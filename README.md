@@ -1,5 +1,8 @@
 # VR-VUE
-a simple admin template based on [vuejs2](http://vuejs.org/) and [element](http://element.eleme.io/#/).
+a simple admin template based on [vuejs2](http://vuejs.org/)
+
+###机密项目
+禁止外传
 
 ### Usage
 
