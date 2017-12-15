@@ -1,12 +1,15 @@
 # VR-VUE
 a simple admin template based on [vuejs2](http://vuejs.org/)
 
-###机密项目
-禁止外传
 
 ### Usage
 
 This is a project template for [vue-cli](https://github.com/vuejs/vue-cli).
+
+```
+###机密项目
+
+禁止外传
 
 ``` bash
 # install dependencies
