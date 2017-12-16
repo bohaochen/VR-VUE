@@ -14,8 +14,6 @@
 </script>
 
 <style>
-	@import "../node_modules/font-awesome/css/font-awesome.min.css";
-	@import "../node_modules/flex.css/dist/flex.css";
 	@import "./common/css/animate.css";
 	@import "./common/css/common.css";
 	

@@ -5,6 +5,8 @@ import VueRouter from 'vue-router'
 import routeConfig from './router'
 import VueResource from 'vue-resource'
 import * as APIS from './api.js' 
+//import PhotoSphereViewer from 'photo-sphere-viewer'
+
 //import store from './vuex/store'
 //import Vuex from 'vuex'
 

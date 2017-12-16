@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "flex.css": "^1.1.6",
+    "photo-sphere-viewer": "^3.2.3",
     "vue": "^2.0.7",
     "vue-resource": "^1.0.3",
     "vuex": "^2.0.0-rc.6"
