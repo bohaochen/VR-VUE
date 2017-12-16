@@ -1,14 +1,23 @@
 <template>
 <div class="home">
-	<div class="word animated fadeIn" v-for="(item,index) in wordArr" :key="index">{{item}}</div>
+  <div class="text_box">
+	  <div class="text animated fadeIn" v-for="(item,index) in wordArr" :key="index">{{item}}</div>
+  </div>  
+
+
+    <img src="../../../static/img/93d42fa1909329ac27e793fbcad47e_2168_1513134608.jpg" width="100%" alt="">
+   <button @click="jieping()">点我截屏</button>
+   <img class="html_img" :src="htmlImg" :style="{display:htmlImg ? 'block' : 'none'}">
 </div>
 </template>
 
 <script>
+import html2canvas from "html2canvas";
 export default {
   data() {
     return {
-      wordArr: []
+      wordArr: [],
+      htmlImg: ""
     };
   },
   created() {},
@@ -21,13 +30,39 @@ export default {
       }, 160 * i);
     }
   },
-  methods: {}
+  methods: {
+    jieping() {
+      html2canvas(document.body, {
+        scale: 1,
+        backgroundColor: "#fff"
+      }).then(canvas => {
+        console.log(canvas);
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        let url = canvas.toDataURL();
+        this.htmlImg = url;
+        alert("截屏成功，可以长按分享啦");
+      });
+    }
+  }
 };
 </script>
 
-<style scoped>
-.word {
-  display: inline-block;
-  font-size: 40px;
+<style lang="scss" scoped>
+.text_box {
+  height: 300px;
+  .text {
+    display: inline-block;
+    font-size: 20px;
+  }
+}
+
+.html_img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
 }
 </style>
