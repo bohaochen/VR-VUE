@@ -9,11 +9,8 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "flex.css": "^1.1.6",
-    "photo-sphere-viewer": "^3.2.3",
-    "vue": "^2.0.7",
-    "vue-resource": "^1.0.3",
-    "vuex": "^2.0.0-rc.6"
+    "axios": "^0.17.1",
+    "vue": "^2.5.11"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",

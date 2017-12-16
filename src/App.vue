@@ -7,43 +7,48 @@
 </template>
 
 <script>
-	export default {
-		name: 'app',
-		components: {}
-	}
+export default {
+  name: "app",
+  components: {}
+};
 </script>
 
 <style>
-	@import "./common/css/animate.css";
-	@import "./common/css/common.css";
-	
-	@keyframes bounce-in {
-		0% {
-			transform: scale(0);
-		}
-		50% {
-			transform: scale(1.05);
-		}
-		100% {
-			transform: scale(1);
-		}
-	}
-	
-	@keyframes bounce-out {
-		0% {
-			transform: scale(1);
-		}
-		50% {
-			transform: scale(0.95);
-		}
-		100% {
-			transform: scale(0);
-		}
-	}
-	#app {
-		position: absolute;
-		top: 0px;
-		bottom: 0px;
-		width: 100%;
-	}
+@import "./assets/css/animate.css";
+@import "./assets/css/common.css";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce-out {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
 </style>

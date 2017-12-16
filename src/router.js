@@ -1,11 +1,7 @@
 export default [{
-	path: '/index',
-	component: (resolve) => {
-		require(['./components/home/Index.vue'], resolve);
-	}
-}, {
-	path: '*',
-	component: (resolve) => {
-		require(['./components/home/Index.vue'], resolve);
-	}
+    path: '/',
+    name: '首页',
+    component: (resolve) => {
+        require(['./views/home/Index.vue'], resolve);
+    }
 }]
