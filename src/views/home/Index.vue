@@ -87,8 +87,8 @@
 			bottom: 32px;
 			z-index: 2;
 			.jiantou {
-				width: 8%;
 				position: absolute;
+				width: 8%;
 				top: 0;
 				z-index: 2;
 				left: 50%;
