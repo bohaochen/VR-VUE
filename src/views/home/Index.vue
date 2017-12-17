@@ -1,5 +1,5 @@
 <template>
-	<div class="content">
+	<div class="content malfunction">
 		<div class="bg"></div>
 		<img src="../../assets/img/qiu.png" class="qiu" />
 		<img ref="test" src="../../assets/img/pn_logo_03.png" class="logo animated bounceInRight" />
@@ -32,10 +32,15 @@
 				console.log('动画执行完毕！');
 				self.sjAni = true;
 			});
+			this.malfunction();
 		},
 		methods: {
 			jieping() {
 
+			},
+			malfunction(){
+				// document.getElementsByClassName("malfunction")[0].
+			// transform: translate(-40px,0px)  scale(1)  ;
 			}
 		}
 	};
@@ -48,6 +53,7 @@
 		background-color: #000000;
 		overflow: hidden;
 		position: relative;
+		
 		.bg {
 			width: 100%;
 			height: 100%;
@@ -55,20 +61,23 @@
 			position: absolute;
 			top: 0;
 			z-index: 1;
-			animation: myfirst 1s linear 2s infinite alternate;
-			-moz-animation: myfirst 1s linear 2s infinite alternate;
-			-webkit-animation: myfirst 1s linear 2s infinite alternate;
-			-o-animation: myfirst 1s linear 2s infinite alternate;
+			animation: myfirst 2s linear 0.5s infinite alternate;
+			-moz-animation: myfirst 2s linear 0.5s infinite alternate;
+			-webkit-animation: myfirst 2s linear 0.5s infinite alternate;
+			-o-animation: myfirst 2s linear 0.5s infinite alternate;
 		}
 		.heikeji {
-			width: 100%;
+			width: 90%;
+			margin-left: 5%;
 			height: auto;
 			position: absolute;
 			top: 0;
 			z-index: 3;
 		}
 		.jingweidu {
-			width: 100%;
+			width: 90%;
+			margin-left: 5%;
+			margin-top: 5%;
 			height: auto;
 			position: absolute;
 			top: 0;
@@ -88,11 +97,11 @@
 			z-index: 2;
 			.jiantou {
 				position: absolute;
-				width: 8%;
+				width:7%;
 				top: 0;
 				z-index: 2;
 				left: 50%;
-				margin-left: -4%;
+				margin-left: -3%;
 				transform: translate3d(0, -100%, 0);
 				-moz-transform: translate3d(0, -100%, 0);
 				-webkit-transform: translate3d(0, -100%, 0);
@@ -111,18 +120,23 @@
 			position: absolute;
 			top: 0;
 			z-index: 2;
-			/*animation: sanjiaoFD 1s linear 2s infinite alternate;
-			-moz-animation: sanjiaoFD 1s linear 2s infinite alternate;
-			-webkit-animation: sanjiaoFD 1s linear 2s infinite alternate;
-			-o-animation: sanjiaoFD 1s linear 2s infinite alternate;*/
+			/*animation: sanjiaoFD 1s linear 0.5s infinite alternate;
+			-moz-animation: sanjiaoFD 1s linear 0.5s infinite alternate;
+			-webkit-animation: sanjiaoFD 1s linear 0.5s infinite alternate;
+			-o-animation: sanjiaoFD 1s linear 0.5s infinite alternate;*/
 		}
 		.qiu {
-			width: 100%;
+			width: 90%;
+			margin-left: 5%;
+			margin-top: 5%;
 			height: auto;
 			position: absolute;
 			top: 0;
 			z-index: 2;
 		}
+	}
+
+	.malfunction{
 	}
 	
 	@keyframes sanjiaoFD {
@@ -190,7 +204,7 @@
 			opacity: 1;
 		}
 		to {
-			opacity: 0.5;
+			opacity: 0.45;
 		}
 	}
 	
@@ -199,7 +213,7 @@
 			opacity: 1;
 		}
 		to {
-			opacity: 0.5;
+			opacity: 0.45;
 		}
 	}
 	
@@ -208,7 +222,7 @@
 			opacity: 1;
 		}
 		to {
-			opacity: 0.5;
+			opacity: 0.45;
 		}
 	}
 	
@@ -217,7 +231,38 @@
 			opacity: 1;
 		}
 		to {
-			opacity: 0.5;
+			opacity: 0.45;
 		}
 	}
+
+	
+	
+	// @-moz-keyframes malfunction {
+	// 	from {
+	// 		opacity: 1;
+	// 	}
+	// 	to {
+	// 		opacity: 0.45;
+	// 	}
+	// }
+	
+	// @-webkit-keyframes malfunction {
+	// 	from {
+	// 		opacity: 1;
+	// 	}
+	// 	to {
+	// 		opacity: 0.45;
+	// 	}
+	// }
+	
+	// @-o-keyframes malfunction {
+	// 	from {
+	// 		opacity: 1;
+	// 	}
+	// 	to {
+	// 		opacity: 0.45;
+	// 	}
+	// }
+
+	
 </style>
