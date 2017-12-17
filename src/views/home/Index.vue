@@ -1,68 +1,223 @@
 <template>
-<div class="home">
-  <div class="text_box">
-	  <div class="text animated fadeIn" v-for="(item,index) in wordArr" :key="index">{{item}}</div>
-  </div>  
-
-
-    <img src="../../../static/img/93d42fa1909329ac27e793fbcad47e_2168_1513134608.jpg" width="100%" alt="">
-   <button @click="jieping()">点我截屏</button>
-   <img class="html_img" :src="htmlImg" :style="{display:htmlImg ? 'block' : 'none'}">
-</div>
+	<div class="content">
+		<div class="bg"></div>
+		<img src="../../assets/img/qiu.png" class="qiu" />
+		<img ref="test" src="../../assets/img/pn_logo_03.png" class="logo animated bounceInRight" />
+		<img src="../../assets/img/wzh3j_01.png" class="sanjiao animated" v-show="sjAni" :class="{slideInDown:sjAni}">
+		<img src="../../assets/img/wz_01.png" class="heikeji" />
+		<img src="../../assets/img/zj_01.png" class="jingweidu" />
+		<div class="btns">
+			<img src="../../assets/img/jt_04.png" class="jiantou" />
+			<img src="../../assets/img/btn_04.png" class="btn1" />
+			<img src="../../assets/img/btn_06.png" class="btn2" />
+		</div>
+	</div>
 </template>
 
 <script>
-import html2canvas from "html2canvas";
-export default {
-  data() {
-    return {
-      wordArr: [],
-      htmlImg: ""
-    };
-  },
-  created() {},
-  mounted() {
-    let wordStr = `2017年12月26日，平安科技传来AI捷报人脸识别调用量累计突破1000000000数字的背后隐藏着怎样神秘的黑科技？`;
-    // 添加打字效果
-    for (let i = 0; i < wordStr.length; i++) {
-      setTimeout(() => {
-        this.wordArr.push(wordStr[i]);
-      }, 160 * i);
-    }
-  },
-  methods: {
-    jieping() {
-      html2canvas(document.body, {
-        scale: 1,
-        backgroundColor: "#fff"
-      }).then(canvas => {
-        console.log(canvas);
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        let url = canvas.toDataURL();
-        this.htmlImg = url;
-        alert("截屏成功，可以长按分享啦");
-      });
-    }
-  }
-};
+	import html2canvas from "html2canvas";
+	export default {
+		data() {
+			return {
+				sjAni: false,
+			};
+		},
+		mounted() {
+			//页面加载完成回调
+			let self = this;
+			//获取页面ref属性DOM(类似于查找id)
+			let _rect = self.$refs.test;
+			//监听动画执行回调
+			self.MA(_rect, function() {
+				console.log('动画执行完毕！');
+				self.sjAni = true;
+			});
+		},
+		methods: {
+			jieping() {
+
+			}
+		}
+	};
 </script>
 
 <style lang="scss" scoped>
-.text_box {
-  height: 300px;
-  .text {
-    display: inline-block;
-    font-size: 20px;
-  }
-}
-
-.html_img {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  display: none;
-}
+	.content {
+		width: 100%;
+		height: 100%;
+		background-color: #000000;
+		overflow: hidden;
+		position: relative;
+		.bg {
+			width: 100%;
+			height: 100%;
+			background: url(../../assets/img/bg.jpg) 50%/cover;
+			position: absolute;
+			top: 0;
+			z-index: 1;
+			animation: myfirst 1s linear 2s infinite alternate;
+			-moz-animation: myfirst 1s linear 2s infinite alternate;
+			-webkit-animation: myfirst 1s linear 2s infinite alternate;
+			-o-animation: myfirst 1s linear 2s infinite alternate;
+		}
+		.heikeji {
+			width: 100%;
+			height: auto;
+			position: absolute;
+			top: 0;
+			z-index: 3;
+		}
+		.jingweidu {
+			width: 100%;
+			height: auto;
+			position: absolute;
+			top: 0;
+			z-index: 4;
+		}
+		.logo {
+			width: 26%;
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			z-index: 2;
+		}
+		.btns {
+			width: 100%;
+			position: absolute;
+			bottom: 32px;
+			z-index: 2;
+			.jiantou {
+				width: 8%;
+				position: absolute;
+				top: 0;
+				z-index: 2;
+				left: 50%;
+				margin-left: -4%;
+				transform: translate3d(0, -100%, 0);
+				-moz-transform: translate3d(0, -100%, 0);
+				-webkit-transform: translate3d(0, -100%, 0);
+				-o-transform: translate3d(0, -100%, 0);
+			}
+			.btn1,
+			.btn2 {
+				width: 50%;
+				display: block;
+				margin: auto;
+			}
+		}
+		.sanjiao {
+			width: 100%;
+			height: auto;
+			position: absolute;
+			top: 0;
+			z-index: 2;
+			/*animation: sanjiaoFD 1s linear 2s infinite alternate;
+			-moz-animation: sanjiaoFD 1s linear 2s infinite alternate;
+			-webkit-animation: sanjiaoFD 1s linear 2s infinite alternate;
+			-o-animation: sanjiaoFD 1s linear 2s infinite alternate;*/
+		}
+		.qiu {
+			width: 100%;
+			height: auto;
+			position: absolute;
+			top: 0;
+			z-index: 2;
+		}
+	}
+	
+	@keyframes sanjiaoFD {
+		from {
+			transform: translate3d(0, 5px, 0);
+			-moz-transform: translate3d(0, 5px, 0);
+			-webkit-transform: translate3d(0, 5px, 0);
+			-o-transform: translate3d(0, 5px, 0);
+		}
+		to {
+			transform: translate3d(0, -5px, 0);
+			-moz-transform: translate3d(0, -5px, 0);
+			-webkit-transform: translate3d(0, -5px, 0);
+			-o-transform: translate3d(0, -5px, 0);
+		}
+	}
+	
+	@-moz-keyframes sanjiaoFD {
+		from {
+			transform: translate3d(0, 5px, 0);
+			-moz-transform: translate3d(0, 5px, 0);
+			-webkit-transform: translate3d(0, 5px, 0);
+			-o-transform: translate3d(0, 5px, 0);
+		}
+		to {
+			transform: translate3d(0, -5px, 0);
+			-moz-transform: translate3d(0, -5px, 0);
+			-webkit-transform: translate3d(0, -5px, 0);
+			-o-transform: translate3d(0, -5px, 0);
+		}
+	}
+	
+	@-webkit-keyframes sanjiaoFD {
+		from {
+			transform: translate3d(0, 5px, 0);
+			-moz-transform: translate3d(0, 5px, 0);
+			-webkit-transform: translate3d(0, 5px, 0);
+			-o-transform: translate3d(0, 5px, 0);
+		}
+		to {
+			transform: translate3d(0, -5px, 0);
+			-moz-transform: translate3d(0, -5px, 0);
+			-webkit-transform: translate3d(0, -5px, 0);
+			-o-transform: translate3d(0, -5px, 0);
+		}
+	}
+	
+	@-o-keyframes sanjiaoFD {
+		from {
+			transform: translate3d(0, 5px, 0);
+			-moz-transform: translate3d(0, 5px, 0);
+			-webkit-transform: translate3d(0, 5px, 0);
+			-o-transform: translate3d(0, 5px, 0);
+		}
+		to {
+			transform: translate3d(0, -5px, 0);
+			-moz-transform: translate3d(0, -5px, 0);
+			-webkit-transform: translate3d(0, -5px, 0);
+			-o-transform: translate3d(0, -5px, 0);
+		}
+	}
+	
+	@keyframes myfirst {
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0.5;
+		}
+	}
+	
+	@-moz-keyframes myfirst {
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0.5;
+		}
+	}
+	
+	@-webkit-keyframes myfirst {
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0.5;
+		}
+	}
+	
+	@-o-keyframes myfirst {
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0.5;
+		}
+	}
 </style>

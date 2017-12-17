@@ -1,3 +1,11 @@
+export const MA = (_node, callback) => {
+	_node.addEventListener('webkitAnimationEnd', function() {
+		if(callback) {
+			callback();
+		}
+	}, false);
+}
+
 export const timeToNow = (time) => {
 	const t = parseFloat(new Date - new Date(time)) / 1000;
 	let str;
@@ -23,7 +31,7 @@ export const timeToNow = (time) => {
  *处理json字符串，转为json格式
  */
 export const isLogin = (code, _this) => {
-	try { 
+	try {
 		if(code == 8888) {
 			console.log("请登录！")
 			window.localStorage.removeItem('userInfo')
@@ -54,10 +62,10 @@ export const jsonFormat = (val) => {
  *   "yyyy-M-d h:m:s.S"      ==> 2006-7-2 8:9:4.18 
  */
 export const dateFormat = (date, format) => {
-	if(date==''||typeof(date)=="undefined"){
+	if(date == '' || typeof(date) == "undefined") {
 		return ''
 	}
-	
+
 	date = Number(date);
 	date = new Date(date);
 
@@ -83,7 +91,7 @@ export const dateFormat = (date, format) => {
 		}
 		return all;
 	});
-	if(format=='NaN-aN-aN aN:aN:aN'||format=='1970-01-01 08:00:00'){
+	if(format == 'NaN-aN-aN aN:aN:aN' || format == '1970-01-01 08:00:00') {
 		return ''
 	}
 	return format;

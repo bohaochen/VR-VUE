@@ -24,3 +24,10 @@ npm run build
 ### Browser Support
 
 Modern browsers and Internet Explorer 10+.
+
+
+### 百度统计
+
+https://tongji.baidu.com/web/welcome/login
+
+账号：asdfgh5007  pwd:Sdfgh5007
