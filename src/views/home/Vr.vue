@@ -16,7 +16,6 @@
 				isGyroscope: false,
 				isRotate: false,
 				PSV: null,
-				index: 0, //当前VR加载进度
 				vrImgs: [
 					"https://wx.nullexcept.com/s_static/img/1.jpg",
 					"https://wx.nullexcept.com/s_static/img/2.jpg",
