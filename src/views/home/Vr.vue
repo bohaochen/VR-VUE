@@ -9,6 +9,7 @@
 		data() {
 			return {
 				sjAni: false,
+				PSV : null,
 			};
 		},
 		mounted() {
@@ -21,7 +22,7 @@
 			loadQj() {
 				var self = this;
 				//加载全景图
-				var PSV = new PhotoSphereViewer({
+				self.PSV = new PhotoSphereViewer({
 					panorama: 'static/img/1.jpg', //缩略图
 					container: 'photosphere', //全景组件父容器
 					caption: '平安大厦</b>', //控制台标题
@@ -62,22 +63,22 @@
 					}] //标记
 				});
 
-				PSV.on('select-marker', function(marker) {
+				self.PSV.on('select-marker', function(marker) {
 					//点击标记时的回调
 					//				zoonAnimate(PSV)
-					PSV.setPanorama('img/2.jpg');
+					self.PSV.setPanorama('img/2.jpg');
 					console.log("奔放吧少年", marker);
 					// if(marker.data && marker.data.generated) {
 					// 	PSV.removeMarker(marker);
 					// }
 				});
 
-				PSV.on('position-updated', function(ev) {
+				self.PSV.on('position-updated', function(ev) {
 					//点击标记时的回调
 					//				console.log("位置更新",ev);
 				});
-				PSV.on('ready', function() {
-					PSV.animate({
+				self.PSV.on('ready', function() {
+					self.PSV.animate({
 						longitude: 3.17,
 						latitude: 0.13
 					}, 2000)
