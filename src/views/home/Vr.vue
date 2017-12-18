@@ -39,6 +39,12 @@
 			//页面加载完成回调
 			let self = this;
 			self.loadQj();
+			self.$refs.photosphere.addEventListener("touchstart", function() {
+				event.preventDefault();
+				if(self.PSV != null) {
+					self.isRotate = self.PSV.isAutorotateEnabled();
+				}
+			}, false);
 		},
 		methods: {
 			loadQj() {
