@@ -1,0 +1,14 @@
+.psv-marker-jiantou {
+	animation: mymove 0.5s infinite;
+	animation-direction: alternate;
+	-webkit-animation-direction: alternate;
+}
+
+@keyframes mymove {
+	from {
+		top: 0px;
+	}
+	to {
+		top: 20px;
+	}
+}
