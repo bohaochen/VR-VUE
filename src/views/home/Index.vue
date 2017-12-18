@@ -1,5 +1,5 @@
 <template>
-	<div class="content malfunction">
+	<div class="content malfunction3">
 		<div class="bg"></div>
 		<img src="../../assets/img/qiu.png" class="qiu" />
 		<img ref="test" src="../../assets/img/pn_logo_03.png" class="logo animated bounceInRight" />
@@ -136,55 +136,23 @@
 		}
 	}
 
-	.malfunction{
+	.malfunction1{
+		animation: malfunction1 0.001s linear infinite alternate;
+	}
+
+	.malfunction2{
+		animation: malfunction2 0.001s linear infinite alternate;
+	}
+
+	.malfunction3{
+		animation: malfunction3 1s linear 3 alternate;
+	}
+
+	.malfunction4{
+		animation: malfunction4 0.001s linear infinite alternate;
 	}
 	
 	@keyframes sanjiaoFD {
-		from {
-			transform: translate3d(0, 5px, 0);
-			-moz-transform: translate3d(0, 5px, 0);
-			-webkit-transform: translate3d(0, 5px, 0);
-			-o-transform: translate3d(0, 5px, 0);
-		}
-		to {
-			transform: translate3d(0, -5px, 0);
-			-moz-transform: translate3d(0, -5px, 0);
-			-webkit-transform: translate3d(0, -5px, 0);
-			-o-transform: translate3d(0, -5px, 0);
-		}
-	}
-	
-	@-moz-keyframes sanjiaoFD {
-		from {
-			transform: translate3d(0, 5px, 0);
-			-moz-transform: translate3d(0, 5px, 0);
-			-webkit-transform: translate3d(0, 5px, 0);
-			-o-transform: translate3d(0, 5px, 0);
-		}
-		to {
-			transform: translate3d(0, -5px, 0);
-			-moz-transform: translate3d(0, -5px, 0);
-			-webkit-transform: translate3d(0, -5px, 0);
-			-o-transform: translate3d(0, -5px, 0);
-		}
-	}
-	
-	@-webkit-keyframes sanjiaoFD {
-		from {
-			transform: translate3d(0, 5px, 0);
-			-moz-transform: translate3d(0, 5px, 0);
-			-webkit-transform: translate3d(0, 5px, 0);
-			-o-transform: translate3d(0, 5px, 0);
-		}
-		to {
-			transform: translate3d(0, -5px, 0);
-			-moz-transform: translate3d(0, -5px, 0);
-			-webkit-transform: translate3d(0, -5px, 0);
-			-o-transform: translate3d(0, -5px, 0);
-		}
-	}
-	
-	@-o-keyframes sanjiaoFD {
 		from {
 			transform: translate3d(0, 5px, 0);
 			-moz-transform: translate3d(0, 5px, 0);
@@ -208,61 +176,40 @@
 		}
 	}
 	
-	@-moz-keyframes myfirst {
-		from {
-			opacity: 1;
+	@keyframes malfunction1 {
+		0% {
+			transform: translate(30px,0);
 		}
-		to {
-			opacity: 0.45;
-		}
-	}
-	
-	@-webkit-keyframes myfirst {
-		from {
-			opacity: 1;
-		}
-		to {
-			opacity: 0.45;
-		}
-	}
-	
-	@-o-keyframes myfirst {
-		from {
-			opacity: 1;
-		}
-		to {
-			opacity: 0.45;
+		100% {
+			transform: translate(-2px,-3px);
 		}
 	}
 
+	@keyframes malfunction2 {
+		0% {
+			transform: translate(-40px,0);
+		}
+		100% {
+			transform: translate(-30px,-3px);
+		}
+	}
 	
-	
-	// @-moz-keyframes malfunction {
-	// 	from {
-	// 		opacity: 1;
-	// 	}
-	// 	to {
-	// 		opacity: 0.45;
-	// 	}
-	// }
-	
-	// @-webkit-keyframes malfunction {
-	// 	from {
-	// 		opacity: 1;
-	// 	}
-	// 	to {
-	// 		opacity: 0.45;
-	// 	}
-	// }
-	
-	// @-o-keyframes malfunction {
-	// 	from {
-	// 		opacity: 1;
-	// 	}
-	// 	to {
-	// 		opacity: 0.45;
-	// 	}
-	// }
+	@keyframes malfunction3 {
+		0% {
+			transform: translate(30px,0);
+		}
+		100% {
+			transform: translate(-2px,-3px);
+		}
+	}
 
+	@keyframes malfunction4 {
+		0% {
+			transform: translate(30px,0);
+		}
+		100% {
+			transform: translate(-2px,-3px);
+		}
+	}
 	
 </style>
