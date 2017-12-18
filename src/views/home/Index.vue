@@ -15,7 +15,7 @@
 		<img src="../../assets/img/gx_01.png" class="guangxiao animated" v-show="gxAni"/>
 		
 		<img src="../../assets/img/zj_01.png" class="jingweidu" />
-		<div class="btns hidden">
+		<div class="btns">
 		<!-- <div class="btns hidden"> -->
 			<img src="../../assets/img/jt_04.png" class="jiantou" />
 			<img src="../../assets/img/btn_04.png" @click="goToVr" class="btn1" />
