@@ -3,8 +3,8 @@
 		<div class="content" ref="photosphere" id="photosphere"></div>
 		<div class="btns">
 			<div class="skip" @click="goToEyes">跳过</div>
-			<div class="gyroscope-off" @click="toggleGyroscope" :class="{'gyroscope-on':isGyroscope}">陀螺关</div>
-			<div class="rotate-off" @click="toggleRotate" :class="{'rotate-on':isRotate}">旋转关</div>
+			<div class="gyroscope-off" @click="toggleGyroscope" :class="{'gyroscope-on':isGyroscope}">陀螺</div>
+			<div class="rotate-off" @click="toggleRotate" :class="{'rotate-on':isRotate}">旋转</div>
 		</div>
 	</div>
 </template>
