@@ -47,6 +47,7 @@ Vue.prototype.API = APIS;
 Vue.prototype.$http = axios;
 
 const router = new VueRouter({
+	mode: 'history',
 	routes: routeConfig,
 })
 router.beforeEach((to, from, next) => {

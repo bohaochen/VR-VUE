@@ -8,7 +8,7 @@
 		<img src="../../assets/img/zj_01.png" class="jingweidu" />
 		<div class="btns">
 			<img src="../../assets/img/jt_04.png" class="jiantou" />
-			<img src="../../assets/img/btn_04.png" class="btn1" />
+			<img src="../../assets/img/btn_04.png" @click="goToVr" class="btn1" />
 			<img src="../../assets/img/btn_06.png" class="btn2" />
 		</div>
 	</div>
@@ -35,12 +35,20 @@
 			this.malfunction();
 		},
 		methods: {
-			jieping() {
-
+			goToVr() {
+				//页面跳转
+				let self = this;
+				// 带查询参数，变成 /register?plan=private
+				self.$router.push({
+					path: 'vr',
+					query: {
+						plan: 'private'
+					}
+				})
 			},
-			malfunction(){
+			malfunction() {
 				// document.getElementsByClassName("malfunction")[0].
-			// transform: translate(-40px,0px)  scale(1)  ;
+				// transform: translate(-40px,0px)  scale(1)  ;
 			}
 		}
 	};
@@ -53,7 +61,6 @@
 		background-color: #000000;
 		overflow: hidden;
 		position: relative;
-		
 		.bg {
 			width: 100%;
 			height: 100%;
@@ -97,7 +104,7 @@
 			z-index: 2;
 			.jiantou {
 				position: absolute;
-				width:7%;
+				width: 7%;
 				top: 0;
 				z-index: 2;
 				left: 50%;
