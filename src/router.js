@@ -11,5 +11,12 @@ export default [{
 		component: (resolve) => {
 			require(['./views/home/Vr.vue'], resolve);
 		}
+	},{
+		path: '/eyes',
+		name: '黑科技就在眼前',
+		component: (resolve) => {
+			require(['./views/home/Eyes.vue'], resolve);
+		}
 	},
 ]
+
