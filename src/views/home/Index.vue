@@ -25,7 +25,6 @@
 </template>
 
 <script>
-import html2canvas from "html2canvas";
 export default {
   data() {
     return {
@@ -48,9 +47,6 @@ export default {
       // 带查询参数，变成 /register?plan=private
       self.$router.push({
         path: "vr",
-        query: {
-          plan: "private"
-        }
       });
     },
     animateEnd(refName, show_age, callback) {
