@@ -9,7 +9,7 @@
 		data() {
 			return {
 				sjAni: false,
-				PSV : null,
+				PSV: null,
 			};
 		},
 		mounted() {
@@ -23,10 +23,10 @@
 				var self = this;
 				//加载全景图
 				self.PSV = new PhotoSphereViewer({
-					panorama: 'static/img/1.jpg', //缩略图
+					panorama: 'https://wx.nullexcept.com/s_static/img/1.jpg', //缩略图
 					container: 'photosphere', //全景组件父容器
 					caption: '平安大厦</b>', //控制台标题
-					loading_img: 'static/img/photosphere-logo.gif', //loadING图
+					loading_img: 'https://wx.nullexcept.com/s_static/img/photosphere-logo.gif', //loadING图
 					navbar: 'gyroscope', //控制台配置
 					navbar: true, //控制台配置
 					default_fov: 70, //初始焦距

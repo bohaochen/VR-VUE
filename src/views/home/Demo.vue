@@ -5,7 +5,7 @@
   </div>  
 
 
-    <img src="../../../static/img/photosphere-logo.gif" width="100%" alt="">
+    <img src="https://wx.nullexcept.com/s_static/img/photosphere-logo.gif" width="100%" alt="">
    <button @click="jieping()">点我截屏</button>
    <img class="html_img" :src="htmlImg" :style="{display:htmlImg ? 'block' : 'none'}">
 </div>
