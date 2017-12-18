@@ -22,7 +22,9 @@ export default {
   },
   created() {},
   mounted() {
-    let wordStr = `2017年12月26日，平安科技传来AI捷报人脸识别调用量累计突破1000000000数字的背后隐藏着怎样神秘的黑科技？`;
+    let wordStr = `平安科技传来AI捷报：
+			人脸识别调用量累计突破10亿，
+			数字的背后究竟隐藏着怎样的黑科技？`;
     // 添加打字效果
     for (let i = 0; i < wordStr.length; i++) {
       setTimeout(() => {
