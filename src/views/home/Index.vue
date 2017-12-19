@@ -132,7 +132,7 @@ export default {
     margin-left: 5%;
     height: auto;
     position: absolute;
-    animation-duration: 5s;
+    animation:guangxiao 0.5s linear 1 alternate;
     top: 0;
     z-index: 3;
   }
@@ -206,7 +206,7 @@ export default {
     position: absolute;
     top: 0;
     z-index: 2;
-    animation-duration: 8s;
+    animation-duration: 7s;
   }
   .qiu {
     width: 90%;
@@ -262,6 +262,17 @@ export default {
   animation: chandong 0.02s linear 8 alternate;
 }
 
+@keyframes guangxiao{
+  0% {
+    opacity: 0;
+    transform:rotate(5deg);
+  }
+  100% {
+    opacity: 1;
+    transform:rotate(0deg);
+  }
+}
+
 @keyframes opacity1 {
   0% {
     opacity: 0;
@@ -294,10 +305,10 @@ export default {
     opacity: 0;
   }
   1% {
-    opacity: 0.01;
+    opacity: 0.03;
   }
   15% {
-    opacity: 0.05;
+    opacity: 0.08;
   }
   16% {
     opacity: 0;
@@ -357,16 +368,16 @@ export default {
 
 @keyframes malfunction1 {
   0% {
-    transform: translate(6px, 0) scale(1.02);
+    transform: translate(4px, 0) scale(1.01);
   }
   100% {
-    transform: translate(2px, -3px) scale(1);
+    transform: translate(0px, -3px) scale(1);
   }
 }
 
 @keyframes malfunction2 {
   0% {
-    transform: translate(-8px, 2px) scale(1);
+    transform: translate(-4px, 2px) scale(1);
   }
   100% {
     transform: translate(-2px, -2px) scale(1.01);
