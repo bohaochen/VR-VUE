@@ -357,10 +357,10 @@ export default {
 
 @keyframes malfunction1 {
   0% {
-    transform: translate(10px, 0) scale(1.04);
+    transform: translate(6px, 0) scale(1.02);
   }
   100% {
-    transform: translate(6px, -3px) scale(1);
+    transform: translate(2px, -3px) scale(1);
   }
 }
 
