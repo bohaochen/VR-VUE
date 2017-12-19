@@ -15,6 +15,9 @@
 		<img src="../../../static/img/gx_01.png" class="guangxiao animated" v-show="gxAni"/>
 		
 		<img src="../../../static/img/zj_01.png" class="jingweidu" />
+
+    <div class="text animated fadeIn" v-for="(item,index) in wordArr" :key="index">{{item}}</div>
+
 		<div class="btns">
 		<!-- <div class="btns hidden"> -->
 			<img src="../../../static/img/jt_04.png" class="jiantou" />
@@ -28,6 +31,7 @@
 export default {
   data() {
     return {
+      wordArr: [],
       hkjAni: true,
       gxAni: false,
       btnAni: false
