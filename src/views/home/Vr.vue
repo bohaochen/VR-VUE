@@ -78,7 +78,7 @@
 						width: 364,
 						height: 172,
 						anchor: 'bottom center',
-						content: document.getElementById('photosphere').innerHTML,
+//						content: document.getElementById('photosphere').innerHTML,
 					}, {
 						id: 'quan1',
 						longitude: 3.198,
@@ -87,7 +87,7 @@
 						width: 124,
 						height: 72,
 						anchor: 'top center',
-						content: document.getElementById('photosphere').innerHTML,
+//						content: document.getElementById('photosphere').innerHTML,
 					}, {
 						id: 'jiantou1',
 						longitude: 3.198,
@@ -97,7 +97,7 @@
 						height: 142,
 						className: 'psv-marker-jiantou',
 						anchor: 'top center',
-						content: document.getElementById('photosphere').innerHTML,
+//						content: document.getElementById('photosphere').innerHTML,
 					}, {
 						id: 'xiaoxi2',
 						longitude: 3.698,
@@ -106,7 +106,7 @@
 						width: 364,
 						height: 172,
 						anchor: 'bottom center',
-						content: document.getElementById('photosphere').innerHTML,
+//						content: document.getElementById('photosphere').innerHTML,
 						visible: false,
 					}, {
 						id: 'quan2',
@@ -116,7 +116,7 @@
 						width: 124,
 						height: 72,
 						anchor: 'top center',
-						content: document.getElementById('photosphere').innerHTML,
+//						content: document.getElementById('photosphere').innerHTML,
 						visible: false,
 					}, {
 						id: 'jiantou2',
@@ -127,7 +127,7 @@
 						height: 142,
 						className: 'psv-marker-jiantou',
 						anchor: 'top center',
-						content: document.getElementById('photosphere').innerHTML,
+//						content: document.getElementById('photosphere').innerHTML,
 						visible: false,
 					}, {
 						id: 'xiaoxi3',
@@ -137,7 +137,7 @@
 						width: 364,
 						height: 172,
 						anchor: 'bottom center',
-						content: document.getElementById('photosphere').innerHTML,
+//						content: document.getElementById('photosphere').innerHTML,
 						visible: false,
 					}, {
 						id: 'quan3',
@@ -147,7 +147,7 @@
 						width: 124,
 						height: 72,
 						anchor: 'top center',
-						content: document.getElementById('photosphere').innerHTML,
+//						content: document.getElementById('photosphere').innerHTML,
 						visible: false,
 					}, {
 						id: 'jiantou3',
@@ -158,7 +158,7 @@
 						height: 142,
 						className: 'psv-marker-jiantou',
 						anchor: 'top center',
-						content: document.getElementById('photosphere').innerHTML,
+//						content: document.getElementById('photosphere').innerHTML,
 						visible: false,
 					}, {
 						id: 'xiaoxi31',
@@ -168,7 +168,7 @@
 						width: 242,
 						height: 193,
 						anchor: 'top left',
-						content: document.getElementById('photosphere').innerHTML,
+//						content: document.getElementById('photosphere').innerHTML,
 						visible: false,
 					}, {
 						id: 'xiaoxi4',
@@ -178,7 +178,7 @@
 						width: 364,
 						height: 172,
 						anchor: 'bottom center',
-						content: document.getElementById('photosphere').innerHTML,
+//						content: document.getElementById('photosphere').innerHTML,
 						visible: false,
 					}, {
 						id: 'quan4',
@@ -188,7 +188,7 @@
 						width: 124,
 						height: 72,
 						anchor: 'top center',
-						content: document.getElementById('photosphere').innerHTML,
+//						content: document.getElementById('photosphere').innerHTML,
 						visible: false,
 					}, {
 						id: 'jiantou4',
@@ -199,7 +199,7 @@
 						height: 142,
 						className: 'psv-marker-jiantou',
 						anchor: 'top center',
-						content: document.getElementById('photosphere').innerHTML,
+//						content: document.getElementById('photosphere').innerHTML,
 						visible: false,
 					}] //标记
 				});
