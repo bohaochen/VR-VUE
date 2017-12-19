@@ -59,7 +59,7 @@
 					navbar: false, //控制台配置
 					default_fov: 70, //初始焦距
 					default_long: 5.6, //max 6.3
-					default_lat: 0.73, //max 1.5
+					default_lat: 0.13, //max 1.5
 					tilt_up_max: Math.PI / 2,
 					//tilt_down_max: Math.PI / 2,
 					move_speed: 3, //滑动速度
@@ -172,7 +172,7 @@
 						visible: false,
 					}, {
 						id: 'xiaoxi4',
-						longitude: 0.9,
+						longitude: 0.1,
 						latitude: -0.1,
 						image: '/static/img/xinhao3.png',
 						width: 364,
@@ -182,7 +182,7 @@
 						visible: false,
 					}, {
 						id: 'quan4',
-						longitude: 0.9,
+						longitude: 0.1,
 						latitude: -0.105,
 						image: '/static/img/quan.png',
 						width: 124,
@@ -192,7 +192,7 @@
 						visible: false,
 					}, {
 						id: 'jiantou4',
-						longitude: 0.9,
+						longitude: 0.1,
 						latitude: -0.115,
 						image: '/static/img/jiantou.png',
 						width: 111,
@@ -244,7 +244,7 @@
 						break;
 					case 3:
 						self.PSV.animate({
-							longitude: 0.9,
+							longitude: 0.1,
 							latitude: 0.13
 						}, 2000)
 						break;
