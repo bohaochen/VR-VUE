@@ -16,8 +16,6 @@
 		
 		<img src="../../../static/img/zj_01.png" class="jingweidu" />
 
-    <div class="text animated fadeIn" v-for="(item,index) in wordArr" :key="index">{{item}}</div>
-
 		<div class="btns">
 		<!-- <div class="btns hidden"> -->
 			<img src="../../../static/img/jt_04.png" class="jiantou" />
@@ -31,10 +29,6 @@
 export default {
   data() {
     return {
-      wordStr:`平安科技传来AI捷报：
-			人脸识别调用量累计突破10亿，
-			数字的背后究竟隐藏着怎样的黑科技？`,
-      wordArr: [],
       hkjAni: true,
       gxAni: false,
       btnAni: false
@@ -42,13 +36,6 @@ export default {
   },
   mounted() {
     //页面加载完成回调
-    // 添加打字效果
-    for (let i = 0; i < wordStr.length; i++) {
-      setTimeout(() => {
-        this.wordArr.push(wordStr[i]);
-      }, 160 * i);
-    }
-
     this.animateEnd("sanjiao", "gxAni", function() {
       console.log("光线来了");
     });
