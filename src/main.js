@@ -51,11 +51,12 @@ const router = new VueRouter({
 	routes: routeConfig,
 })
 router.beforeEach((to, from, next) => {
+	//路由请求前做些什么
 	next();
 })
 
 router.afterEach(transition => {
-
+	//路由请求完做些什么
 });
 
 new Vue({
