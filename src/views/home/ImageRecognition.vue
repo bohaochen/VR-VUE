@@ -232,7 +232,7 @@
 				position: absolute;
 				/*border: 1px solid #7EF9FF;*/
 				height: 70%;
-				margin-left: -28.25%;
+				margin-left: -28.2%;
 				width: 56%;
 				top: 15%;
 				left: 50%;
