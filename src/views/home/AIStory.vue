@@ -35,6 +35,9 @@ export default {
       }, 20);
     }, 2000);
   },
+  beforeDestroy: function () {
+    clearInterval(scollFn);
+  },
   methods: {
     jieping() {},
     scollUp() {
@@ -100,7 +103,7 @@ export default {
   .longImage {
     width: 100%;
     z-index: 3333;
-    opacity: 0.1;
+    opacity: 0;
     height: auto;
     position: relative;
     margin-top: 75px;
