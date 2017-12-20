@@ -32,6 +32,20 @@ export default [{
 		}
 	},
 	{
+		path: '/userinfo',
+		name: '录入用户信息',
+		component: (resolve) => {
+			require(['./views/home/UserInfo.vue'], resolve);
+		}
+	},
+	{
+		path: '/luckdraw',
+		name: '抽奖页面',
+		component: (resolve) => {
+			require(['./views/home/LuckDraw.vue'], resolve);
+		}
+	},
+	{
 		path: '*',
 		redirect: '/'
 	}
