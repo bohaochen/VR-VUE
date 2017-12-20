@@ -45,6 +45,7 @@
 				});
 			},
 			compress(event, callback) {
+				let self = this;
 				try {
 					let file = event.currentTarget.files[0];
 					if(!/image\/\w+/.test(file.type)) {
@@ -56,10 +57,10 @@
 					//获取照片方向角属性，用户旋转控制  
 					EXIF.getData(file, function() {
 						// alert(EXIF.pretty(this));  
-						EXIF.getAllTags(this);
+//						EXIF.getAllTags(this);
 						//alert(EXIF.getTag(this, 'Orientation'));   
 						Orientation = EXIF.getTag(this, 'Orientation');
-						alert(Orientation)
+						//						alert(Orientation)
 						//return;  
 					});
 
@@ -90,10 +91,10 @@
 							var base64 = null;
 							//修复ios  
 							if(navigator.userAgent.match(/iphone/i)) {
-								console.log('iphone');
+//								alert('iphone');
 								//alert(expectWidth + ',' + expectHeight);  
 								//如果方向角不为1，都需要进行旋转 added by lzk  
-								console.log(Orientation)
+								
 								if(Orientation != "" && Orientation != 1) {
 									//alert('旋转处理');
 									switch(Orientation) {
@@ -112,18 +113,11 @@
 											break;
 									}
 								}
-
-								/*var mpImg = new MegaPixImage(image); 
-								mpImg.render(canvas, { 
-								    maxWidth: 800, 
-								    maxHeight: 1200, 
-								    quality: 0.8, 
-								    orientation: 8 
-								});*/
-								base64 = canvas.toDataURL("image/jpeg", 0.8);
+								base64 = canvas.toDataURL("image/jpeg", self.quality);
 							} else if(navigator.userAgent.match(/Android/i)) { // 修复android  
-								var encoder = new JPEGEncoder();
-								base64 = encoder.encode(ctx.getImageData(0, 0, expectWidth, expectHeight), 80);
+								base64 = canvas.toDataURL("image/jpeg", self.quality);
+								//var encoder = new JPEGEncoder();
+								//base64 = encoder.encode(ctx.getImageData(0, 0, expectWidth, expectHeight), self.quality * 100);
 							} else {
 								//alert(Orientation);  
 								if(Orientation != "" && Orientation != 1) {
@@ -180,14 +174,7 @@
 					step--;
 					step < min_step && (step = max_step);
 				}
-				//img.setAttribute('step', step);    
-				/*var canvas = document.getElementById('pic_' + pid);   
-				if (canvas == null) {   
-				    img.style.display = 'none';   
-				    canvas = document.createElement('canvas');   
-				    canvas.setAttribute('id', 'pic_' + pid);   
-				    img.parentNode.appendChild(canvas);   
-				}  */
+
 				//旋转角度以弧度值为参数    
 				var degree = step * 90 * Math.PI / 180;
 				var ctx = canvas.getContext('2d');
