@@ -57,7 +57,7 @@
 					//获取照片方向角属性，用户旋转控制  
 					EXIF.getData(file, function() {
 						// alert(EXIF.pretty(this));  
-//						EXIF.getAllTags(this);
+						//						EXIF.getAllTags(this);
 						//alert(EXIF.getTag(this, 'Orientation'));   
 						Orientation = EXIF.getTag(this, 'Orientation');
 						//						alert(Orientation)
@@ -78,23 +78,14 @@
 							var imageHeight;
 							var offsetX = 0;
 							var offsetY = 0;
-							if(this.width > this.height) {
-								imageWidth = Math.round(square * this.width / this.height);
-								imageHeight = square;
-								offsetX = -Math.round((imageWidth - square) / 2);
-							} else {
-								imageHeight = Math.round(square * this.height / this.width);
-								imageWidth = square;
-								offsetY = -Math.round((imageHeight - square) / 2);
-							}
-							context.drawImage(this, offsetX, offsetY, imageWidth, imageHeight);
+
 							var base64 = null;
 							//修复ios  
 							if(navigator.userAgent.match(/iphone/i)) {
-//								alert('iphone');
+								//								alert('iphone');
 								//alert(expectWidth + ',' + expectHeight);  
 								//如果方向角不为1，都需要进行旋转 added by lzk  
-								
+
 								if(Orientation != "" && Orientation != 1) {
 									//alert('旋转处理');
 									switch(Orientation) {
@@ -113,34 +104,18 @@
 											break;
 									}
 								}
-								base64 = canvas.toDataURL("image/jpeg", self.quality);
-							} else if(navigator.userAgent.match(/Android/i)) { // 修复android  
-								base64 = canvas.toDataURL("image/jpeg", self.quality);
-								//var encoder = new JPEGEncoder();
-								//base64 = encoder.encode(ctx.getImageData(0, 0, expectWidth, expectHeight), self.quality * 100);
-							} else {
-								//alert(Orientation);  
-								if(Orientation != "" && Orientation != 1) {
-									//alert('旋转处理');  
-									switch(Orientation) {
-										case 6: //需要顺时针（向左）90度旋转  
-											//												alert('需要顺时针（向左）90度旋转');
-											self.rotateImg(this, 'left', canvas);
-											break;
-										case 8: //需要逆时针（向右）90度旋转  
-											//												alert('需要顺时针（向右）90度旋转');
-											self.rotateImg(this, 'right', canvas);
-											break;
-										case 3: //需要180度旋转  
-											//												alert('需要180度旋转');
-											self.rotateImg(this, 'right', canvas); //转两次  
-											self.rotateImg(this, 'right', canvas);
-											break;
-									}
-								}
-								base64 = canvas.toDataURL("image/jpeg", self.quality);
 							}
-							//uploadImage(base64);  
+							if(this.width > this.height) {
+								imageWidth = Math.round(square * this.width / this.height);
+								imageHeight = square;
+								offsetX = -Math.round((imageWidth - square) / 2);
+							} else {
+								imageHeight = Math.round(square * this.height / this.width);
+								imageWidth = square;
+								offsetY = -Math.round((imageHeight - square) / 2);
+							}
+							context.drawImage(this, offsetX, offsetY, imageWidth, imageHeight);
+							base64 = canvas.toDataURL("image/png", self.quality);
 							callback && callback(base64);
 						}
 						img.src = e.target.result;
