@@ -2,6 +2,14 @@
 	<div class="content">
 		<div class="bg"></div>
 		<img src="../../../static/img/pn_logo_03.png" class="logo" />
+
+		<div>
+			
+		</div>
+
+		<div class="btns">
+			<img src="../../../static/img/btn_04.png" @click="mashangtansuo" class="btn1" />
+		</div>
 	</div>
 </template>
 
@@ -16,8 +24,8 @@
 
 		},
 		methods: {
-			jieping() {
-
+			mashangtansuo() {
+				//马上探索
 			}
 		}
 	};
@@ -37,6 +45,17 @@
 			position: absolute;
 			top: 0;
 			z-index: 1;
+		}
+		.btns {
+			width: 100%;
+			position: absolute;
+			bottom: 32px;
+			z-index: 4;
+			.btn1 {
+				width: 50%;
+				display: block;
+				margin: auto;
+			}
 		}
 		.logo {
 			width: 26%;
