@@ -20,7 +20,7 @@
 		<!-- <div class="btns hidden"> -->
 			<img src="../../../static/img/jt_04.png" class="jiantou" />
 			<img src="../../../static/img/btn_04.png" @click="goToVr" class="btn1" />
-			<img src="../../../static/img/btn_06.png" class="btn2" />
+			<img src="../../../static/img/btn_06.png" @click="goToAi" class="btn2" />
 		</div>
 	</div>
 </template>
@@ -48,6 +48,15 @@ export default {
       // 带查询参数，变成 /register?plan=private
       self.$router.push({
         path: "vr",
+      });
+    },
+
+    goToAi() {
+      //页面跳转
+      let self = this;
+      // 带查询参数，变成 /register?plan=private
+      self.$router.push({
+        path: "ai",
       });
     },
     
@@ -189,6 +198,7 @@ export default {
       z-index: 2;
       left: 50%;
       margin-left: -3%;
+      animation: fudong 5s linear infinite alternate;
       transform: translate3d(0, -100%, 0);
       -moz-transform: translate3d(0, -100%, 0);
       -webkit-transform: translate3d(0, -100%, 0);
@@ -272,6 +282,15 @@ export default {
   100% {
     opacity: 1;
     transform:rotate(0deg);
+  }
+}
+
+@keyframes fudong{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
