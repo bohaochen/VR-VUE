@@ -1,3 +1,6 @@
+img{
+	-ms-user-select: none;
+}
 .psv-marker-jiantou {
 	animation: mymove 0.5s infinite;
 	animation-direction: alternate;
