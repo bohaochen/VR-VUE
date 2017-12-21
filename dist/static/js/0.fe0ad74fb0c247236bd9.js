@@ -16,7 +16,7 @@ webpackJsonp([0,8],{
 	
 	var _Vector2 = _interopRequireDefault(_Vector);
 	
-	var _BezierCurve = __webpack_require__(502);
+	var _BezierCurve = __webpack_require__(501);
 	
 	var _BezierCurve2 = _interopRequireDefault(_BezierCurve);
 	
@@ -783,17 +783,17 @@ webpackJsonp([0,8],{
 	
 	var _border = __webpack_require__(131);
 	
-	var _borderRadius = __webpack_require__(506);
+	var _borderRadius = __webpack_require__(505);
 	
-	var _display = __webpack_require__(507);
+	var _display = __webpack_require__(506);
 	
-	var _float = __webpack_require__(508);
+	var _float = __webpack_require__(507);
 	
-	var _font = __webpack_require__(509);
+	var _font = __webpack_require__(508);
 	
-	var _letterSpacing = __webpack_require__(510);
+	var _letterSpacing = __webpack_require__(509);
 	
-	var _overflow = __webpack_require__(511);
+	var _overflow = __webpack_require__(510);
 	
 	var _padding = __webpack_require__(191);
 	
@@ -801,15 +801,15 @@ webpackJsonp([0,8],{
 	
 	var _textDecoration = __webpack_require__(132);
 	
-	var _textShadow = __webpack_require__(512);
+	var _textShadow = __webpack_require__(511);
 	
 	var _textTransform = __webpack_require__(193);
 	
-	var _transform = __webpack_require__(513);
+	var _transform = __webpack_require__(512);
 	
-	var _visibility = __webpack_require__(514);
+	var _visibility = __webpack_require__(513);
 	
-	var _zIndex = __webpack_require__(515);
+	var _zIndex = __webpack_require__(514);
 	
 	var _Bounds = __webpack_require__(38);
 	
@@ -1044,7 +1044,7 @@ webpackJsonp([0,8],{
 	
 	var _Length2 = _interopRequireDefault(_Length);
 	
-	var _Size = __webpack_require__(504);
+	var _Size = __webpack_require__(503);
 	
 	var _Size2 = _interopRequireDefault(_Size);
 	
@@ -1703,7 +1703,7 @@ webpackJsonp([0,8],{
 	
 	var _border = __webpack_require__(131);
 	
-	var _Circle = __webpack_require__(503);
+	var _Circle = __webpack_require__(502);
 	
 	var _Circle2 = _interopRequireDefault(_Circle);
 	
@@ -2527,7 +2527,7 @@ webpackJsonp([0,8],{
 		value: true
 	});
 	
-	var _html2canvas = __webpack_require__(505);
+	var _html2canvas = __webpack_require__(504);
 	
 	var _html2canvas2 = _interopRequireDefault(_html2canvas);
 	
@@ -2578,7 +2578,7 @@ webpackJsonp([0,8],{
 
 /***/ }),
 
-/***/ 477:
+/***/ 475:
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(34)();
@@ -2586,20 +2586,20 @@ webpackJsonp([0,8],{
 	
 	
 	// module
-	exports.push([module.id, ".text_box[data-v-1e0fa50a]{height:300px}.text_box .text[data-v-1e0fa50a]{display:inline-block;font-size:20px}.html_img[data-v-1e0fa50a]{position:absolute;left:0;right:0;top:0;bottom:0;display:none}", ""]);
+	exports.push([module.id, ".text_box[data-v-0a305f83]{height:300px}.text_box .text[data-v-0a305f83]{display:inline-block;font-size:20px}.html_img[data-v-0a305f83]{position:absolute;left:0;right:0;top:0;bottom:0;display:none}", ""]);
 	
 	// exports
 
 
 /***/ }),
 
-/***/ 487:
+/***/ 484:
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(477);
+	var content = __webpack_require__(475);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(40)(content, {});
@@ -2608,8 +2608,8 @@ webpackJsonp([0,8],{
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-1e0fa50a&scoped=true!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Demo.vue", function() {
-				var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-1e0fa50a&scoped=true!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Demo.vue");
+			module.hot.accept("!!../../../node_modules/_css-loader@0.26.4@css-loader/index.js!../../../node_modules/_vue-loader@9.9.5@vue-loader/lib/style-rewriter.js?id=data-v-0a305f83&scoped=true!../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../node_modules/_vue-loader@9.9.5@vue-loader/lib/selector.js?type=styles&index=0!./Demo.vue", function() {
+				var newContent = require("!!../../../node_modules/_css-loader@0.26.4@css-loader/index.js!../../../node_modules/_vue-loader@9.9.5@vue-loader/lib/style-rewriter.js?id=data-v-0a305f83&scoped=true!../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../node_modules/_vue-loader@9.9.5@vue-loader/lib/selector.js?type=styles&index=0!./Demo.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -2620,7 +2620,7 @@ webpackJsonp([0,8],{
 
 /***/ }),
 
-/***/ 494:
+/***/ 493:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -2652,7 +2652,7 @@ webpackJsonp([0,8],{
 
 /***/ }),
 
-/***/ 495:
+/***/ 494:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2670,7 +2670,7 @@ webpackJsonp([0,8],{
 	
 	var _Proxy = __webpack_require__(189);
 	
-	var _ResourceLoader = __webpack_require__(499);
+	var _ResourceLoader = __webpack_require__(498);
 	
 	var _ResourceLoader2 = _interopRequireDefault(_ResourceLoader);
 	
@@ -3162,7 +3162,7 @@ webpackJsonp([0,8],{
 
 /***/ }),
 
-/***/ 496:
+/***/ 495:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3178,7 +3178,7 @@ webpackJsonp([0,8],{
 	
 	var _NodeContainer2 = _interopRequireDefault(_NodeContainer);
 	
-	var _Angle = __webpack_require__(494);
+	var _Angle = __webpack_require__(493);
 	
 	var _Color = __webpack_require__(39);
 	
@@ -3615,7 +3615,7 @@ webpackJsonp([0,8],{
 
 /***/ }),
 
-/***/ 497:
+/***/ 496:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3625,7 +3625,7 @@ webpackJsonp([0,8],{
 	});
 	exports.NodeParser = undefined;
 	
-	var _StackingContext = __webpack_require__(500);
+	var _StackingContext = __webpack_require__(499);
 	
 	var _StackingContext2 = _interopRequireDefault(_StackingContext);
 	
@@ -3738,7 +3738,7 @@ webpackJsonp([0,8],{
 
 /***/ }),
 
-/***/ 498:
+/***/ 497:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3755,7 +3755,7 @@ webpackJsonp([0,8],{
 	
 	var _Font = __webpack_require__(186);
 	
-	var _Gradient = __webpack_require__(496);
+	var _Gradient = __webpack_require__(495);
 	
 	var _TextContainer = __webpack_require__(130);
 	
@@ -4070,7 +4070,7 @@ webpackJsonp([0,8],{
 
 /***/ }),
 
-/***/ 499:
+/***/ 498:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4340,7 +4340,7 @@ webpackJsonp([0,8],{
 
 /***/ }),
 
-/***/ 500:
+/***/ 499:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4391,7 +4391,7 @@ webpackJsonp([0,8],{
 
 /***/ }),
 
-/***/ 501:
+/***/ 500:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4407,9 +4407,9 @@ webpackJsonp([0,8],{
 	
 	var _Logger2 = _interopRequireDefault(_Logger);
 	
-	var _NodeParser = __webpack_require__(497);
+	var _NodeParser = __webpack_require__(496);
 	
-	var _Renderer = __webpack_require__(498);
+	var _Renderer = __webpack_require__(497);
 	
 	var _Renderer2 = _interopRequireDefault(_Renderer);
 	
@@ -4423,7 +4423,7 @@ webpackJsonp([0,8],{
 	
 	var _Bounds = __webpack_require__(38);
 	
-	var _Clone = __webpack_require__(495);
+	var _Clone = __webpack_require__(494);
 	
 	var _Font = __webpack_require__(186);
 	
@@ -4528,7 +4528,7 @@ webpackJsonp([0,8],{
 
 /***/ }),
 
-/***/ 502:
+/***/ 501:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4589,7 +4589,7 @@ webpackJsonp([0,8],{
 
 /***/ }),
 
-/***/ 503:
+/***/ 502:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4626,7 +4626,7 @@ webpackJsonp([0,8],{
 
 /***/ }),
 
-/***/ 504:
+/***/ 503:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -4648,7 +4648,7 @@ webpackJsonp([0,8],{
 
 /***/ }),
 
-/***/ 505:
+/***/ 504:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4665,7 +4665,7 @@ webpackJsonp([0,8],{
 	
 	var _Logger2 = _interopRequireDefault(_Logger);
 	
-	var _Window = __webpack_require__(501);
+	var _Window = __webpack_require__(500);
 	
 	var _Bounds = __webpack_require__(38);
 	
@@ -4740,7 +4740,7 @@ webpackJsonp([0,8],{
 
 /***/ }),
 
-/***/ 506:
+/***/ 505:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4775,7 +4775,7 @@ webpackJsonp([0,8],{
 
 /***/ }),
 
-/***/ 507:
+/***/ 506:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -4891,7 +4891,7 @@ webpackJsonp([0,8],{
 
 /***/ }),
 
-/***/ 508:
+/***/ 507:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -4923,7 +4923,7 @@ webpackJsonp([0,8],{
 
 /***/ }),
 
-/***/ 509:
+/***/ 508:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -4963,7 +4963,7 @@ webpackJsonp([0,8],{
 
 /***/ }),
 
-/***/ 510:
+/***/ 509:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -4981,7 +4981,7 @@ webpackJsonp([0,8],{
 
 /***/ }),
 
-/***/ 511:
+/***/ 510:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -5012,7 +5012,7 @@ webpackJsonp([0,8],{
 
 /***/ }),
 
-/***/ 512:
+/***/ 511:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5113,7 +5113,7 @@ webpackJsonp([0,8],{
 
 /***/ }),
 
-/***/ 513:
+/***/ 512:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5186,7 +5186,7 @@ webpackJsonp([0,8],{
 
 /***/ }),
 
-/***/ 514:
+/***/ 513:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -5214,7 +5214,7 @@ webpackJsonp([0,8],{
 
 /***/ }),
 
-/***/ 515:
+/***/ 514:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -5679,20 +5679,20 @@ webpackJsonp([0,8],{
 
 /***/ }),
 
-/***/ 558:
+/***/ 559:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(487)
+	__webpack_require__(484)
 	
 	/* script */
 	__vue_exports__ = __webpack_require__(220)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(567)
+	var __vue_template__ = __webpack_require__(566)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -5706,14 +5706,14 @@ webpackJsonp([0,8],{
 	
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-1e0fa50a"
+	__vue_options__._scopeId = "data-v-0a305f83"
 	
 	module.exports = __vue_exports__
 
 
 /***/ }),
 
-/***/ 567:
+/***/ 566:
 /***/ (function(module, exports) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

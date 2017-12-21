@@ -158,7 +158,7 @@ export default {
     height: auto;
     position: absolute;
     animation-timing-function: ease;
-    animation-duration: 5.5s;
+    animation-duration: 6s;
     top: 0;
     z-index: 3;
   }
@@ -246,19 +246,21 @@ export default {
 }
 
 .malfunction1 {
-  animation: malfunction1 0.0025s linear 400 alternate;
+  // animation: malfunction1 0.0025s linear 400 alternate;
+  animation: malfunction1 0.1s linear 10 alternate;
 }
 
 .malfunction2 {
-  animation: malfunction2 0.001s linear 1000 alternate;
+  // animation: malfunction2 0.001s linear 1000 alternate;
+  animation: malfunction2 0.1s linear 10 alternate;
 }
 
 .malfunction3 {
-  animation: malfunction3 0.01s linear 100;
+  animation: malfunction3 0.1s linear 10;
 }
 
 .malfunction4 {
-  animation: malfunction4 0.01s linear 15 alternate;
+  animation: malfunction4 0.04s linear 6  alternate;
 }
 
 .malfunction5 {
@@ -279,7 +281,7 @@ export default {
 }
 
 .chandong {
-  animation: chandong 0.02s linear 10 alternate;
+  animation: chandong 0.08s linear 4 alternate;
 }
 
 @keyframes guangxiao{
