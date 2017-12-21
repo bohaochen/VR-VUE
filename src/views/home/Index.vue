@@ -21,7 +21,7 @@
 
 		<div class="btns">
 		<!-- <div class="btns hidden"> -->
-			<img src="../../../static/img/jt_04.png" class="jiantou" />
+			<img src="../../../static/img/jt_04.png" class="jiantou psv-marker-jiantou" />
 			<img src="../../../static/img/btn_04.png" @click="goToVr" class="btn1" />
 			<img src="../../../static/img/btn_06.png" @click="goToAi" class="btn2" />
 		</div>
@@ -148,7 +148,7 @@ export default {
     margin-left: 5%;
     height: auto;
     position: absolute;
-    animation:guangxiao 0.5s linear 1 alternate;
+    animation:guangxiao 0.3s linear 1 alternate;
     top: 0;
     z-index: 3;
   }
@@ -204,7 +204,6 @@ export default {
       z-index: 2;
       left: 50%;
       margin-left: -3%;
-      animation: fudong 5s linear infinite alternate;
       transform: translate3d(0, -100%, 0);
       -moz-transform: translate3d(0, -100%, 0);
       -webkit-transform: translate3d(0, -100%, 0);
@@ -224,7 +223,7 @@ export default {
     position: absolute;
     top: 0;
     z-index: 2;
-    animation-duration: 7s;
+    animation-duration: 6s;
   }
   .qiu {
     width: 90%;
@@ -244,19 +243,19 @@ export default {
 }
 
 .malfunction1 {
-  animation: malfunction1 0.001s linear 150 alternate;
+  animation: malfunction1 0.0025s linear 400 alternate;
 }
 
 .malfunction2 {
-  animation: malfunction2 0.001s linear 60 alternate;
+  animation: malfunction2 0.001s linear 1000 alternate;
 }
 
 .malfunction3 {
-  animation: malfunction3 1s linear;
+  animation: malfunction3 0.01s linear 100;
 }
 
 .malfunction4 {
-  animation: malfunction4 0.01s linear 6 alternate;
+  animation: malfunction4 0.01s linear 15 alternate;
 }
 
 .malfunction5 {
@@ -283,7 +282,7 @@ export default {
 @keyframes guangxiao{
   0% {
     opacity: 0;
-    transform:rotate(5deg);
+    transform:rotate(6deg);
   }
   100% {
     opacity: 1;
@@ -305,10 +304,10 @@ export default {
     opacity: 0;
   }
   1% {
-    opacity: 0.5;
+    opacity: 0.1;
   }
   15% {
-    opacity: 0.5;
+    opacity: 0.2;
   }
   16% {
     opacity: 0;
@@ -317,7 +316,7 @@ export default {
     opacity: 0;
   }
   36% {
-    opacity: 0.6;
+    opacity: 0.3;
   }
   38% {
     opacity: 0;
@@ -395,19 +394,19 @@ export default {
 
 @keyframes malfunction1 {
   0% {
-    transform: translate(4px, 0) scale(1.01);
+    transform: translate(2px, 0) scale(1);
   }
   100% {
-    transform: translate(0px, -3px) scale(1);
+    transform: translate(-3px, 0px) scale(1);
   }
 }
 
 @keyframes malfunction2 {
   0% {
-    transform: translate(-4px, 2px) scale(1);
+    transform: translate(-4px, 0px) scale(1);
   }
   100% {
-    transform: translate(-2px, -2px) scale(1.01);
+    transform: translate(2px, 0px) scale(1.01);
   }
 }
 
