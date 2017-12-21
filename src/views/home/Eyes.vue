@@ -124,7 +124,7 @@
 		.logo {
 			width: 26%;
 			position: absolute;
-			top: 20px;
+			top: 2.5px;
 			right: 20px;
 			z-index: 2;
 		}

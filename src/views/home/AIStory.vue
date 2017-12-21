@@ -88,26 +88,23 @@ export default {
   .bg {
     width: 100%;
     height: 100%;
-    background: url(../../../static/img/bg.jpg) 50%/cover;
+    background: #0a0f13;
     position: fixed;
     top: 0;
     z-index: 1;
   }
   .logo {
     width: 26%;
-    position: absolute;
-    top: 20px;
+    position: fixed;
+    top: 2.5%;
     right: 20px;
     z-index: 2;
   }
   .longImage {
     width: 100%;
-    z-index: 3333;
-    opacity: 0;
+    z-index: 1;
     height: auto;
     position: relative;
-    margin-top: 75px;
-    margin-bottom: 400px;
   }
   .btns {
     width: 100%;

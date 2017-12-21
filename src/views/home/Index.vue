@@ -12,6 +12,9 @@
 		<img src="../../../static/img/wz_01.png" class="heikeji animated" v-show="hkjAni" :class="{slideInDown:hkjAni}"/>
 		<img src="../../../static/img/wz_01_gr.png" class="heikeji-gr animated" v-show="hkjAni" :class="{slideInDown:hkjAni}"/>
 		
+		<img src="../../../static/img/wz_02.png"  class="heikeji animated" v-show="hkjAni" :class="{slideInDown:hkjAni}"/>
+		<img src="../../../static/img/wz_02_gr.png" class="heikeji-gr animated" v-show="hkjAni" :class="{slideInDown:hkjAni}"/>
+
 		<img src="../../../static/img/gx_01.png" class="guangxiao animated" v-show="gxAni"/>
 		
 		<img src="../../../static/img/zj_01.png" class="jingweidu" />
@@ -92,6 +95,8 @@ export default {
           if (num == 4) {
             document.getElementsByClassName("heikeji-gr")[0].className =
               "heikeji-gr chandong";
+            document.getElementsByClassName("heikeji-gr")[1].className =
+               "heikeji-gr chandong";
             document.getElementsByClassName("bg-gr")[0].className =
               "bg-gr chandong";
           }
@@ -152,6 +157,7 @@ export default {
     margin-left: 5%;
     height: auto;
     position: absolute;
+    animation-timing-function: ease;
     animation-duration: 5s;
     top: 0;
     z-index: 3;
@@ -182,7 +188,7 @@ export default {
   .logo {
     width: 26%;
     position: absolute;
-    top: 20px;
+    top: 2.5%;
     right: 20px;
     z-index: 2;
   }
@@ -407,7 +413,7 @@ export default {
 
 @keyframes malfunction3 {
   0% {
-    transform: translate(-10px, 0) scale(1.015);
+    transform: translate(-7px, 0) scale(1.01);
   }
   100% {
     transform: translate(0, 0) scale(1);
