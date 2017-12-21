@@ -8,7 +8,7 @@
 			<div class="btns">
 			<!-- <div class="btns hidden"> -->
 				<img src="../../../static/img/jt_04.png" class="jiantou" />
-				<img src="../../../static/img/btn_04.png" class="btn1" />
+				<img src="../../../static/img/btn_04.png" @click="goToImagerecognition" class="btn1" />
 			</div>
 		</div>
 		
@@ -21,22 +21,27 @@ export default {
   data() {
     return {
       wordArr: [],
-      isTouch: true
+      isTouch: true,
+      isOutPage:false,
     };
   },
   mounted() {
     var _this = this;
     _this.ontouchFn();
     setTimeout(function() {
-      window.scollFn = setInterval(function() {
+      var scollFn = setInterval(function() {
         if (_this.isTouch) {
           _this.scollUp();
         }
+        if(_this.isOutPage){
+          clearInterval(scollFn)
+        }
+        console.log(1)
       }, 20);
     }, 2000);
   },
   beforeDestroy: function () {
-    clearInterval(scollFn);
+    this.isOutPage = true;
   },
   methods: {
     jieping() {},
@@ -44,6 +49,14 @@ export default {
       var dom = document.getElementsByClassName("content")[0];
       var y = dom.scrollTop;
       dom.scrollTop = y + 1;
+    },
+    goToImagerecognition() {
+      //页面跳转
+      let self = this;
+      // 带查询参数，变成 /register?plan=private
+      self.$router.push({
+        path: "imagerecognition",
+      });
     },
     ontouchFn() {
       var _this = this;
