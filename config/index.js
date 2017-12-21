@@ -22,11 +22,11 @@ module.exports = {
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',
         proxyTable: {
-            '/v1.0': {
+            '/v1': {
                 target: 'https://wx.nullexcept.com/',
                 changeOrigin: true,
                 pathRewrite: {
-                    '^/v1.0': '/v1.0',
+                    '^/v1': '/v1',
                     secure: false,
                 }
             }
