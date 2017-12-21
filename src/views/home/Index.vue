@@ -158,7 +158,7 @@ export default {
     height: auto;
     position: absolute;
     animation-timing-function: ease;
-    animation-duration: 5.3s;
+    animation-duration: 5.5s;
     top: 0;
     z-index: 3;
   }
@@ -279,17 +279,17 @@ export default {
 }
 
 .chandong {
-  animation: chandong 0.02s linear 8 alternate;
+  animation: chandong 0.02s linear 10 alternate;
 }
 
 @keyframes guangxiao{
   0% {
     opacity: 0;
-    transform:rotate(6deg);
+    transform:rotate(9deg) scale(1.3);
   }
   100% {
     opacity: 1;
-    transform:rotate(0deg);
+    transform:rotate(0deg) scale(1);
   }
 }
 
@@ -361,12 +361,16 @@ export default {
     transform: translate(20px, 0) scale(1);
     opacity: 0.2;
   }
-  50% {
+  30% {
     transform: translate(40px, -30px) scale(1.1);
     opacity: 0.6;
   }
-  100% {
+  70% {
     transform: translate(-60px, -3px) scale(1.1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(-10px, -3px) scale(1.1);
     opacity: 0.4;
   }
 }
