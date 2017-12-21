@@ -1,6 +1,7 @@
-img{
+img {
 	-ms-user-select: none;
 }
+
 .psv-marker-jiantou {
 	animation: mymove 0.5s infinite;
 	animation-direction: alternate;
@@ -13,5 +14,84 @@ img{
 	}
 	to {
 		top: 20px;
+	}
+}
+
+@-webkit-keyframes mymove {
+	from {
+		top: 0px;
+	}
+	to {
+		top: 20px;
+	}
+}
+
+.toast {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 80%;
+	margin-left: -40%;
+	font-size: 24px;
+	color: #7ef9ff;
+	text-align: center;
+	padding: 32px 0;
+	z-index: 999999;
+	background: url(/static/img/cj_03.png) 50%/cover;
+	transform: translate3d(0, 100%, 0);
+	-webkit-transform: translate3d(0, 100%, 0);
+}
+
+.toast-ain {
+	animation: findin 0.7s ease-in forwards;
+	-webkit-animation: findin 0.7s ease-in forwards;
+}
+
+.toast-out {
+	animation: findout 0.7s ease-in forwards;
+	-webkit-animation: findout 0.7s ease-in forwards;
+}
+
+@keyframes findout {
+	to {
+		transform: translate3d(0, 100%, 0);
+		-webkit-transform: translate3d(0, 100%, 0);
+	}
+	from {
+		transform: translate3d(0, -100%, 0);
+		-webkit-transform: translate3d(0, -100%, 0);
+	}
+}
+
+@-webkit-keyframes findout {
+	to {
+		transform: translate3d(0, 100%, 0);
+		-webkit-transform: translate3d(0, 100%, 0);
+	}
+	from {
+		transform: translate3d(0, -100%, 0);
+		-webkit-transform: translate3d(0, -100%, 0);
+	}
+}
+
+@keyframes findin {
+	to {
+		transform: translate3d(0, -100%, 0);
+		-webkit-transform: translate3d(0, -100%, 0);
+	}
+	from {
+		transform: translate3d(0, 100%, 0);
+		-webkit-transform: translate3d(0, 100%, 0);
+	}
+}
+
+@-webkit-keyframes findin {
+	to {
+		transform: translate3d(0, -100%, 0);
+		-webkit-transform: translate3d(0, -100%, 0);
+	}
+	from {
+		transform: translate3d(0, 100%, 0);
+		-webkit-transform: translate3d(0, 100%, 0);
 	}
 }

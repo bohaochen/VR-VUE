@@ -46,6 +46,13 @@ export default [{
 		}
 	},
 	{
+		path: '/demo',
+		name: 'demo',
+		component: (resolve) => {
+			require(['./views/home/Demo.vue'], resolve);
+		}
+	},
+	{
 		path: '*',
 		redirect: '/'
 	}

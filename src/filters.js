@@ -1,3 +1,31 @@
+export const toast = () => {
+	var isToast = false;
+	var num = 0;
+	var toast = document.getElementById('toast');
+	return function(msg) {
+		if(isToast) {
+			return false;
+		}
+		isToast = true;
+		toast.innerHTML = msg;
+		toast.classList.add("toast-ain");
+		toast.addEventListener('webkitAnimationEnd', function() {
+			num += 1;
+			if(num == 1) {
+				let interval = setInterval(() => {
+					toast.classList.add("toast-out");
+					clearInterval(interval);
+				}, 1500);
+
+			} else {
+				toast.classList.remove("toast-out");
+				toast.classList.remove("toast-ain");
+				isToast = false;
+				num = 0;
+			}
+		}, false);
+	}
+}
 export const MA = (_node, callback) => {
 	_node.addEventListener('webkitAnimationEnd', function() {
 		if(callback) {
