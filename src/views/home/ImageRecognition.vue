@@ -39,6 +39,9 @@
 			</div>
 		</div>
 
+		<img class="cntu" v-show="isRead" src="../../../static/img/cntu_bc.png" >
+   		<img class="html_img" :src="htmlImg" :style="{display:htmlImg ? 'block' : 'none'}">
+
 	</div>
 </template>
 
@@ -50,7 +53,8 @@ export default {
       isUnUpload: true,
       isUpload: false,
       isRead: false,
-      base64Img: null,
+	  base64Img: null,
+	  htmlImg: "",
       scoreArray: [
         {
           minScore: 0,
@@ -241,7 +245,8 @@ export default {
 
           default:
             break;
-        }
+		}
+		self.jieping();
       }, 2000);
     },
     start_upload(obj) {
@@ -386,6 +391,20 @@ export default {
           ctx.drawImage(img, -width, 0);
           break;
       }
+	},
+	jieping() {
+		//截屏
+      html2canvas(document.body, {
+        scale: 1,
+        backgroundColor: "#fff"
+      }).then(canvas => {
+        console.log(canvas);
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        let url = canvas.toDataURL();
+        this.htmlImg = url;
+        alert("截屏成功，可以长按分享啦");
+      });
     }
   }
 };
@@ -603,6 +622,13 @@ export default {
   }
   .animated{
 	  animation-fill-mode: forwards;
+  }
+  .cntu{
+	  width: 100%;
+	  bottom: 0px;
+	  position: absolute;
+	  z-index: 2;
+	  animation: fuxian 2s;
   }
 }
 </style>
