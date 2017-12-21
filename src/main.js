@@ -28,6 +28,7 @@ axios.interceptors.response.use(function(response) {
 
 import {
 	MA,
+	toast,
 	timeToNow,
 	jsonFormat,
 	dateFormat,
@@ -42,6 +43,7 @@ Vue.filter('numberinteger', numberinteger);
 
 //动画回调
 Vue.prototype.MA = MA;
+Vue.prototype.toast = toast();
 
 Vue.prototype.API = APIS;
 Vue.prototype.$http = axios;
