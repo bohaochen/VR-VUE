@@ -73,7 +73,7 @@
 				z-index: 5;
 				/*transform: translate3d(0, -20%, 0);
 				-webkit-transform: translate3d(0, -20%, 0);*/
-				    margin-top: -18%;
+				margin-top: -18%;
 				animation: myfirst 2s linear 0.5s infinite alternate;
 				-webkit-animation: myfirst 2s linear 0.5s infinite alternate;
 			}
@@ -124,7 +124,7 @@
 		.logo {
 			width: 26%;
 			position: absolute;
-			top: 2.5px;
+			top: 20px;
 			right: 20px;
 			z-index: 2;
 		}

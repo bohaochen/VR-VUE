@@ -32,7 +32,6 @@ import {
 	jsonFormat,
 	dateFormat,
 	numberinteger,
-	log
 } from './filters';
 
 Vue.use(VueRouter);
