@@ -7,6 +7,7 @@
 
 			<div class="btns">
 			<!-- <div class="btns hidden"> -->
+        <img src="../../../static/img/aiStoryText.png" class="wenzi-text" alt="">
 				<img src="../../../static/img/jt_04.png" class="jiantou" />
 				<img src="../../../static/img/btn_04.png" @click="goToImagerecognition" class="btn1" />
 			</div>
@@ -35,9 +36,9 @@ export default {
         }
         if(_this.isOutPage){
           clearInterval(scollFn)
+          console.log(clearInterval)
         }
-        console.log(1)
-      }, 20);
+      }, 40);
     }, 2000);
   },
   beforeDestroy: function () {
@@ -48,7 +49,7 @@ export default {
     scollUp() {
       var dom = document.getElementsByClassName("content")[0];
       var y = dom.scrollTop;
-      dom.scrollTop = y + 1;
+      dom.scrollTop = y + 2;
     },
     goToImagerecognition() {
       //页面跳转
@@ -135,6 +136,13 @@ export default {
       -moz-transform: translate3d(0, -100%, 0);
       -webkit-transform: translate3d(0, -100%, 0);
       -o-transform: translate3d(0, -100%, 0);
+      animation: fudong 1s linear infinite alternate;
+    }
+    .wenzi-text{
+      position: absolute;
+      width: 80%;
+      margin-left: 10%;
+      bottom: 300px;
     }
     .btn1,
     .btn2 {
@@ -146,6 +154,14 @@ export default {
   .relative_box {
     position: relative;
     width: 100%;
+  }
+  @keyframes fudong {
+    from{
+      transform: translate(0,-100%)
+    }
+    to{
+      transform: translate(0,-120%)
+    }
   }
 }
 </style>

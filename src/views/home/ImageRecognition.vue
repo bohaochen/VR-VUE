@@ -4,6 +4,9 @@
 		<img src="../../../static/img/pn_logo_03.png" class="logo" />
 
 		<div class="album">
+			<div class="score score_1">1111</div>
+			<div class="score score_2">111</div>
+			<div class="score score_3">1111</div>
 			<img class="waikuang" src="../../../static/img/renlianshibiekuangdeng.png" />
 			<div class="album-content">
 				<div class="title">点击上传个人正面自拍照</div>
@@ -11,7 +14,6 @@
 				<div class="upload">
 					<input ref="upload" @change="start_upload(this)" type="file" name="upload" accept="image/*">
 				</div>
-				
 			</div>
 			<div class="upload-end" v-show="isUpload">
 				<img src="../../../static/img/saomiao.png" class="saomiao-animate" />
@@ -23,8 +25,16 @@
 		</div>
 
 		<div class="sb-btn" v-show="isUpload">
-			<img src="../../../static/img/titlebg.png" @click="mashangtansuo" class="btn1" />
-			<span>正在启动分析...</span>
+			<img src="../../../static/img/titlebg.png" class="btn1" />
+			<span class="is-cs">正在启动分析...</span>
+		</div>
+
+		<div class="sb-btn" v-show="isRead">
+			<img src="../../../static/img/titlebg1.png" class="btn1" />
+			<span class="is-read">神秘指数：</span>
+			<span class="stars">
+				
+			</span>
 		</div>
 
 	</div>
@@ -34,9 +44,10 @@
 export default {
   data() {
     return {
-	  quality: 0.8,
-	  isUpload:false,
-	  isRead:false,
+      quality: 0.8,
+      isUpload: false,
+      isRead: true,
+      base64Img: null
     };
   },
   mounted() {
@@ -48,23 +59,32 @@ export default {
   methods: {
     mashangtansuo() {
       //马上探索
+      let self = this;
+      let base64Img = self.base64Img;
+      self.$http
+        .post("/user" + "?uid=" + 111 + "&action=" + "compare", {
+          base64Img
+        })
+        .then(function(response) {
+          console.log(response);
+          alert("图片上传成功");
+        })
+        .catch(function(error) {
+          console.log(error);
+          self.isUpload = true;
+        });
+    },
+    score() {
+      self.isUpload = true;
+      alert(1);
     },
     start_upload(obj) {
       let self = this;
       self.compress(event, function(base64Img) {
         self.$refs.imgsss.src = base64Img;
-		//					console.log("start_upload:", base64Img);
-		self.$http.post('/user'+"?uid="+111+"&action="+'compare', {
-				base64: base64Img
-			})
-			.then(function (response) {
-				console.log(response);
-				alert(1)
-			})
-			.catch(function (error) {
-				console.log(error);
-			});
-     	 });
+        self.base64Img = base64Img;
+        //					console.log("start_upload:", base64Img);
+      });
     },
     compress(event, callback) {
       let self = this;
@@ -220,11 +240,37 @@ export default {
     top: 0;
     z-index: 1;
   }
+
   .album {
     width: 100%;
     position: absolute;
     top: 12%;
     z-index: 4;
+    .score {
+      width: 300px;
+      line-height: 50px;
+      border: 2px #bb7753 solid;
+      border-radius: 10px;
+      color: #3bf6fe;
+      text-shadow: 0px 0px 10px #00fff9;
+      background: rgba(0, 0, 0, 0.24);
+      position: absolute;
+      z-index: 5;
+      text-align: center;
+      font-size: 30px;
+    }
+    .score_1 {
+      right: 5%;
+      top: 21%;
+    }
+    .score_2 {
+      left: 4%;
+      top: 54%;
+    }
+    .score_3 {
+      right: 9%;
+      top: 74%;
+    }
     .album-content {
       position: absolute;
       /*border: 1px solid #7EF9FF;*/
@@ -283,23 +329,35 @@ export default {
     }
   }
   .sb-btn {
-    width: 100%;
+    width: 74%;
     position: absolute;
     z-index: 4;
     top: 70%;
     margin-top: -40px;
+    left: 13%;
     .btn1 {
-      width: 74%;
+      width: 100%;
       display: block;
       margin: auto;
     }
-    span {
+    .is-cs {
       position: absolute;
       color: #68faff;
       text-align: center;
       width: 100%;
       line-height: 42px;
       top: 50%;
+      margin-top: -21px;
+      font-size: 42px;
+    }
+    .is-read {
+      position: absolute;
+      color: #68faff;
+      text-align: left;
+      width: 100%;
+      line-height: 42px;
+      top: 50%;
+      padding-left: 42px;
       margin-top: -21px;
       font-size: 42px;
     }
@@ -311,29 +369,29 @@ export default {
     right: 20px;
     z-index: 2;
   }
-  .upload-end{
-	position: absolute;
+  .upload-end {
+    position: absolute;
     height: 70%;
     margin-left: -28.2%;
     width: 56%;
     top: 15%;
     left: 50%;
     overflow: hidden;
-	  img{
-		  top: 0px;
-		  position: absolute;
-	  }
+    img {
+      top: 0px;
+      position: absolute;
+    }
   }
-  .saomiao-animate{
-	  animation: toprun 3s linear infinite alternate;
+  .saomiao-animate {
+    animation: toprun 3s linear infinite alternate;
   }
   @keyframes toprun {
-	  from{
-		  top: 0%;
-	  }
-	  to{
-		  top: 100%;
-	  }
+    from {
+      top: 0%;
+    }
+    to {
+      top: 100%;
+    }
   }
 }
 </style>
