@@ -19,7 +19,7 @@
 		
 		<img src="../../../static/img/zj_01.png" class="jingweidu" />
 
-		<div class="btns">
+		<div class="btns" v-show="gxAni">
 		<!-- <div class="btns hidden"> -->
 			<img src="../../../static/img/jt_04.png" class="jiantou psv-marker-jiantou" />
 			<img src="../../../static/img/btn_04.png" @click="goToVr" class="btn1" />
@@ -158,7 +158,7 @@ export default {
     height: auto;
     position: absolute;
     animation-timing-function: ease;
-    animation-duration: 5s;
+    animation-duration: 5.3s;
     top: 0;
     z-index: 3;
   }
@@ -197,6 +197,9 @@ export default {
     position: absolute;
     bottom: 32px;
     z-index: 2;
+    // opacity: 0;
+    animation-fill-mode: forwards;
+    animation: fudong 1s;
     .jiantou {
       position: absolute;
       width: 7%;
