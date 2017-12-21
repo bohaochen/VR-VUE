@@ -16,6 +16,7 @@ var loader = new resLoader({
 		"https://wx.nullexcept.com/s_static/img/2.jpg",
 		"https://wx.nullexcept.com/s_static/img/3.jpg",
 		"https://wx.nullexcept.com/s_static/img/4.jpg",
+		"https://wx.nullexcept.com/s_static/img/photosphere-logo.gif",
 		"static/img/ai_gs.jpg",
 	],
 	onStart: function(total) {

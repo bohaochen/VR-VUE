@@ -102,7 +102,7 @@
 						id: 'xiaoxi2',
 						longitude: 3.698,
 						latitude: -0.1,
-						image: '/static/img/xinhao2.png',
+						image: '/static/img/jiejinxiansuo.png',
 						width: 364,
 						height: 172,
 						anchor: 'bottom center',
@@ -131,7 +131,7 @@
 						visible: false,
 					}, {
 						id: 'xiaoxi3',
-						longitude: 2.9,
+						longitude: 2.95,
 						latitude: -0.1,
 						image: '/static/img/xinhao2.png',
 						width: 364,
@@ -141,7 +141,7 @@
 						visible: false,
 					}, {
 						id: 'quan3',
-						longitude: 2.9,
+						longitude: 2.95,
 						latitude: -0.105,
 						image: '/static/img/quan.png',
 						width: 124,
@@ -151,7 +151,7 @@
 						visible: false,
 					}, {
 						id: 'jiantou3',
-						longitude: 2.9,
+						longitude: 2.95,
 						latitude: -0.115,
 						image: '/static/img/jiantou.png',
 						width: 111,
@@ -162,12 +162,12 @@
 						visible: false,
 					}, {
 						id: 'xiaoxi31',
-						longitude: 3,
-						latitude: -0.115,
+						longitude: 2.53,
+						latitude: -0.1,
 						image: '/static/img/zhajixinxihao.png',
 						width: 242,
-						height: 193,
-						anchor: 'top left',
+						height: 281,
+						anchor: 'bottom left',
 						//						content: document.getElementById('photosphere').innerHTML,
 						visible: false,
 					}, {
@@ -238,7 +238,7 @@
 						break;
 					case 2:
 						self.PSV.animate({
-							longitude: 3.05,
+							longitude: 2.82,
 							latitude: 0.13
 						}, 2000)
 						break;
