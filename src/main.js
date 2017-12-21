@@ -53,7 +53,17 @@ const router = new VueRouter({
 })
 router.beforeEach((to, from, next) => {
 	//路由请求前做些什么
-	next();
+	if(isLoadAllImgs) {
+		next();
+	} else {
+		let interval = setInterval(() => {
+			if(isLoadAllImgs) {
+				next();
+				clearInterval(interval);
+			}
+		}, 50)
+		loader.start();
+	}
 })
 
 router.afterEach(transition => {

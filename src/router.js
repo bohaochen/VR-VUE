@@ -45,8 +45,8 @@ export default [{
 			require(['./views/home/LuckDraw.vue'], resolve);
 		}
 	},
-//	{
-//		path: '*',
-//		redirect: '/'
-//	}
+	{
+		path: '*',
+		redirect: '/'
+	}
 ]

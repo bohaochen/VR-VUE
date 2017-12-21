@@ -1,3 +1,4 @@
+var isLoadAllImgs = false;
 var loader = new resLoader({
 	resources: [
 		'http://p2.qhimg.com/t01ed1438874f940dc0.jpg',
@@ -15,30 +16,16 @@ var loader = new resLoader({
 		"https://wx.nullexcept.com/s_static/img/2.jpg",
 		"https://wx.nullexcept.com/s_static/img/3.jpg",
 		"https://wx.nullexcept.com/s_static/img/4.jpg",
+		"static/img/ai_gs.jpg",
 	],
 	onStart: function(total) {
-		console.log('start:' + total);
 	},
 	onProgress: function(current, total) {
-		//        console.log(current+'/'+total);
 		document.getElementById('current').innerHTML = current;
 		document.getElementById('total').innerHTML = total;
-		//        var percent = current/total*100;
-		//        $('.progressbar').css('width', percent+'%');
-		//        $('.progresstext .current').text(current);
-		//        $('.progresstext .total').text(total);
 	},
 	onComplete: function(total) {
-		console.log('加载完毕:' + total + '个资源');
+		isLoadAllImgs = true;
 		document.getElementById('loadImg').remove();
 	}
 });
-
-loader.start();
-
-var src = [
-	"https://wx.nullexcept.com/s_static/img/1.jpg",
-	"https://wx.nullexcept.com/s_static/img/2.jpg",
-	"https://wx.nullexcept.com/s_static/img/3.jpg",
-	"https://wx.nullexcept.com/s_static/img/4.jpg",
-]
