@@ -23,7 +23,6 @@
 			};
 		},
 		mounted() {
-			this.toast("你是猪吗");
 		},
 		methods: {
 			goToImageRecognition() {

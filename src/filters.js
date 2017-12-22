@@ -17,13 +17,11 @@ export const toast = () => {
 			isToast = false;
 		}
 		var first = function() {
-			console.log(2222222222)
 			setTimeout(() => {
-				console.log(111111111)
 				toast.removeEventListener("webkitAnimationEnd", first);
 				toast.addEventListener('webkitAnimationEnd', two, false);
 				toast.classList.add("toast-out");
-			}, 1500);
+			}, 2222);
 		};
 		toast.addEventListener('webkitAnimationEnd', first, false);
 	}
