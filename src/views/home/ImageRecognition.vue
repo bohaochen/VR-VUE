@@ -172,7 +172,7 @@
 					},
 					{
 						minScore: 0.4,
-						maxScore: 100,
+						maxScore: 1000000,
 						starNum: 4,
 						starMsg: ["色彩敏感", "细腻入微", "情绪不定"]
 					}
@@ -181,14 +181,10 @@
 		},
 		mounted() {
 			let self = this;
-			//			self.$refs.upload.addEventListener('change',function(){
-			//
-			//			},false)
 			console.log(document.body.clientWidth * 74 / 100)
-			document.getElementsByClassName("starImg")[0].style.width = document.body.clientWidth * 74 / 100 + "px";
+			document.getElementsByClassName("starImg")[0].style.width = document.body.clientWidth * 74 / 1000 + "px";
 			document.getElementsByClassName("starImg")[0].style.height = document.body.clientWidth * 74 / 460 + "px";
 			document.getElementsByClassName("starImg")[0].style.marginTop = -(document.body.clientWidth * 74 / 460) / 2 + "px";
-			// document.getElementsByClassName("btn1")[0].width = (document.body.clientWidth*74/100 + "px");
 		},
 		methods: {
 			mashangtansuo() {
@@ -213,16 +209,23 @@
 			},
 			score(obj) {
 				var self = this;
-				var score = 0.2; //需要改成OBJ的分数值！！！！！！！！！！！！！！！！！！！！！！！
+				var score = obj.data.thres; //需要改成OBJ的分数值！！！！！！！！！！！！！！！！！！！！！！！
 				var scoreIndex = null;
 				setTimeout(function() {
 					self.isUpload = false; //扫描消失
 					self.isRead = true; //分数出现
 					self.scoreArray.forEach((element, index) => {
+            console.log(element.minScore)
+            console.log(element.maxScore)
+            console.log(score)
+            if((score>=element.minScore) && (score < element.maxScore)){
+              alert(1)
+            }
+      
 						if(score >= element.minScore && score < element.maxScore) {
-							scoreIndex = index;
+              scoreIndex = index;
 						}
-					});
+          });
 					document.getElementsByClassName("score_1")[0].innerHTML =
 						self.scoreArray[scoreIndex].starMsg[0];
 					document.getElementsByClassName("score_2")[0].innerHTML =
