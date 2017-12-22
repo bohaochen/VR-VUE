@@ -23,7 +23,7 @@
 			</div>
 		</div>
 
-		<div class="btns" v-show="isUnUpload">
+		<div class="btns" :style="{display:isUnUpload ? 'block' : 'none'}">
 			<img src="../../../static/img/querenceshi.png" @click="mashangtansuo" class="btn1" />
 		</div>
 
@@ -40,9 +40,13 @@
 		</div>
 
 		<img class="cntu" v-show="isRead" src="../../../static/img/cntu_bc.png">
-		<img class="html_img" :src="htmlImg" :style="{display:htmlImg ? 'block' : 'none'}">
+    <img class="html_img" :src="htmlImg" :style="{display:htmlImg ? 'block' : 'none'}">
 
+    <div class="zd-xh">
+	    	<img class="cntu" v-show="isRead" src="../../../static/img/cntu_bc.png">
+    </div>
 	</div>
+  
 </template>
 
 <script>
@@ -53,7 +57,7 @@
 				quality: 0.8,
 				isUnUpload: true,
 				isUpload: false,
-				isRead: true,
+				isRead: false,
 				base64Img: null,
 				htmlImg: "",
 				scoreArray: [{
@@ -208,24 +212,15 @@
 					})
 					.catch(function(error) {
 						console.log(error);
-						self.score();
 					});
 			},
 			score(obj) {
 				var self = this;
 				var score = obj.data.score; //需要改成OBJ的分数值！！！！！！！！！！！！！！！！！！！！！！！
 				var scoreIndex = null;
-				setTimeout(function() {
 					self.isUpload = false; //扫描消失
 					self.isRead = true; //分数出现
 					self.scoreArray.forEach((element, index) => {
-						console.log(element.minScore)
-						console.log(element.maxScore)
-						console.log(score)
-						if((score >= element.minScore) && (score < element.maxScore)) {
-							alert(1)
-						}
-
 						if(score >= element.minScore && score < element.maxScore) {
 							scoreIndex = index;
 						}
@@ -256,10 +251,9 @@
 						default:
 							break;
 					}
-					setTimeout(function() {
-						self.jieping();
-					}, 2000)
-				}, 5000);
+						self.jieping(function(){
+
+            });
 			},
 			start_upload(obj) {
 				let self = this;
@@ -404,26 +398,13 @@
 						break;
 				}
 			},
-			jieping() {
-				//截屏
-				// html2canvas(document.body, {
-				//   scale: 1,
-				//   backgroundColor: "#fff"
-				// }).then(canvas => {
-				//   console.log(canvas);
-				//   canvas.width = window.innerWidth;
-				//   canvas.height = window.innerHeight;
-				//   let url = canvas.toDataURL();
-				//   this.htmlImg = url;
-				//   alert("截屏成功，可以长按分享啦");
-				// });
-				html2canvas(document.getElementById("app")).then(canvas => {
+			jieping(callback) {
+        //截屏
+			  	html2canvas(document.getElementById("app")).then(canvas => {
 					let url;
-					// canvas.width = window.innerWidth;
-					// canvas.height = window.innerHeight;
-					// document.body.appendChild(canvas);
 					url = canvas.toDataURL();
-					this.htmlImg = url;
+          this.htmlImg = url;
+          callback();
 				});
 			}
 		}
@@ -438,10 +419,10 @@
 		overflow: hidden;
 		position: relative;
 		.html_img {
-			width: 100%;
+      width: 100%;
 			position: absolute;
 			z-index: 999;
-		}
+    }
 		.bg {
 			width: 100%;
 			height: 100%;
