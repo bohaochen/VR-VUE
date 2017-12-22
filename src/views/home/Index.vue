@@ -260,11 +260,11 @@ export default {
 }
 
 .malfunction4 {
-  animation: malfunction4 0.04s linear 6  alternate;
+  animation: malfunction4 0.15s linear 3  alternate;
 }
 
 .malfunction5 {
-  //   animation: malfunction5 0.001s linear 100 alternate;
+    animation: malfunction5 0.15s linear 4 alternate;
 }
 
 .opacity1 {
@@ -281,7 +281,7 @@ export default {
 }
 
 .chandong {
-  animation: chandong 0.08s linear 4 alternate;
+  animation: chandong 0.05s linear 4 alternate;
 }
 
 @keyframes guangxiao{
@@ -430,28 +430,20 @@ export default {
 
 @keyframes malfunction4 {
   0% {
-    transform: translate(7px, 0px);
+    transform: translate(-2px, 1px);
   }
-  1% {
-    transform: translate(13px, 4px);
-  }
-  60% {
-    transform: translate(6px, 8px);
-  }
-  62% {
-    transform: translate(0px, 5px);
-  }
+
   100% {
-    transform: translate(5px, 0px);
+    transform: translate(2px, 0px);
   }
 }
 
 @keyframes malfunction5 {
   0% {
-    transform: translate(10px, 0) scale(1);
+    transform: translate(2px, 0);
   }
   100% {
-    transform: translate(8px, -3px) scale(1.01);
+    transform: translate(-1px, 0px) ;
   }
 }
 </style>
