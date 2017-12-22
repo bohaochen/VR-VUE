@@ -70,10 +70,12 @@
 			z-index: 2;
 		}
 		.cjts {
-			width: 100%;
+			width: 86%;
 			position: absolute;
 			top: 12%;
 			z-index: 2;
+			left: 50%;
+			margin-left: -43%;
 		}
 		.join-box {
 			position: absolute;
@@ -84,12 +86,12 @@
 				width: 100%;
 			}
 			.put-text-ipone {
-				width: 520px;
+				width: 72%;
 				height: 107px;
 				position: absolute;
 				top: 13%;
 				left: 50%;
-				margin-left: -260px;
+				margin-left: -36%;
 				color: #16a5a3;
 				font-size: 32px;
 				outline: none;
@@ -101,12 +103,12 @@
 				box-sizing: border-box;
 			}
 			.put-text-name {
-				width: 520px;
+				width: 72%;
 				height: 107px;
 				position: absolute;
 				top: 30%;
 				left: 50%;
-				margin-left: -260px;
+				margin-left: -36%;
 				color: #16a5a3;
 				font-size: 32px;
 				outline: none;
@@ -122,9 +124,10 @@
 				font-size: 24px;
 				position: absolute;
 				top: 46%;
-				width: 520px;
+				width: 72%;
 				left: 50%;
-				margin-left: -251px;
+				margin-left: -36%;
+				margin-top: 32px;
 			}
 			.btn {
 				width: 449px;
