@@ -30,6 +30,9 @@
 				let self = this;
 				self.$router.push({
 					path: "imagerecognition",
+					query: {
+						isIndex: 1,
+					}
 				});
 			}
 		}
@@ -74,7 +77,7 @@
 				/*transform: translate3d(0, -20%, 0);
 				-webkit-transform: translate3d(0, -20%, 0);*/
 				margin-top: -18%;
-				animation: myfirst 80s linear 0.5s infinite ;
+				animation: myfirst 80s linear 0.5s infinite;
 				-webkit-animation: myfirst 80s linear 0.5s infinite alternate;
 			}
 		}

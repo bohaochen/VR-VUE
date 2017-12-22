@@ -29,6 +29,7 @@ axios.interceptors.response.use(function(response) {
 import {
 	MA,
 	toast,
+	isLoginWx,
 	timeToNow,
 	jsonFormat,
 	dateFormat,

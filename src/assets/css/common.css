@@ -36,21 +36,20 @@ img {
   }
 
 .toast {
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	left: 50%;
 	width: 80%;
-	visibility: hidden;
 	margin-left: -40%;
 	font-size: 24px;
 	color: #7ef9ff;
 	text-align: center;
 	padding: 32px 0;
 	z-index: 999999;
-	border-radius: 10px;
-	background: #7ef9ff;
-	transform: translate3d(0, -100%, 0);
-	-webkit-transform: translate3d(0, -100%, 0);
+	/*border-radius: 10px;*/
+	background: url(../../../dist/static/img/cj_03.png) 50%/cover;
+	transform: translate3d(0, 100%, 0);
+	-webkit-transform: translate3d(0, 100%, 0);
 }
 
 .toast-ain {
@@ -78,11 +77,9 @@ img {
 	to {
 		transform: translate3d(0, -100%, 0);
 		-webkit-transform: translate3d(0, -100%, 0);
-		visibility: hidden;
 	}
 	from {
 		transform: translate3d(0, 100%, 0);
 		-webkit-transform: translate3d(0, 100%, 0);
-		visibility: visible;
 	}
 }

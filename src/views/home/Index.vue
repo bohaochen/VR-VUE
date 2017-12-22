@@ -60,6 +60,9 @@ export default {
       // 带查询参数，变成 /register?plan=private
       self.$router.push({
         path: "ai",
+        query :{
+        	isIndex:0,
+        }
       });
     },
     
