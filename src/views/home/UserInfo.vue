@@ -70,9 +70,9 @@ export default {
   data() {
     return {
       phone: "",
-	  name: "",
-	  isInfoPage:true,
-	  isLuckPage:false
+      name: "",
+      isInfoPage: true,
+      isLuckPage: false
     };
   },
   mounted() {},
@@ -84,6 +84,7 @@ export default {
       var _this = this;
       if (!/^1[34578]\d{9}$/.test(_this.phone)) {
 		_this.toast("请正确填写手机号码");
+        console.log("请正确填写手机号码");
         return false;
       }
       if (
@@ -91,16 +92,34 @@ export default {
         /^[\u4e00-\u9fa5]{1,10}$/.test(_this.name)
       ) {
       } else {
-		this.toast("请正确填写姓名");
+        this.toast("请正确填写姓名");
+        console.log("请正确填写姓名");
         return false;
       }
-      _this.goToLuckdraw();
+      _this.$http
+        .post(
+          "v1/em?action=draw&uid=" +
+            1111 +
+            "&phone=" +
+            _this.phone +
+            "&name=" +
+            _this.name
+        )
+        .then(function(response) {
+          console.log(response);
+          if (response) {
+     		 _this.goToLuckdraw();
+          }
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
     },
     goToLuckdraw() {
       //页面跳转
-	  let self = this;
-	  self.isInfoPage=false;
-	  self.isLuckPage=true;
+      let self = this;
+      self.isInfoPage = false;
+      self.isLuckPage = true;
     },
     goToImagerecognition() {
       //页面跳转
@@ -109,8 +128,8 @@ export default {
       self.$router.push({
         path: "imagerecognition"
       });
-	},
-	share() {
+    },
+    share() {
       alert("分享");
     }
   }
@@ -331,5 +350,4 @@ input::-webkit-input-placeholder {
     }
   }
 }
-
 </style>
