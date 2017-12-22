@@ -53,7 +53,7 @@
 				quality: 0.8,
 				isUnUpload: true,
 				isUpload: false,
-				isRead: false,
+				isRead: true,
 				base64Img: null,
 				htmlImg: "",
 				scoreArray: [{
@@ -182,8 +182,8 @@
 		mounted() {
 			let self = this;
 			console.log(document.body.clientWidth * 74 / 100)
-			document.getElementsByClassName("starImg")[0].style.width = document.body.clientWidth * 74 / 1000 + "px";
-			document.getElementsByClassName("starImg")[0].style.height = document.body.clientWidth * 74 / 460 + "px";
+			document.getElementsByClassName("starImg")[0].style.width = (document.body.clientWidth * 74 / 100) + "px";
+			document.getElementsByClassName("starImg")[0].style.height = (document.body.clientWidth * 74 / 460) + "px";
 			document.getElementsByClassName("starImg")[0].style.marginTop = -(document.body.clientWidth * 74 / 460) / 2 + "px";
 		},
 		methods: {
@@ -209,7 +209,7 @@
 			},
 			score(obj) {
 				var self = this;
-				var score = obj.data.thres; //需要改成OBJ的分数值！！！！！！！！！！！！！！！！！！！！！！！
+				var score = obj.data.score; //需要改成OBJ的分数值！！！！！！！！！！！！！！！！！！！！！！！
 				var scoreIndex = null;
 				setTimeout(function() {
 					self.isUpload = false; //扫描消失
@@ -622,7 +622,7 @@
 		}
 		.saomiao-animate {
 			animation: toprun 3s linear infinite alternate;
-		}
+    }
 		@keyframes toprun {
 			from {
 				transform: translate(0, 100%)
