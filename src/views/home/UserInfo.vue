@@ -23,7 +23,7 @@
 			<div class="hj-img-box">
 				<img src="../../../static/img/cj_05.png" class="hj-img" />
 				<span class="hj-text">
-					获得勇于探索奖
+					{{drawText}}
 				</span>
 			</div>
 			
@@ -61,6 +61,9 @@
 			<img src="../../../static/img/cj_06.png" @click="goToImagerecognition" class="btn1" />
 			<img src="../../../static/img/cj_07.png" @click="share" class="btn2" />
 		</div>
+		<div class="share-it" v-show="isSharePage" @click="share">
+			<img src="../../../static/img/share-it.png"/>
+		</div>
 	</div>
 	</div>
 </template>
@@ -71,8 +74,10 @@ export default {
     return {
       phone: "",
       name: "",
+      drawText: "",
       isInfoPage: true,
-      isLuckPage: false
+      isLuckPage: false,
+      isSharePage: false
     };
   },
   mounted() {},
@@ -80,10 +85,34 @@ export default {
     jieping() {
       console.log("什么鬼");
     },
+    drawNum(num) {
+      var _this = this;
+      console.log(num);
+      var numType = parseInt(num);
+      switch (numType) {
+        case 0:
+          _this.drawText = "精神可嘉";
+          break;
+        case 1:
+          _this.drawText = "获得勇于探索奖";
+          break;
+        case 2:
+          _this.drawText = "获得勇于实践奖";
+          break;
+        case 3:
+          _this.drawText = "获得开拓创新奖";
+          break;
+        case 4:
+          _this.drawText = "获得眼光独到奖";
+          break;
+        default:
+          break;
+      }
+    },
     checkPhone(phoneStr, nameStr) {
       var _this = this;
       if (!/^1[34578]\d{9}$/.test(_this.phone)) {
-		_this.toast("请正确填写手机号码");
+        _this.toast("请正确填写手机号码");
         console.log("请正确填写手机号码");
         return false;
       }
@@ -98,8 +127,8 @@ export default {
       }
       _this.$http
         .post(
-          "v1/em?action=draw&uid=" +
-            1111 +
+          "v1/em?action=update_userinfo&uid=" +
+            111 +
             "&phone=" +
             _this.phone +
             "&name=" +
@@ -107,8 +136,36 @@ export default {
         )
         .then(function(response) {
           console.log(response);
-          if (response) {
-     		 _this.goToLuckdraw();
+          if (response.data.code == 200) {
+            _this.$http
+              .post("v1/em?action=draw&uid=" + 111)
+              .then(function(response) {
+                console.log(response);
+                switch (response.data.code) {
+                  case 100:
+                    _this.toast("用户不存在");
+                    break;
+                  case 102:
+                    _this.toast("- 没有录入用户信息");
+                    break;
+                  case 103:
+                    _this.toast("还没做人脸对比");
+                    break;
+                  case 104:
+                    _this.toast("已经抽过奖");
+                    _this.drawNum(response.data.draw);
+                    break;
+                  default:
+                    // _this.drawNum(response.data.draw)
+                    break;
+                }
+              })
+              .catch(function(error) {
+                console.log(error);
+              });
+            _this.goToLuckdraw();
+          } else {
+            console.log("接口返回错误");
           }
         })
         .catch(function(error) {
@@ -130,7 +187,11 @@ export default {
       });
     },
     share() {
-      alert("分享");
+      if (this.isSharePage) {
+        this.isSharePage = false;
+      } else {
+        this.isSharePage = true;
+      }
     }
   }
 };
@@ -243,6 +304,19 @@ input::-webkit-input-placeholder {
   top: 0px;
   overflow: auto;
   animation: fuxian 1s;
+  .share-it {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 9999;
+    top: 0px;
+    background: rgba(0, 0, 0, 0.7);
+    img {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+  }
   .bg {
     width: 100%;
     height: 100%;
