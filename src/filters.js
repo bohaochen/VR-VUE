@@ -9,21 +9,21 @@ export const toast = () => {
 		isToast = true;
 		toast.innerHTML = msg;
 		toast.classList.add("toast-ain");
-		toast.addEventListener('webkitAnimationEnd', function() {
-			num += 1;
-			if(num == 1) {
-				let interval = setInterval(() => {
-					toast.classList.add("toast-out");
-					clearInterval(interval);
-				}, 1500);
-
-			} else {
-				toast.classList.remove("toast-out");
-				toast.classList.remove("toast-ain");
-				isToast = false;
-				num = 0;
-			}
-		}, false);
+		var two = function() {
+			console.log("123123123");
+			toast.classList.remove("toast-out");
+			toast.classList.remove("toast-ain");
+			toast.removeEventListener("webkitAnimationEnd", two);
+			isToast = false;
+		}
+		var first = function() {
+			setTimeout(() => {
+				toast.removeEventListener("webkitAnimationEnd", first);
+				toast.addEventListener('webkitAnimationEnd', two, false);
+				toast.classList.add("toast-out");
+			}, 2222);
+		};
+		toast.addEventListener('webkitAnimationEnd', first, false);
 	}
 }
 export const MA = (_node, callback) => {
