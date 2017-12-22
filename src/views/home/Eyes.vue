@@ -10,7 +10,7 @@
 		<div class="btns">
 			<div class="title">想体验试试吗？</div>
 			<img src="../../../static/img/jt_04.png" class="jiantou psv-marker-jiantou" />
-			<img src="../../../static/img/btn_04.png" @click="goToImageRecognition" class="btn1" />
+			<img src="../../../static/img/lijitiyan.png" @click="goToImageRecognition" class="btn1" />
 		</div>
 	</div>
 </template>

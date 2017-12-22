@@ -10,7 +10,6 @@ export const toast = () => {
 		toast.innerHTML = msg;
 		toast.classList.add("toast-ain");
 		var two = function() {
-			console.log("123123123");
 			toast.classList.remove("toast-out");
 			toast.classList.remove("toast-ain");
 			toast.removeEventListener("webkitAnimationEnd", two);

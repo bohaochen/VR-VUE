@@ -204,12 +204,18 @@
 				//页面跳转
 				let self = this;
 				// 带查询参数，变成 /register?plan=private
-				self.$router.push({
-					path: "ai",
-					query: {
-						isIndex: 1,
-					}
-				});
+				if(self.$route.query.isIndex == 0) {
+					self.$router.push({
+						path: "userinfo",
+					});
+				} else {
+					self.$router.push({
+						path: "ai",
+						query: {
+							isIndex: 1,
+						}
+					});
+				}
 			},
 			mashangtansuo() {
 				//马上探索

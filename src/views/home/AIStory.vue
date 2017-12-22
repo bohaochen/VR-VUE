@@ -9,7 +9,7 @@
 				<!-- <div class="btns hidden"> -->
 				<img src="../../../static/img/aiStoryText.png" class="wenzi-text" alt="">
 				<img src="../../../static/img/jt_04.png" class="jiantou psv-marker-jiantou" />
-				<img src="../../../static/img/btn_04.png" @click="goToImagerecognition" class="btn1" />
+				<img src="../../../static/img/houmianyougecaidan.png" @click="goToImagerecognition" class="btn1" />
 			</div>
 		</div>
 
@@ -57,7 +57,7 @@
 					self.$router.push({
 						path: "imagerecognition",
 						query: {
-							isIndex: 1,
+							isIndex: 0,
 						}
 					});
 				} else {
