@@ -249,9 +249,11 @@ export default {
 
           default:
             break;
-		}
-		self.jieping();
-      }, 500);
+    }
+    setTimeout(function(){
+	  	self.jieping();
+    },2000)
+      }, 5000);
     },
     start_upload(obj) {
       let self = this;
@@ -622,10 +624,10 @@ export default {
   }
   @keyframes toprun {
     from {
-      top: 0%;
+      transform: translate(0,100%)
     }
     to {
-      top: 100%;
+      transform: translate(0,0%)
     }
   }
   @keyframes fuxian {
