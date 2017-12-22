@@ -191,6 +191,10 @@
 				//马上探索
 				let self = this;
 				let base64Img = self.base64Img;
+				var index = base64Img.indexOf(',');
+				if(index > 0) {
+					base64Img = base64Img.substr(index + 1);
+				}
 				self.isUnUpload = false; //初始界面消失
 				self.isUpload = true; //出现扫描界面
 				self.$http.post("v1/em?action=compare&uid=" + 1111, {
@@ -215,17 +219,17 @@
 					self.isUpload = false; //扫描消失
 					self.isRead = true; //分数出现
 					self.scoreArray.forEach((element, index) => {
-            console.log(element.minScore)
-            console.log(element.maxScore)
-            console.log(score)
-            if((score>=element.minScore) && (score < element.maxScore)){
-              alert(1)
-            }
-      
-						if(score >= element.minScore && score < element.maxScore) {
-              scoreIndex = index;
+						console.log(element.minScore)
+						console.log(element.maxScore)
+						console.log(score)
+						if((score >= element.minScore) && (score < element.maxScore)) {
+							alert(1)
 						}
-          });
+
+						if(score >= element.minScore && score < element.maxScore) {
+							scoreIndex = index;
+						}
+					});
 					document.getElementsByClassName("score_1")[0].innerHTML =
 						self.scoreArray[scoreIndex].starMsg[0];
 					document.getElementsByClassName("score_2")[0].innerHTML =
