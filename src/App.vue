@@ -51,6 +51,48 @@
 			preloadingAllImg() {
 				//预加载图片资源
 			},
+			share(title, link, imgUrl, desc) {
+				//获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
+				wx.onMenuShareTimeline({
+					title: title, // 分享标题
+					link: link, // 分享链接
+					imgUrl: imgUrl, // 分享图标
+					success: function() {
+						// 用户确认分享后执行的回调函数
+					},
+					cancel: function() {
+						// 用户取消分享后执行的回调函数
+					}
+				});
+				//获取“分享给朋友”按钮点击状态及自定义分享内容接口
+				wx.onMenuShareAppMessage({
+					title: title, // 分享标题
+					desc: desc, // 分享描述
+					link: link, // 分享链接
+					imgUrl: imgUrl, // 分享图标
+					type: 'link', // 分享类型,music、video或link，不填默认为link
+					dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+					success: function() {
+						// 用户确认分享后执行的回调函数
+					},
+					cancel: function() {
+						// 用户取消分享后执行的回调函数
+					}
+				});
+				//获取“分享到QQ”按钮点击状态及自定义分享内容接口
+				wx.onMenuShareQQ({
+					title: title, // 分享标题
+					desc: desc, // 分享描述
+					link: link, // 分享链接
+					imgUrl: imgUrl, // 分享图标
+					success: function() {
+						// 用户确认分享后执行的回调函数
+					},
+					cancel: function() {
+						// 用户取消分享后执行的回调函数
+					}
+				});
+			},
 			setShare() {
 				let self = this
 				let timestamp = new Date().getTime()
@@ -75,8 +117,11 @@
 							wx.error(function(res) {
 								//验证失败
 								alert("验证失败");
+								console.log("验证失败");
 							});
 							wx.ready(function() {
+								alert("ready");
+								console.log("ready");
 								wx.checkJsApi({
 									jsApiList: ['checkJsApi',
 										"onMenuShareTimeline",
@@ -84,11 +129,12 @@
 										"onMenuShareQQ"
 									],
 									success: function(res) {
-										var title = "新年许心愿 ，红包好礼来";
-										var link = 'http://iorder.nz/?shareId=' + self.queryString('uid');
-										var imgUrl = "http://asbnewyear.pinsolutions.co.nz/share.png";
-										var desc = "我离888个大奖只有1个祝福的距离，ASB邀你许愿领红包";
-										//self.share(title, link, imgUrl, desc);
+										var title = "平安黑科技邀您来感受";
+										var link = 'https://wx.nullexcept.com';
+										var imgUrl = "https://wx.nullexcept.com/static/img/wz_02.21f4fe7.png";
+										var desc = "这个黑科技亮瞎了我的";
+										alert("setShareInfo");
+										self.share(title, link, imgUrl, desc);
 										// 以键值对的形式返回，可用的api值true，不可用为false
 										// 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
 									}
@@ -133,8 +179,7 @@
 									var link = 'http://iorder.nz/?shareId=' + self.queryString('uid');
 									var imgUrl = "http://asbnewyear.pinsolutions.co.nz/share.png";
 									var desc = "我离888个大奖只有1个祝福的距离，ASB邀你许愿领红包";
-									self.share(title, link, imgUrl, desc);
-									// 以键值对的形式返回，可用的api值true，不可用为false
+self.share(title, link, imgUrl, desc);// 以键值对的形式返回，可用的api值true，不可用为false
 									// 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
 								}
 							});
