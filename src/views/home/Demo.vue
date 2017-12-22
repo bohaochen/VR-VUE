@@ -1,10 +1,10 @@
 <template>
-	<div class="home">
+	<div class="home" id="home">
 		<div class="text_box">
 			<div class="text animated fadeIn" v-for="(item,index) in wordArr" :key="index">{{item}}</div>
 		</div>
 
-		<img src="https://wx.nullexcept.com/s_static/img/photosphere-logo.gif" width="100%" alt="">
+		<img src="../../../static/img/wzh3j_01.png" width="100%" alt="">
 		<button @click="jieping()">点我截屏</button>
 		<img class="html_img" :src="htmlImg" :style="{display:htmlImg ? 'block' : 'none'}">
 	</div>
@@ -33,17 +33,26 @@
 		},
 		methods: {
 			jieping() {
-				html2canvas(document.body, {
-					scale: 1,
-					backgroundColor: "#fff"
-				}).then(canvas => {
-					console.log(canvas);
-					canvas.width = window.innerWidth;
-					canvas.height = window.innerHeight;
-					let url = canvas.toDataURL();
+				html2canvas(document.querySelector("#home")).then(canvas => {
+					let url;
+					// canvas.width = window.innerWidth;
+					// canvas.height = window.innerHeight;
+					document.body.appendChild(canvas);
+					url = canvas.toDataURL();
 					this.htmlImg = url;
-					alert("截屏成功，可以长按分享啦");
 				});
+
+				// html2canvas(document.getElementById("home"), {
+				// 	scale: 1,
+				// 	backgroundColor: "#fff"
+				// }).then(canvas => {
+				// 	console.log(canvas);
+				// 	canvas.width = window.innerWidth;
+				// 	canvas.height = window.innerHeight;
+				// 	let url = canvas.toDataURL();
+				// 	this.htmlImg = url;
+				// 	alert("截屏成功，可以长按分享啦");
+				// });
 			}
 		}
 	};

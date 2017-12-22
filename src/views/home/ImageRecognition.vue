@@ -46,6 +46,7 @@
 </template>
 
 <script>
+import html2canvas from 'html2canvas'
 export default {
   data() {
     return {
@@ -53,8 +54,8 @@ export default {
       isUnUpload: true,
       isUpload: false,
       isRead: false,
-	  base64Img: null,
-	  htmlImg: "",
+      base64Img: null,
+      htmlImg: "",
       scoreArray: [
         {
           minScore: 0,
@@ -185,7 +186,10 @@ export default {
     //
 	//			},false)
 	console.log(document.body.clientWidth*74/100)
-	document.getElementsByClassName("starImg")[0].style.width = (document.body.clientWidth*74/100 + "px");
+	document.getElementsByClassName("starImg")[0].style.width = document.body.clientWidth*74/100 +"px";
+	document.getElementsByClassName("starImg")[0].style.height = document.body.clientWidth*74/460 +"px";
+	document.getElementsByClassName("starImg")[0].style.marginTop = -(document.body.clientWidth*74/460)/2 +"px";
+	// document.getElementsByClassName("btn1")[0].width = (document.body.clientWidth*74/100 + "px");
   },
   methods: {
     mashangtansuo() {
@@ -193,7 +197,7 @@ export default {
       let self = this;
       let base64Img = self.base64Img;
       self.isUnUpload = false; //初始界面消失
-	  self.isUpload = true; //出现扫描界面
+	    self.isUpload = true; //出现扫描界面
       self.$http.post("/user" + "?uid=" + 111 + "&action=" + "compare", {
           base64Img
         })
@@ -247,7 +251,7 @@ export default {
             break;
 		}
 		self.jieping();
-      }, 2000);
+      }, 500);
     },
     start_upload(obj) {
       let self = this;
@@ -394,17 +398,25 @@ export default {
 	},
 	jieping() {
 		//截屏
-      html2canvas(document.body, {
-        scale: 1,
-        backgroundColor: "#fff"
-      }).then(canvas => {
-        console.log(canvas);
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        let url = canvas.toDataURL();
-        this.htmlImg = url;
-        alert("截屏成功，可以长按分享啦");
-      });
+      // html2canvas(document.body, {
+      //   scale: 1,
+      //   backgroundColor: "#fff"
+      // }).then(canvas => {
+      //   console.log(canvas);
+      //   canvas.width = window.innerWidth;
+      //   canvas.height = window.innerHeight;
+      //   let url = canvas.toDataURL();
+      //   this.htmlImg = url;
+      //   alert("截屏成功，可以长按分享啦");
+      // });
+      html2canvas(document.getElementById("app")).then(canvas => {
+					let url;
+					// canvas.width = window.innerWidth;
+					// canvas.height = window.innerHeight;
+					// document.body.appendChild(canvas);
+					url = canvas.toDataURL();
+					this.htmlImg = url;
+				});
     }
   }
 };
@@ -417,6 +429,11 @@ export default {
   background-color: #000000;
   overflow: hidden;
   position: relative;
+  .html_img{
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+  }
   .bg {
     width: 100%;
     height: 100%;
@@ -426,8 +443,8 @@ export default {
     z-index: 1;
   }
   .score_box {
-    animation: fuxian 0.5s linear 0.5s;
-	opacity: 0;
+    animation: fuxian 0.5s linear;
+	  opacity: 1;
     z-index: 10;
     position: absolute;
     width: 100%;
@@ -535,7 +552,7 @@ export default {
     position: absolute;
     z-index: 4;
     top: 70%;
-	opacity: 0;
+  	opacity: 0;
     margin-top: -40px;
     left: 13%;
     animation: fuxian 0.5s linear;
@@ -554,8 +571,7 @@ export default {
       box-sizing: border-box;
       img {
         position: relative;
-		top: 50%;
-		transform: translate(0,-50%);
+    		top: 50%;
       }
     }
     .is-cs {
@@ -628,7 +644,7 @@ export default {
 	  bottom: 0px;
 	  position: absolute;
 	  z-index: 2;
-	  animation: fuxian 2s;
+	  animation: fuxian 0.5s;
   }
 }
 </style>
