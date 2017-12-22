@@ -21,6 +21,7 @@
 		},
 		created() {},
 		mounted() {
+			let self = this;
 			let wordStr = `平安科技传来AI捷报：
 			人脸识别调用量累计突破10亿，
 			数字的背后究竟隐藏着怎样的黑科技？`;
@@ -30,6 +31,18 @@
 					this.wordArr.push(wordStr[i]);
 				}, 160 * i);
 			}
+
+			self.$http.post("v1/me?action=compare&uid=" + self.$route.uid, "base64:image/png:xwsf1v1sdf5sdfsdf15sdfsd")
+				.then(function(response) {
+					console.log(response);
+					if(response) {
+						console.log(111111111);
+					}
+				})
+				.catch(function(error) {
+					console.log(error);
+					//					self.score();
+				});
 		},
 		methods: {
 			jieping() {

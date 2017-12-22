@@ -23,7 +23,7 @@ module.exports = {
         assetsPublicPath: '/',
         proxyTable: {
             '/v1': {
-                target: 'https://wx.nullexcept.com/',
+                target: 'http://120.79.45.40:8000',
                 changeOrigin: true,
                 pathRewrite: {
                     '^/v1': '/v1',
