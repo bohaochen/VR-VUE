@@ -28,6 +28,23 @@
 			//			if(self.auto) {
 			//				self.preloadingAllImg();
 			//			}
+			let url = window.location.href.split('?')[0];
+			let code = this.queryString("code")
+			if(code == null || code == '') {
+				window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx42c67be9af7fa426&redirect_uri=' + encodeURIComponent(url) + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect'
+			} else {
+				//				this.$http.jsonp(Oauth2Api + "&code=" + code).then(function(response) {
+				//					if(response.data.code == 200) {
+				//						this.userInfo = response.data
+				//						window.localStorage.setItem("userInfo.nickname", this.userInfo.nickname)
+				//						window.localStorage.setItem("userInfo.headimgurl", this.userInfo.headimgurl)
+				//
+				//						this.loadImage()
+				//					} else {
+				//						$.toast('网络连接失败，请重新试试吧！', 2000, 'success top');
+				//					}
+				//				})
+			}
 		},
 		//		watch: {
 		//			$route() {
@@ -42,6 +59,22 @@
 		methods: {
 			preloadingAllImg() {
 				//预加载图片资源
+			},
+			queryString(name) {
+				let href = window.location.href
+				if(href.indexOf('?') >= 0) {
+					href = href.split('?')[1].split('&')
+					for(let i = 0; i < href.length; i++) {
+						let paramName = href[i].split('=')[0]
+						if(name == paramName) {
+							if(typeof(href[i].split('=')[1]) != "undefined")
+								return href[i].split('=')[1]
+							else
+								return null
+						}
+					}
+				}
+				return null;
 			},
 		},
 		components: {}
