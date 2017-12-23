@@ -56,7 +56,7 @@
 </template>
 
 <script>
-	import html2canvas from "html2canvas";
+//	import html2canvas from "html2canvas";
 	export default {
 		data() {
 			return {
@@ -227,7 +227,6 @@
 				}
 				var index = base64Img.indexOf(",");
 				let openid = window.localStorage.getItem('openid');
-				alert("openid:"+openid)
 				if(index >= 0) {
 					base64Img = base64Img.substr(index + 1);
 				}
@@ -238,6 +237,7 @@
 						base64: base64Img
 					})
 					.then(function(response) {
+						alert("compare:==code>" + response.data.code + "openid:" + openid);
 						console.log(response);
 						if(response.data.code == 200) {
 							self.score(response); //设置打分界面
