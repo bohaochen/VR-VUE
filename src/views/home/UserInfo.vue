@@ -144,7 +144,7 @@
 											_this.toast("用户不存在");
 											break;
 										case 102:
-											_this.toast("- 没有录入用户信息");
+											_this.toast("没有录入用户信息");
 											break;
 										case 103:
 											_this.toast("还没做人脸对比");
@@ -154,7 +154,7 @@
 											_this.drawNum(response.data.draw);
 											break;
 										default:
-											// _this.drawNum(response.data.draw)
+											_this.drawNum(response.data.draw)
 											break;
 									}
 								})
