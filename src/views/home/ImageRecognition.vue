@@ -227,6 +227,7 @@
 				}
 				var index = base64Img.indexOf(",");
 				let openid = window.localStorage.getItem('openid');
+				alert("openid:"+openid)
 				if(index >= 0) {
 					base64Img = base64Img.substr(index + 1);
 				}
@@ -238,8 +239,12 @@
 					})
 					.then(function(response) {
 						console.log(response);
-						if(response) {
+						if(response.data.code == 200) {
 							self.score(response); //设置打分界面
+						} else {
+							self.toast("人脸识别失败,请重试");
+							self.isUnUpload = true; //初始界面消失
+							self.isUpload = false; //出现扫描界面
 						}
 					})
 					.catch(function(error) {

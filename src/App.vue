@@ -105,10 +105,10 @@
 										"onMenuShareQQ"
 									],
 									success: function(res) {
-										var title = "平安黑科技邀您来感受";
+										var title = "聚焦AI,智创未来/平安人脸识别调用量破10亿";
 										var link = 'https://wx.nullexcept.com';
-										var imgUrl = "https://wx.nullexcept.com/static/img/wz_02.21f4fe7.png";
-										var desc = "这个黑科技亮瞎了我的";
+										var imgUrl = "https://wx.nullexcept.com/static/img/shareImg.png";
+										var desc = "欢迎来见证人脸识别调用量破10亿!参与体验即可抽取小礼物,它可能是iPhoneX哦";
 										self.share(title, link, imgUrl, desc);
 										// 以键值对的形式返回，可用的api值true，不可用为false
 										// 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}

@@ -5753,6 +5753,7 @@ webpackJsonp([0,8],{
 				}
 				var index = base64Img.indexOf(",");
 				var openid = window.localStorage.getItem('openid');
+				alert("openid:" + openid);
 				if (index >= 0) {
 					base64Img = base64Img.substr(index + 1);
 				}
@@ -5762,8 +5763,12 @@ webpackJsonp([0,8],{
 					base64: base64Img
 				}).then(function (response) {
 					console.log(response);
-					if (response) {
+					if (response.data.code == 200) {
 						self.score(response);
+					} else {
+						self.toast("人脸识别失败,请重试");
+						self.isUnUpload = true;
+						self.isUpload = false;
 					}
 				}).catch(function (error) {
 					console.log(error);
