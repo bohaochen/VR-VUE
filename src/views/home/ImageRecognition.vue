@@ -56,7 +56,7 @@
 </template>
 
 <script>
-//	import html2canvas from "html2canvas";
+	//	import html2canvas from "html2canvas";
 	export default {
 		data() {
 			return {
@@ -237,8 +237,7 @@
 						base64: base64Img
 					})
 					.then(function(response) {
-						alert("compare:==code>" + response.data.code + "openid:" + openid);
-						console.log(response);
+						console.log("compare:==code>" + response.data.code + "openid:" + openid);
 						if(response.data.code == 200) {
 							self.score(response); //设置打分界面
 						} else {
@@ -311,16 +310,14 @@
 				try {
 					let file = event.currentTarget.files[0];
 					if(!/image\/\w+/.test(file.type)) {
-						alert("请确保文件为图像类型");
+						self.toast("请确保文件为图像类型");
 						return false;
 					}
 					let Orientation = null;
 					// var URL = URL || webkitURL;
 					//获取照片方向角属性，用户旋转控制
 					EXIF.getData(file, function() {
-						// alert(EXIF.pretty(this));
 						//						EXIF.getAllTags(this);
-						//alert(EXIF.getTag(this, 'Orientation'));
 						Orientation = EXIF.getTag(this, "Orientation");
 						//						alert(Orientation)
 						//return;

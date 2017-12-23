@@ -22,8 +22,8 @@
 		<div class="btns" v-show="gxAni">
 			<!-- <div class="btns hidden"> -->
 			<img src="../../../static/img/jt_04.png" class="jiantou psv-marker-jiantou" />
-			<img src="../../../static/img/btn_06.png" @click="goToAi" class="btn2" />
-			<img src="../../../static/img/btn_04.png" @click="goToVr" class="btn1" />
+			<img src="../../../static/img/btn_06.png"  @click="goToVr" class="btn2" />
+			<img src="../../../static/img/btn_04.png"  @click="goToAi" class="btn1" />
 		</div>
 	</div>
 </template>

@@ -16,8 +16,11 @@
 		return null;
 	}
 	var code = queryString("code");
-	if(code == null || code == '') {
-		href = href.split('?')[0];
+	if(code == null || code == '' || !code) {
+		window.stop(); //停止浏览器   继续加载
+		if(href.indexOf('?') > -1) {
+			href = href.split('?')[0];
+		}
 		window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx42c67be9af7fa426&redirect_uri=' + encodeURIComponent(href) + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect'
 	}
 })();
