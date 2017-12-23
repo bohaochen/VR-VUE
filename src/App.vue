@@ -40,6 +40,7 @@
 							if(response.data.code == 200) {
 								console.log(response.data.openid); //用户ID
 								window.localStorage.setItem("openid", response.data.openid);
+								alert(response.data.openid);
 							}
 						})
 						.catch(function(error) {
