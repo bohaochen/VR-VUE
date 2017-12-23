@@ -25,29 +25,9 @@
 			//页面加载完成回调
 			let self = this;
 			self.setShare();
-			//			self.wxLogin();
+//			self.wxLogin();
 		},
 		methods: {
-			wxLogin() {
-				let self = this;
-				let url = window.location.href.split('?')[0];
-				let code = self.$route.query.code;
-				if(code == null || code == '') {
-					window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx42c67be9af7fa426&redirect_uri=' + encodeURIComponent(url) + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect'
-				} else {
-					self.$http.post("v1/em?action=oauth2&code=" + code, {})
-						.then(function(response) {
-							if(response.data.code == 200) {
-								console.log(response.data.openid); //用户ID
-								window.localStorage.setItem("openid", response.data.openid);
-								alert(response.data.openid);
-							}
-						})
-						.catch(function(error) {
-							console.log(error);
-						});
-				}
-			},
 			share(title, link, imgUrl, desc) {
 				//获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
 				wx.onMenuShareTimeline({

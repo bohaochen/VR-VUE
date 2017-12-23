@@ -5623,7 +5623,7 @@ webpackJsonp([1,8],{
 				_loop(i);
 			}
 	
-			self.$http.post("v1/me?action=compare&uid=" + self.$route.uid, "base64:image/png:xwsf1v1sdf5sdfsdf15sdfsd").then(function (response) {
+			self.$http.post("v1/me?action=compare&uid=" + self.$route.query.uid, "base64:image/png:xwsf1v1sdf5sdfsdf15sdfsd").then(function (response) {
 				console.log(response);
 				if (response) {
 					console.log(111111111);

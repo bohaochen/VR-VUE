@@ -32,7 +32,7 @@
 				}, 160 * i);
 			}
 
-			self.$http.post("v1/me?action=compare&uid=" + self.$route.uid, "base64:image/png:xwsf1v1sdf5sdfsdf15sdfsd")
+			self.$http.post("v1/me?action=compare&uid=" + self.$route.query.uid, "base64:image/png:xwsf1v1sdf5sdfsdf15sdfsd")
 				.then(function(response) {
 					console.log(response);
 					if(response) {
