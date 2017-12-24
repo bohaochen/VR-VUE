@@ -22,8 +22,7 @@
 				wordArr: [],
 			};
 		},
-		mounted() {
-		},
+		mounted() {},
 		methods: {
 			goToImageRecognition() {
 				let self = this;
@@ -86,6 +85,7 @@
 			left: 0;
 			width: 100%;
 			z-index: 3;
+			margin-top: -12%;
 		}
 		.btns {
 			width: 100%;

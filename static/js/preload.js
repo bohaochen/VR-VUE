@@ -32,7 +32,7 @@ var loader = new resLoader({
 		"static/img/quan.png",
 		"static/img/querenceshi.png",
 		"static/img/redbtn.png",
-		"static/img/renlianshibiekuangdeng.png",
+		"static/img/renlianshibiekuangdengwu.png",
 		"static/img/renlianshibierenlian.png",
 		"static/img/saomiao.png",
 		"static/img/share-it.png",
@@ -54,6 +54,8 @@ var loader = new resLoader({
 		"static/img/xuanzhuanno.png",
 		"static/img/zhajixinxihao.png",
 		"static/img/zj_01.png",
+		"static/img/guangdian.png",
+		"static/img/xiegang.png",
 	],
 	onStart: function(total) {
 	},

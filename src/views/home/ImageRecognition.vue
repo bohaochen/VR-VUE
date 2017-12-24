@@ -14,7 +14,7 @@
 			<img class="waikuang" src="../../../static/img/renlianshibiekuangdengwu.png" />
 			<img src="../../../static/img/guangdian.png" class="waikuangleftdian" />
 			<img src="../../../static/img/guangdian.png" class="waikuangrightdian" />
-			
+
 			<div class="album-content">
 				<div class="title" v-show="!base64Img">点击上传个人正面自拍照</div>
 				<img :src="base64Img" ref="imgsss" class="imgsss" />
@@ -32,7 +32,9 @@
 		</div>
 
 		<div class="sb-btn animated" v-show="isUpload">
-			<img src="../../../static/img/titlebg.png" class="btn1" />
+			<!--<img src="../../../static/img/titlebg.png" class="btn1" />-->
+			<img src="../../../dist/static/img/titlebg1.png" class="btn1">
+			<img src="../../../static/img/xiegang.png" class="xiegang" />
 			<span class="is-cs">正在启动分析...</span>
 		</div>
 
@@ -642,10 +644,18 @@
 			margin-top: -40px;
 			left: 13%;
 			animation: fuxian 0.5s linear;
+			overflow: hidden;
 			.btn1 {
 				width: 100%;
 				display: block;
 				margin: auto;
+			}
+			.xiegang {
+				position: absolute;
+				height: 100%;
+				top: 0;
+				left: -36%;
+				animation:laihuibaidong 2s linear infinite;
 			}
 			.star {
 				width: 100%;
@@ -712,6 +722,16 @@
 			}
 			to {
 				transform: translate(0, 0%);
+			}
+		}
+		
+		
+		@keyframes laihuibaidong {
+			from {
+				left: -36%;
+			}
+			to {
+				left: 136%;
 			}
 		}
 		@keyframes fuxian {
