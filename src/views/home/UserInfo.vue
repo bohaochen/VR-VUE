@@ -285,11 +285,11 @@
 				margin-top: 32px;
 			}
 			.btn {
-				width: 449px;
+				width: 66%;
 				position: absolute;
 				bottom: 14%;
 				left: 50%;
-				margin-left: -225px;
+				margin-left: -33%;
 			}
 		}
 	}
@@ -417,7 +417,7 @@
 			}
 			.btn1,
 			.btn2 {
-				width: 50%;
+				width: 66%;
 				display: block;
 				margin: auto;
 			}

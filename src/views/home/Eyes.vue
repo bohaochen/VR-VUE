@@ -90,7 +90,7 @@
 		.btns {
 			width: 100%;
 			position: absolute;
-			bottom: 32px;
+			bottom: 5%;
 			z-index: 4;
 			.jiantou {
 				position: absolute;
@@ -118,7 +118,7 @@
 				-o-transform: translate3d(0, -100%, 0);*/
 			}
 			.btn1 {
-				width: 50%;
+				width: 66%;
 				display: block;
 				margin: auto;
 			}

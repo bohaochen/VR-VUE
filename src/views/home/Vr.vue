@@ -132,7 +132,8 @@
 					}, {
 						id: 'xiaoxi3',
 						longitude: 2.95,
-						latitude: -0.1,
+//						latitude: -0.1,
+						latitude: -6.32,
 						image: '/static/img/xinhao2.png',
 						width: 364,
 						height: 172,
@@ -142,7 +143,8 @@
 					}, {
 						id: 'quan3',
 						longitude: 2.95,
-						latitude: -0.105,
+//						latitude: -0.105,
+						latitude: -6.32,
 						image: '/static/img/quan.png',
 						width: 124,
 						height: 72,
@@ -152,7 +154,7 @@
 					}, {
 						id: 'jiantou3',
 						longitude: 2.95,
-						latitude: -0.115,
+						latitude: -6.32,
 						image: '/static/img/jiantou.png',
 						width: 111,
 						height: 142,
@@ -162,8 +164,8 @@
 						visible: false,
 					}, {
 						id: 'xiaoxi31',
-						longitude: 2.53,
-						latitude: -0.1,
+						longitude: 2.506,
+						latitude: -6.32,
 						image: '/static/img/zhajixinxihao.png',
 						width: 242,
 						height: 281,

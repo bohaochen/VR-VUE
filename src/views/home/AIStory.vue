@@ -153,7 +153,7 @@
 			}
 			.btn1,
 			.btn2 {
-				width: 50%;
+				width: 66%;
 				display: block;
 				margin: auto;
 			}

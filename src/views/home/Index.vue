@@ -218,7 +218,7 @@
 		.btns {
 			width: 100%;
 			position: absolute;
-			bottom: 32px;
+			bottom: 5%;
 			z-index: 2;
 			// opacity: 0;
 			animation-fill-mode: forwards;
@@ -237,7 +237,7 @@
 			}
 			.btn1,
 			.btn2 {
-				width: 50%;
+				width: 66%;
 				display: block;
 				margin: auto;
 			}

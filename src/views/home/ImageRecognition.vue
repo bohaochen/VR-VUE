@@ -10,10 +10,14 @@
 				<div class="score score_3">1111</div>
 			</div>
 
-			<img class="waikuang" src="../../../static/img/renlianshibiekuangdeng.png" />
+			<!--<img class="waikuang" src="../../../static/img/renlianshibiekuangdeng.png" />-->
+			<img class="waikuang" src="../../../static/img/renlianshibiekuangdengwu.png" />
+			<img src="../../../static/img/guangdian.png" class="waikuangleftdian" />
+			<img src="../../../static/img/guangdian.png" class="waikuangrightdian" />
+			
 			<div class="album-content">
-				<div class="title" v-show="isUnUpload">点击上传个人正面自拍照</div>
-				<img src="" ref="imgsss" class="imgsss" />
+				<div class="title" v-show="!base64Img">点击上传个人正面自拍照</div>
+				<img :src="base64Img" ref="imgsss" class="imgsss" />
 				<div class="upload">
 					<input ref="upload" @change="start_upload(this)" type="file" name="upload" accept="image/*">
 				</div>
@@ -603,14 +607,28 @@
 				display: block;
 				width: 80%;
 			}
+			.waikuangleftdian {
+				position: absolute;
+				top: 27.5%;
+				left: 17.5%;
+				height: 46%;
+				animation: fuxian 0.1s infinite linear alternate;
+			}
+			.waikuangrightdian {
+				position: absolute;
+				top: 27.5%;
+				right: 17.5%;
+				height: 46%;
+				animation: fuxian 0.1s infinite linear alternate;
+			}
 		}
 		.btns {
 			width: 100%;
 			position: absolute;
-			bottom: 10%;
+			bottom: 5%;
 			z-index: 4;
 			.btn1 {
-				width: 50%;
+				width: 66%;
 				display: block;
 				margin: auto;
 			}
