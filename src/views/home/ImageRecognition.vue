@@ -238,7 +238,7 @@
 					})
 					.then(function(response) {
 						console.log("compare:==code>" + response.data.code + "openid:" + openid);
-						if(response.data.code == 200) {
+						if(response.data.code == 200 || response.data.code == 102) {
 							self.score(response); //设置打分界面
 						} else {
 							self.toast("人脸识别失败,请重试");
