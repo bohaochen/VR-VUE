@@ -1,8 +1,8 @@
 <template>
 	<div class="content">
 		<div class="bg"></div>
+		<img src="../../../static/img/pn_logo_03.png" class="logo" />
 		<div class="relative_box">
-			<img src="../../../static/img/pn_logo_03.png" class="logo" />
 			<img src="../../../static/img/ai_gs.jpg" class="longImage" />
 
 			<div class="btns">
