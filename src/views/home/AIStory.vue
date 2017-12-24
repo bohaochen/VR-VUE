@@ -23,6 +23,7 @@
 				wordArr: [],
 				isTouch: true,
 				isOutPage: false,
+				isShowBtns:false
 			};
 		},
 		mounted() {
@@ -38,13 +39,30 @@
 						console.log(clearInterval)
 					}
 				}, 40);
-			}, 2000);
+			}, 1500);
+			var dom = document.getElementsByClassName("content")[0];
+			dom.onscroll = function(){
+				if((dom.scrollHeight - dom.scrollTop)<((dom.clientHeight)*1.25)){
+					document.getElementsByClassName("wenzi-text")[0].style.display = "block";
+				}
+				if((dom.scrollHeight - dom.scrollTop)<((dom.clientHeight)*1.2)){
+					setTimeout(function(){
+						document.getElementsByClassName("jiantou")[0].style.opacity = "1";
+					},500)
+				}
+				if((dom.scrollHeight - dom.scrollTop)<((dom.clientHeight)*1.15)){
+					setTimeout(function(){
+						document.getElementsByClassName("btn1")[0].style.opacity = "1";
+					},1000)
+				}
+			}
 		},
 		beforeDestroy: function() {
 			this.isOutPage = true;
 		},
 		methods: {
 			scollUp() {
+				var _this = this;
 				var dom = document.getElementsByClassName("content")[0];
 				var y = dom.scrollTop;
 				dom.scrollTop = y + 2;
@@ -117,7 +135,7 @@
 		}
 		.logo {
 			width: 26%;
-			position: fixed;
+			position: absolute;
 			top: 2.5%;
 			right: 20px;
 			z-index: 2;
@@ -138,8 +156,11 @@
 				width: 7%;
 				top: 0;
 				z-index: 2;
+				display: block;
 				left: 50%;
+				opacity: 0;transition: all 1s;
 				margin-left: -3%;
+				animation: 1s linear inherit alternate;
 				transform: translate3d(0, -100%, 0);
 				-moz-transform: translate3d(0, -100%, 0);
 				-webkit-transform: translate3d(0, -100%, 0);
@@ -149,13 +170,17 @@
 				position: absolute;
 				width: 80%;
 				margin-left: 10%;
-				bottom: 300px;
+				display: none;
+				animation: fuxian 1s;
+				bottom: 333px;
 			}
 			.btn1,
 			.btn2 {
 				width: 66%;
 				display: block;
+				opacity: 0;
 				margin: auto;
+				transition: all 1s;
 			}
 		}
 		.relative_box {
@@ -164,10 +189,20 @@
 		}
 		@keyframes fudong {
 			from {
-				transform: translate(0, -100%)
+				transform: translate(0, -100%);
+				opacity: 0;
 			}
 			to {
-				transform: translate(0, -120%)
+				transform: translate(0, -120%);
+				opacity: 1;
+			}
+		}
+		@keyframes fuxian {
+			from {
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
 			}
 		}
 	}

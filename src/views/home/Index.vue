@@ -8,11 +8,11 @@
 
 		<img src="../../../static/img/pn_logo_03.png" class="logo" />
 
-		<img ref="sanjiao" src="../../../static/img/wzh3j_01.png" class="sanjiao animated" v-show="hkjAni" :class="{slideInDown:hkjAni}">
+		<img src="../../../static/img/wzh3j_01.png" class="sanjiao animated" v-show="hkjAni" :class="{slideInDown:hkjAni}">
 		<img src="../../../static/img/wz_01.png" class="heikeji animated" v-show="hkjAni" :class="{slideInDown:hkjAni}" />
 		<img src="../../../static/img/wz_01_gr.png" class="heikeji-gr animated" v-show="hkjAni" :class="{slideInDown:hkjAni}" />
 
-		<img src="../../../static/img/wz_02.png" class="heikeji animated" v-show="hkjAni" :class="{slideInDown:hkjAni}" />
+		<img ref="sanjiao"  src="../../../static/img/wz_02.png" class="heikeji animated" v-show="hkjAni" :class="{slideInDown:hkjAni}" />
 		<img src="../../../static/img/wz_02_gr.png" class="heikeji-gr animated" v-show="hkjAni" :class="{slideInDown:hkjAni}" />
 
 		<img src="../../../static/img/gx_01.png" class="guangxiao animated" v-show="gxAni" />
@@ -116,7 +116,7 @@
 							document.getElementsByClassName("jingweidu")[0].className =
 								"jingweidu opacity3";
 						}
-						if(num == 4) {
+						if(num == 5) {
 							document.getElementsByClassName("heikeji-gr")[0].className =
 								"heikeji-gr chandong";
 							document.getElementsByClassName("heikeji-gr")[1].className =
@@ -132,7 +132,7 @@
 						} else {
 							document.getElementsByClassName("content")[0].className = "content";
 						}
-					}, 1000);
+					}, 500);
 				}
 			}
 		}
@@ -182,7 +182,7 @@
 			height: auto;
 			position: absolute;
 			animation-timing-function: ease;
-			animation-duration: 6s;
+			animation-duration: 3.5s;
 			top: 0;
 			z-index: 3;
 		}
@@ -249,7 +249,7 @@
 			position: absolute;
 			top: 0;
 			z-index: 2;
-			animation-duration: 6s;
+			animation-duration: 2s;
 		}
 		.qiu {
 			width: 90%;
@@ -304,7 +304,7 @@
 	}
 	
 	.chandong {
-		animation: chandong 0.05s linear 4 alternate;
+		animation: chandong 0.025s linear 8 alternate;
 	}
 	
 	@keyframes guangxiao {
@@ -387,15 +387,15 @@
 			opacity: 0.2;
 		}
 		30% {
-			transform: translate(40px, -30px) scale(1.1);
+			transform: translate(40px, 3px) scale(1);
 			opacity: 0.6;
 		}
 		70% {
-			transform: translate(-60px, -3px) scale(1.1);
+			transform: translate(-20px, -3px) scale(1);
 			opacity: 0.4;
 		}
 		100% {
-			transform: translate(-10px, -3px) scale(1.1);
+			transform: translate(10px, 3px) scale(1);
 			opacity: 0.4;
 		}
 	}
