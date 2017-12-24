@@ -16,9 +16,10 @@
 		return null;
 	}
 	var code = queryString("code");
-	console.log(window.location.host)
+	console.log("host:",window.location.host)
+	console.log("protocol:",window.location.protocol)
 	if(code == null || code == '' || !code) {
-		
+
 		//		if(href.indexOf('?') > -1) {
 		//			href = href.split('?')[0];
 		//		}
@@ -27,9 +28,9 @@
 		//			
 		//		}
 		window.stop(); //停止浏览器   继续加载
-//		href = "https://wx.nullexcept.com";
-		href = window.location.host;
-		console.log(href);
+		//		href = "https://wx.nullexcept.com";
+		href = location.protocol + window.location.host;
+		console.log("href:",href);
 		window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx42c67be9af7fa426&redirect_uri=' + encodeURIComponent(href) + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
 	}
 })();
