@@ -107,7 +107,7 @@
 									success: function(res) {
 										let openid = window.localStorage.getItem('openid');
 										var title = "聚焦AI,智创未来/平安人脸识别调用量破10亿";
-										var link = 'https://wx.nullexcept.com/?openid=' + openid;
+										var link = 'https://wx.nullexcept.com/';
 										var imgUrl = "https://wx.nullexcept.com/static/img/shareImg.png";
 										var desc = "欢迎来见证人脸识别调用量破10亿!参与体验即可抽取小礼物,它可能是iPhoneX哦";
 										self.share(title, link, imgUrl, desc);

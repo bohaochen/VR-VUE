@@ -23,7 +23,7 @@
 		}
 		let openid = queryString("openid")
 		if(openid != null && openid != '' && openid != 'null') {
-			url = window.location.href.split('?')[0] + '?openid=' + openid
+			url = "https://wx.nullexcept.com";
 		}
 		window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx42c67be9af7fa426&redirect_uri=' + encodeURIComponent(href) + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect'
 	}
