@@ -25,8 +25,8 @@
 		//		if(openid != null && openid != '' && openid != 'null') {
 		//			
 		//		}
-		url = "https://wx.nullexcept.com";
-		window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx42c67be9af7fa426&redirect_uri=' + encodeURIComponent(href) + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
 		window.stop(); //停止浏览器   继续加载
+		href = "https://wx.nullexcept.com";
+		window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx42c67be9af7fa426&redirect_uri=' + encodeURIComponent(href) + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
 	}
 })();
