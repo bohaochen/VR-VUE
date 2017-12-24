@@ -1,5 +1,5 @@
 <template>
-	<div class="content">
+	<div class="content" id="content">
 		<div class="bg"></div>
 		<img src="../../../static/img/pn_logo_03.png" class="logo" />
 		<div class="relative_box">
@@ -40,8 +40,8 @@
 					}
 				}, 40);
 			}, 1500);
-			var dom = document.getElementsByClassName("content")[0];
-			dom.onscroll = function(){
+			var dom = document.getElementById("content");
+			document.getElementById("content").onscroll = function(){
 				if((dom.scrollHeight - dom.scrollTop)<((dom.clientHeight)*1.25)){
 					document.getElementsByClassName("wenzi-text")[0].style.display = "block";
 				}
