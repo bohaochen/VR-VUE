@@ -468,7 +468,8 @@
 				$pCanvas.height = $pCanvas.height;
 			},
 			_ratio(size) {
-				return parseInt(window.devicePixelRatio * size);
+//				return parseInt(window.devicePixelRatio * size);
+				return parseInt(size);
 			},
 			_pointDistance(x1, y1, x2, y2) {
 				return parseInt(Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2)));
