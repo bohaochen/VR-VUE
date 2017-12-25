@@ -361,12 +361,13 @@
 							var canvas = document.createElement("canvas");
 							canvas.width = img.width;
 							canvas.height = img.height;
+							var imageWidth = img.width;
+							var imageHeight = img.height;
 							console.log("img.width:", img.width)
 							console.log("img.height:", img.height)
 							var context = canvas.getContext("2d");
-							context.clearRect(0, 0, square, square);
-							var imageWidth = img.width;
-							var imageHeight = img.height;
+							context.clearRect(0, 0, imageWidth, imageHeight);
+							
 							var offsetX = 0;
 							var offsetY = 0;
 
@@ -396,6 +397,8 @@
 									}
 								}
 							}
+							
+							/////此处为图片裁剪    方法  
 							//							if(this.width > this.height) {
 							//								imageWidth = Math.round(square * this.width / this.height);
 							//								imageHeight = square;
@@ -621,13 +624,13 @@
 				}
 				.imgsss,
 				.upload {
-					width: 100%;
-					height: 100%;
 					position: absolute;
 					top: 0;
 					left: 0;
 				}
 				.upload {
+					width: 100%;
+					height: 100%;
 					opacity: 0;
 					-webkit-opacity: 0;
 				}
@@ -637,6 +640,8 @@
 					position: absolute;
 					top: 0;
 					left: 0;
+					opacity: 0;
+					-webkit-opacity: 0;
 				}
 			}
 			.waikuang {
