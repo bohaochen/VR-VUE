@@ -26,7 +26,7 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
-		z-index: 100;
+		z-index: 4;
 		line-height: 0;
 		background-color: #000;
 		.clipper-part {

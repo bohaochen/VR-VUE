@@ -14,9 +14,9 @@
 			<img class="waikuang" src="../../../static/img/renlianshibiekuangdengwu.png" />
 			<img src="../../../static/img/guangdian.png" class="waikuangleftdian" />
 			<img src="../../../static/img/guangdian.png" class="waikuangrightdian" />
-			
+
 			<!--<img :src="teset" v-show="teset" ref="imgsss" class="imgsss" style="position: fixed;top: 0;left: 0;bottom: 0;right: 0;z-index: 999;" />-->
-			
+
 			<div class="album-content">
 				<div class="title" v-show="!base64Img">{{imgTitle}}</div>
 				<!--<img :src="base64Img" ref="imgsss" class="imgsss" />-->
@@ -52,8 +52,8 @@
 		<img v-show="chaoshi" src="../../../static/img/sbsb_1.png" class="sbsbsb" />
 		<img v-show="cuowu" src="../../../static/img/sbsb_2.png" class="sbsbsb" />
 
-		<img class="cntu" v-show="isRead" src="../../../static/img/cntu_bc.png">
-		<img class="cntu" v-show="!isRead&&isPageOut" src="../../../static/img/cntu_ewm.png">
+		<img class="cntu" v-show="!isPageOut&&isRead" src="../../../static/img/cntu_bc.png">
+		<img class="cntu" v-show="isPageOut" src="../../../static/img/cntu_ewm.png">
 
 		<img class="html_img" :src="htmlImg" :style="{display:htmlImg ? 'block' : 'none'}">
 
@@ -228,7 +228,7 @@
 			change(base64Img) {
 				let self = this;
 				//				self.base64Img = msg;
-//				console.log("base64Img:",base64Img)
+				//				console.log("base64Img:",base64Img)
 				self.teset = base64Img;
 				self.mashangtansuo(base64Img);
 			},
@@ -282,6 +282,8 @@
 					})
 					.then(function(response) {
 						console.log("compare:==code>" + response.data.code + "openid:" + openid);
+						//						self.score(0.5); //设置打分界面
+						//						return false;
 						if(response.data.code == 200 || response.data.code == 102) {
 							self.score(response.data.score); //设置打分界面
 						} else {
@@ -290,7 +292,7 @@
 							self.cuowu = true;
 							setTimeout(() => {
 								self.cuowu = false;
-//								self.isUnUpload = true;
+								//								self.isUnUpload = true;
 								self.imgTitle = "重新上传";
 								self.base64Img = null;
 							}, 3000);
@@ -301,7 +303,7 @@
 						self.isUpload = false;
 						setTimeout(() => {
 							self.chaoshi = false;
-//							self.isUnUpload = true;
+							//							self.isUnUpload = true;
 							self.imgTitle = "重新上传";
 							self.base64Img = null;
 						}, 3000);
