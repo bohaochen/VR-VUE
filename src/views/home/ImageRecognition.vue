@@ -66,7 +66,7 @@
 	export default {
 		data() {
 			return {
-				quality: 0.8,
+				quality: 0.5,
 				isUnUpload: true,
 				isUpload: false,
 				isRead: false,
@@ -319,6 +319,7 @@
 						self.toast("请确保文件为图像类型");
 						return false;
 					}
+					console.log("图片原始大小：", file.size)
 					let Orientation = null;
 					// var URL = URL || webkitURL;
 					//获取照片方向角属性，用户旋转控制
@@ -381,7 +382,15 @@
 							}
 							context.drawImage(this, offsetX, offsetY, imageWidth, imageHeight);
 							base64 = canvas.toDataURL("image/png", self.quality);
-							callback && callback(base64);
+							let strLength = base64.length;
+							var fileLength = parseInt(strLength - (strLength / 8) * 2);
+							console.log("图片压缩后大小：", fileLength)
+							if(fileLength > 1024 * 1000 * 2) {
+								self.toast("自拍照不能大于2M");
+								return false;
+							} else {
+								callback && callback(base64);
+							}
 						};
 						img.src = e.target.result;
 					};
@@ -655,7 +664,7 @@
 				height: 100%;
 				top: 0;
 				left: -36%;
-				animation:laihuibaidong 2s linear infinite;
+				animation: laihuibaidong 2s linear infinite;
 			}
 			.star {
 				width: 100%;
@@ -724,8 +733,6 @@
 				transform: translate(0, 0%);
 			}
 		}
-		
-		
 		@keyframes laihuibaidong {
 			from {
 				left: -36%;
