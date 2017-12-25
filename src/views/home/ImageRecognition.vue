@@ -74,124 +74,124 @@
 				base64Img: null,
 				htmlImg: "",
 				scoreArray: [{
-						minScore: 0,
+						minScore: -1,
 						maxScore: 0.1,
-						starNum: 5,
-						starMsg: ["小心谨慎", "和蔼可亲", "多重性格"]
+						starNum: 1,
+						starMsg: ["竟然一点神秘感也没有？", "！！！", "WTF！！！"]
 					},
 					{
 						minScore: 0.1,
 						maxScore: 0.12,
-						starNum: 1,
-						starMsg: ["表里如一", "心境纯粹", "大智若愚"]
+						starNum: 5,
+						starMsg: ["思想深不可测", "周围人的精神信仰", "神盾局局长就是你？"]
 					},
 					{
 						minScore: 0.12,
 						maxScore: 0.14,
-						starNum: 2,
-						starMsg: ["乐天达观", "善解人意", "聪明好学"]
+						starNum: 4,
+						starMsg: ["plan B计划不离手", "心思细腻到令人咋舌", "瞬间秒杀一票人的智商情商各种商"]
 					},
 					{
 						minScore: 0.14,
 						maxScore: 0.15,
-						starNum: 3,
-						starMsg: ["风趣幽默", "感情用事", "豪放不羁"]
+						starNum: 4,
+						starMsg: ["做别人所不能", "想别人不敢想", "永远在常人的理解范围以外"]
 					},
 					{
 						minScore: 0.15,
 						maxScore: 0.17,
-						starNum: 4,
-						starMsg: ["外表冷漠", "内心善良", "富正义感"]
+						starNum: 1,
+						starMsg: ["绝不藏着掖着", "该哭就哭该笑就笑", "一辈子的乐天派"]
 					},
 					{
 						minScore: 0.17,
 						maxScore: 0.19,
-						starNum: 5,
-						starMsg: ["深谋远虑", "洞察锐利", "占有欲强"]
+						starNum: 1,
+						starMsg: ["一眼就被看穿", "心思单纯", "简简单单地像个长不大的孩子"]
 					},
 					{
 						minScore: 0.19,
 						maxScore: 0.2,
-						starNum: 1,
-						starMsg: ["纯净质朴", "内心平和", "向往自由"]
+						starNum: 2,
+						starMsg: ["太过正经", "偶尔活泼", "肯定超多人喜欢你这闷骚的小人"]
 					},
 					{
 						minScore: 0.2,
 						maxScore: 0.22,
-						starNum: 2,
-						starMsg: ["感情脆弱", "同理心重", "不拘小节"]
+						starNum: 3,
+						starMsg: ["及时出手", "及时出现", "总能在关键时刻解决重要问题"]
 					},
 					{
 						minScore: 0.22,
 						maxScore: 0.24,
 						starNum: 3,
-						starMsg: ["临机应变", "充满活力", "富于童心"]
+						starMsg: ["时冷时热", "若即若离", "看透你比和阿尔法狗下棋还需要勇气"]
 					},
 					{
 						minScore: 0.24,
 						maxScore: 0.25,
-						starNum: 4,
-						starMsg: ["谦逊有礼", "内心丰富", "不善表达"]
+						starNum: 3,
+						starMsg: ["逢人只说三分话", "从不全抛一颗心", "只有神探夏洛克才能挖掘真实的你"]
 					},
 					{
 						minScore: 0.25,
 						maxScore: 0.27,
-						starNum: 5,
-						starMsg: ["聪明机警", "善于推理", "追求挑战"]
+						starNum: 3,
+						starMsg: ["你的心思不好猜", "你的话不好懂", "你的人需要X教授才能破解"]
 					},
 					{
 						minScore: 0.27,
 						maxScore: 0.29,
-						starNum: 1,
-						starMsg: ["精力充沛", "崇尚调和", "理性公正"]
+						starNum: 3,
+						starMsg: ["掩藏着数不尽的故事", "经历过别人没有的岁月", "极致的内心亟待有缘人破解"]
 					},
 					{
 						minScore: 0.29,
 						maxScore: 0.3,
-						starNum: 2,
-						starMsg: ["坦白率真", "不受束缚", "富有野心"]
+						starNum: 3,
+						starMsg: ["时而安静", "时而热烈", "内心有一匹野马急需一片草原"]
 					},
 					{
 						minScore: 0.3,
 						maxScore: 0.32,
-						starNum: 3,
-						starMsg: ["足智多谋", "好奇心强", "能屈能伸"]
+						starNum: 2,
+						starMsg: ["总有新惊喜", "时常新变化", "了解你就像走进一个宝藏"]
 					},
 					{
 						minScore: 0.32,
 						maxScore: 0.34,
-						starNum: 4,
-						starMsg: ["善于倾听", "捉摸不定", "沉默寡言"]
+						starNum: 1,
+						starMsg: ["经常面无表情", "看似神秘", "一开口就让这辈子的神秘感化为云朵飘走了～"]
 					},
 					{
 						minScore: 0.34,
 						maxScore: 0.35,
-						starNum: 5,
-						starMsg: ["自尊心强", "条理清晰", "极富野心"]
+						starNum: 1,
+						starMsg: ["一副冰块脸", "不喜多言", "熟悉了就立马变成撒泼打滚的小公举"]
 					},
 					{
 						minScore: 0.35,
 						maxScore: 0.37,
-						starNum: 1,
-						starMsg: ["兴趣广泛", "脚踏实地", "个性单纯"]
+						starNum: 4,
+						starMsg: ["轻易解读周围人内心的OS", "身体隐藏着巨大的能量", "X教授是你的谁？"]
 					},
 					{
 						minScore: 0.37,
 						maxScore: 0.39,
-						starNum: 2,
-						starMsg: ["勤奋努力", "个性明朗", "亲切温暖"]
+						starNum: 4,
+						starMsg: ["表面上极端克制", "不轻易彻底放飞自我", "内心却如同进入另一个世界"]
 					},
 					{
 						minScore: 0.39,
 						maxScore: 0.4,
 						starNum: 5,
-						starMsg: ["谨慎谦虚", "创意十足", "眼光敏锐"]
+						starMsg: ["看不清", "猜不透", "难道是隐藏在地球的外星人？"]
 					},
 					{
 						minScore: 0.4,
 						maxScore: 1000000,
-						starNum: 4,
-						starMsg: ["色彩敏感", "细腻入微", "情绪不定"]
+						starNum: 5,
+						starMsg: ["预警！", "此人神秘感爆表！！", "已无法破译！！！"]
 					}
 				]
 			};
@@ -204,6 +204,9 @@
 			document.getElementsByClassName("starImg")[0].style.height =
 				document.body.clientWidth * 74 / 460 + "px";
 			document.getElementsByClassName("starImg")[0].style.marginTop = -(document.body.clientWidth * 74 / 460) / 2 + "px";
+//			var score = (Math.random() * 1.4).toFixed(2) - 1;
+//			console.log("score",score.toFixed(2))
+//			self.score(score);
 		},
 		methods: {
 			goToUserInfo() {
@@ -245,7 +248,7 @@
 					.then(function(response) {
 						console.log("compare:==code>" + response.data.code + "openid:" + openid);
 						if(response.data.code == 200 || response.data.code == 102) {
-							self.score(response); //设置打分界面
+							self.score(response.data.score); //设置打分界面
 						} else {
 							self.toast("人脸识别失败,请重试");
 							self.isUnUpload = true; //初始界面消失
@@ -256,9 +259,9 @@
 						console.log(error);
 					});
 			},
-			score(obj) {
+			score(score) {
 				var self = this;
-				var score = obj.data.score; //需要改成OBJ的分数值！！！！！！！！！！！！！！！！！！！！！！！
+				//				var score = obj.data.score; //需要改成OBJ的分数值！！！！！！！！！！！！！！！！！！！！！！！
 				var scoreIndex = null;
 				self.isUpload = false; //扫描消失
 				self.isRead = true; //分数出现

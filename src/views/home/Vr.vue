@@ -65,7 +65,7 @@
 					move_speed: 3, //滑动速度
 					mousewheel: false, //监听鼠标操作
 					gyroscope: true, //陀螺仪开关
-					time_anim: true, //自动观察模式
+					time_anim: false, //自动观察模式
 					transition: {
 						duration: 1500, // duration of transition in milliseconds
 						loader: true // should display the loader ?
@@ -132,7 +132,7 @@
 					}, {
 						id: 'xiaoxi3',
 						longitude: 2.95,
-//						latitude: -0.1,
+						//						latitude: -0.1,
 						latitude: -6.32,
 						image: '/static/img/xinhao2.png',
 						width: 364,
@@ -143,7 +143,7 @@
 					}, {
 						id: 'quan3',
 						longitude: 2.95,
-//						latitude: -0.105,
+						//						latitude: -0.105,
 						latitude: -6.32,
 						image: '/static/img/quan.png',
 						width: 124,
@@ -212,6 +212,12 @@
 							longitude: 3.17,
 							latitude: 0.13
 						}, 2000)
+						setTimeout(() => {
+							if(!self.PSV.isGyroscopeEnabled()) {
+								self.PSV.startGyroscopeControl();
+								self.isGyroscope = self.PSV.isGyroscopeEnabled();
+							}
+						}, 50)
 					});
 			},
 			showIndex: function(index) {
@@ -237,18 +243,36 @@
 							longitude: 3.698,
 							latitude: 0.13
 						}, 2000)
+						setTimeout(() => {
+							if(self.isGyroscope && !self.PSV.isGyroscopeEnabled()) {
+								self.PSV.startGyroscopeControl();
+								self.isGyroscope = self.PSV.isGyroscopeEnabled();
+							}
+						}, 50)
 						break;
 					case 2:
 						self.PSV.animate({
 							longitude: 2.82,
 							latitude: 0.13
 						}, 2000)
+						setTimeout(() => {
+							if(self.isGyroscope && !self.PSV.isGyroscopeEnabled()) {
+								self.PSV.startGyroscopeControl();
+								self.isGyroscope = self.PSV.isGyroscopeEnabled();
+							}
+						}, 50)
 						break;
 					case 3:
 						self.PSV.animate({
 							longitude: 0.1,
 							latitude: 0.13
 						}, 2000)
+						setTimeout(() => {
+							if(self.isGyroscope && !self.PSV.isGyroscopeEnabled()) {
+								self.PSV.startGyroscopeControl();
+								self.isGyroscope = self.PSV.isGyroscopeEnabled();
+							}
+						}, 50)
 						break;
 					default:
 						break;

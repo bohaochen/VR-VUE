@@ -56,15 +56,26 @@ var loader = new resLoader({
 		"static/img/zj_01.png",
 		"static/img/guangdian.png",
 		"static/img/xiegang.png",
+		"https://wx.nullexcept.com/s_static/img/1.jpg",
+		"https://wx.nullexcept.com/s_static/img/2.jpg",
+		"https://wx.nullexcept.com/s_static/img/3.jpg",
+		"https://wx.nullexcept.com/s_static/img/4.jpg",
 	],
-	onStart: function(total) {
-	},
+	onStart: function(total) {},
 	onProgress: function(current, total) {
-		document.getElementById('current').innerHTML = current;
-		document.getElementById('total').innerHTML = total;
+		if(!isLoadAllImgs) {
+			document.getElementById('current').innerHTML = current;
+			document.getElementById('total').innerHTML = total - 4;
+		}
+		if(this.resources.length - 4 == current) {
+			isLoadAllImgs = true;
+			document.getElementById('loadImg').remove();
+		}
 	},
 	onComplete: function(total) {
-		isLoadAllImgs = true;
-		document.getElementById('loadImg').remove();
+		if(!isLoadAllImgs) {
+			isLoadAllImgs = true;
+			document.getElementById('loadImg').remove();
+		}
 	}
 });
