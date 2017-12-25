@@ -15,7 +15,7 @@
 			<img src="../../../static/img/guangdian.png" class="waikuangleftdian" />
 			<img src="../../../static/img/guangdian.png" class="waikuangrightdian" />
 			
-			<img :src="teset" v-show="teset" ref="imgsss" class="imgsss" style="position: fixed;top: 0;left: 0;bottom: 0;right: 0;z-index: 999;" />
+			<!--<img :src="teset" v-show="teset" ref="imgsss" class="imgsss" style="position: fixed;top: 0;left: 0;bottom: 0;right: 0;z-index: 999;" />-->
 			
 			<div class="album-content">
 				<div class="title" v-show="!base64Img">{{imgTitle}}</div>
