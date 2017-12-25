@@ -359,12 +359,14 @@
 						img.onload = function() {
 							var square = 750;
 							var canvas = document.createElement("canvas");
-							canvas.width = square;
-							canvas.height = square;
+							canvas.width = img.width;
+							canvas.height = img.height;
+							console.log("img.width:", img.width)
+							console.log("img.height:", img.height)
 							var context = canvas.getContext("2d");
 							context.clearRect(0, 0, square, square);
-							var imageWidth;
-							var imageHeight;
+							var imageWidth = img.width;
+							var imageHeight = img.height;
 							var offsetX = 0;
 							var offsetY = 0;
 
@@ -394,15 +396,15 @@
 									}
 								}
 							}
-							if(this.width > this.height) {
-								imageWidth = Math.round(square * this.width / this.height);
-								imageHeight = square;
-								offsetX = -Math.round((imageWidth - square) / 2);
-							} else {
-								imageHeight = Math.round(square * this.height / this.width);
-								imageWidth = square;
-								offsetY = -Math.round((imageHeight - square) / 2);
-							}
+							//							if(this.width > this.height) {
+							//								imageWidth = Math.round(square * this.width / this.height);
+							//								imageHeight = square;
+							//								offsetX = -Math.round((imageWidth - square) / 2);
+							//							} else {
+							//								imageHeight = Math.round(square * this.height / this.width);
+							//								imageWidth = square;
+							//								offsetY = -Math.round((imageHeight - square) / 2);
+							//							}
 							context.drawImage(this, offsetX, offsetY, imageWidth, imageHeight);
 							base64 = canvas.toDataURL("image/png", self.quality);
 							let strLength = base64.length;
