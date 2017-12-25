@@ -38,7 +38,7 @@
 						clearInterval(scollFn)
 						console.log(clearInterval)
 					}
-				}, 40);
+				}, 20);
 			}, 1500);
 			var dom = document.getElementById("content");
 			document.getElementById("content").onscroll = function(){
