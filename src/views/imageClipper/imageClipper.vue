@@ -209,8 +209,10 @@
 
 				this.originXDiff = pClientRect.left - cClientRect.left;
 				this.originYDiff = pClientRect.top - cClientRect.top;
-				this.cWidth = cClientRect.width;
-				this.cHeight = cClientRect.height;
+				//				this.cWidth = cClientRect.width;
+				//				this.cHeight = cClientRect.height;
+				this.cWidth = $canvas.width;
+				this.cHeight = $canvas.height;
 			},
 			_initEvent() {
 				let $gesture = this.$refs.gesture,
@@ -468,7 +470,7 @@
 				$pCanvas.height = $pCanvas.height;
 			},
 			_ratio(size) {
-//				return parseInt(window.devicePixelRatio * size);
+				//				return parseInt(window.devicePixelRatio * size);
 				return parseInt(size);
 			},
 			_pointDistance(x1, y1, x2, y2) {
