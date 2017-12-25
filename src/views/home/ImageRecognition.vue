@@ -17,9 +17,9 @@
 
 			<div class="album-content">
 				<div class="title" v-show="!base64Img">点击上传个人正面自拍照</div>
-				<img :src="base64Img" ref="imgsss" class="imgsss" />
-		<image-clipper ref="clipper" v-show="imgUrl" :img="imgUrl"  @sure="sure"></image-clipper>
-				
+				<!--<img :src="base64Img" ref="imgsss" class="imgsss" />-->
+				<image-clipper @ok="change" ref="clipper" v-show="base64Img" :img="base64Img" @sure="sure"></image-clipper>
+
 				<div class="upload">
 					<input ref="upload" @change="start_upload(this)" type="file" name="upload" accept="image/*">
 				</div>
@@ -30,7 +30,7 @@
 		</div>
 
 		<div class="btns" :style="{display:isUnUpload ? 'block' : 'none'}">
-			<img src="../../../static/img/querenceshi.png" @click="mashangtansuo" class="btn1" />
+			<img src="../../../static/img/querenceshi.png" @click="test" class="btn1" />
 		</div>
 
 		<div class="sb-btn animated" v-show="isUpload">
@@ -74,8 +74,8 @@
 		data() {
 			return {
 				visible: true,
-				sure:false,
-				imgUrl: '',
+				sure: false,
+				imgUrl: null,
 				quality: 0.5,
 				isUnUpload: false,
 				chaoshi: false,
@@ -221,6 +221,11 @@
 			//			self.score(-0.5);
 		},
 		methods: {
+			change(base64Img) {
+				let self = this;
+				//				self.base64Img = msg;
+				self.mashangtansuo(base64Img);
+			},
 			goToUserInfo() {
 				//页面跳转
 				let self = this;
@@ -238,10 +243,21 @@
 					});
 				}
 			},
-			mashangtansuo() {
+			test() {
+				let self = this;
+				self.$refs.clipper._clipper();
+			},
+			mashangtansuo(base64Img) {
 				//马上探索
 				let self = this;
-				let base64Img = self.base64Img;
+				console.log(1231312)
+				let strLength = base64Img.length;
+				var fileLength = parseInt(strLength - (strLength / 8) * 2);
+				if(fileLength > 1024 * 1000 * 2) {
+					self.toast("自拍照不能大于2M");
+					return false;
+				}
+				console.log("fileLength", fileLength);
 				if(base64Img == null || base64Img == '') {
 					self.toast("请上传自拍照");
 					return false;
@@ -334,8 +350,11 @@
 			start_upload(obj) {
 				let self = this;
 				self.compress(event, function(base64Img) {
-					self.$refs.imgsss.src = base64Img;
+					//					self.$refs.imgsss.src = base64Img;
 					self.base64Img = base64Img;
+					//					self.imgUrl = base64Img;
+					//					self.$refs.clipper.img = base64Img;
+					self.$refs.clipper._initClipper(base64Img);
 					//					console.log("start_upload:", base64Img);
 				});
 			},
@@ -372,7 +391,7 @@
 							console.log("img.height:", img.height)
 							var context = canvas.getContext("2d");
 							context.clearRect(0, 0, imageWidth, imageHeight);
-							
+
 							var offsetX = 0;
 							var offsetY = 0;
 
@@ -402,7 +421,7 @@
 									}
 								}
 							}
-							
+
 							/////此处为图片裁剪    方法  
 							//							if(this.width > this.height) {
 							//								imageWidth = Math.round(square * this.width / this.height);
@@ -418,13 +437,15 @@
 							let strLength = base64.length;
 							var fileLength = parseInt(strLength - (strLength / 8) * 2);
 							console.log("图片压缩后大小：", fileLength)
-							if(fileLength > 1024 * 1000 * 2) {
-								self.toast("自拍照不能大于2M");
-								return false;
-							} else {
-								self.isUnUpload = true;
-								callback && callback(base64);
-							}
+							self.isUnUpload = true;
+							callback && callback(base64);
+							//							if(fileLength > 1024 * 1000 * 2) {
+							//								self.toast("自拍照不能大于2M");
+							//								return false;
+							//							} else {
+							//								self.isUnUpload = true;
+							//								callback && callback(base64);
+							//							}
 						};
 						img.src = e.target.result;
 					};
