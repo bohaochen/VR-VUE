@@ -1,6 +1,6 @@
 <template>
 	<div class="clipper-container" ref="clipper">
-		<canvas ref="canvas"></canvas>
+		<canvas ref="canvas" style="visibility: hidden;"></canvas>
 
 		<!-- 裁剪部分 -->
 		<div class="clipper-part">
@@ -94,7 +94,8 @@
 			left: 0;
 			right: 0;
 			z-index: 100;
-			bottom: 61px;
+			/*bottom: 61px;*/
+			bottom: 0;
 			z-index: 103;
 		}
 	}
@@ -107,11 +108,11 @@
 			img: String, //url或dataUrl
 			clipperImgWidth: {
 				type: Number,
-				default: 1200
+				default: 840
 			},
 			clipperImgHeight: {
 				type: Number,
-				default: 1200
+				default: 840
 			}
 		},
 		watch: {
@@ -186,11 +187,11 @@
 
 				//判断clipperWidth与clipperHeight有没有超过容器值
 				if(clipperWidth < 0 || clipperWidth > clipperClientRect.width) {
-					clipperWidth = 1200
+					clipperWidth = 840
 				}
 
 				if(clipperHeight < 0 || clipperHeight > clipperClientRect.height) {
-					clipperHeight = 1200
+					clipperHeight = 840
 				}
 
 				//因为canvas在手机上会被放大，因此里面的内容会模糊，这里根据手机的devicePixelRatio来放大canvas，然后再通过设置css来收缩，因此关于canvas的所有值或坐标都要乘以devicePixelRatio
@@ -199,8 +200,8 @@
 				$canvas.width = this._ratio(clipperClientRect.width);
 				$canvas.height = this._ratio(clipperClientRect.height);
 
-				$pCanvas.style.width = clipperWidth + 'px';
-				$pCanvas.style.height = clipperHeight + 'px';
+				$pCanvas.style.width = clipperClientRect.width + 'px';
+				$pCanvas.style.height = clipperClientRect.height + 'px';
 				$pCanvas.width = this._ratio(clipperWidth);
 				$pCanvas.height = this._ratio(clipperHeight);
 

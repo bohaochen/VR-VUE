@@ -14,7 +14,9 @@
 			<img class="waikuang" src="../../../static/img/renlianshibiekuangdengwu.png" />
 			<img src="../../../static/img/guangdian.png" class="waikuangleftdian" />
 			<img src="../../../static/img/guangdian.png" class="waikuangrightdian" />
-
+			
+			<img :src="teset" v-show="teset" ref="imgsss" class="imgsss" style="position: fixed;top: 0;left: 0;bottom: 0;right: 0;z-index: 999;" />
+			
 			<div class="album-content">
 				<div class="title" v-show="!base64Img">{{imgTitle}}</div>
 				<!--<img :src="base64Img" ref="imgsss" class="imgsss" />-->
@@ -84,6 +86,7 @@
 				isRead: false,
 				isPageOut: false,
 				base64Img: null,
+				teset: null,
 				imgTitle: "点击上传个人正面自拍照",
 				htmlImg: "",
 				scoreArray: [{
@@ -225,7 +228,8 @@
 			change(base64Img) {
 				let self = this;
 				//				self.base64Img = msg;
-				console.log("base64Img:",base64Img)
+//				console.log("base64Img:",base64Img)
+				self.teset = base64Img;
 				self.mashangtansuo(base64Img);
 			},
 			goToUserInfo() {
@@ -286,7 +290,7 @@
 							self.cuowu = true;
 							setTimeout(() => {
 								self.cuowu = false;
-								self.isUnUpload = true;
+//								self.isUnUpload = true;
 								self.imgTitle = "重新上传";
 								self.base64Img = null;
 							}, 3000);
@@ -297,7 +301,7 @@
 						self.isUpload = false;
 						setTimeout(() => {
 							self.chaoshi = false;
-							self.isUnUpload = true;
+//							self.isUnUpload = true;
 							self.imgTitle = "重新上传";
 							self.base64Img = null;
 						}, 3000);
