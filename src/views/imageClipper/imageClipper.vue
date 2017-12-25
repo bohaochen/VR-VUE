@@ -173,7 +173,6 @@
 					this._loadImg();
 					this._initEvent();
 				})
-
 			},
 			_initCanvas() {
 				let $canvas = this.$refs.canvas,

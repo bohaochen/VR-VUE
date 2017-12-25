@@ -16,7 +16,7 @@
 			<img src="../../../static/img/guangdian.png" class="waikuangrightdian" />
 
 			<div class="album-content">
-				<div class="title" v-show="!base64Img">点击上传个人正面自拍照</div>
+				<div class="title" v-show="!base64Img">{{imgTitle}}</div>
 				<!--<img :src="base64Img" ref="imgsss" class="imgsss" />-->
 				<image-clipper @ok="change" ref="clipper" v-show="base64Img" :img="base64Img" @sure="sure"></image-clipper>
 
@@ -84,6 +84,7 @@
 				isRead: false,
 				isPageOut: false,
 				base64Img: null,
+				imgTitle: "点击上传个人正面自拍照",
 				htmlImg: "",
 				scoreArray: [{
 						minScore: -1,
@@ -224,6 +225,7 @@
 			change(base64Img) {
 				let self = this;
 				//				self.base64Img = msg;
+				console.log("base64Img:",base64Img)
 				self.mashangtansuo(base64Img);
 			},
 			goToUserInfo() {
@@ -250,11 +252,12 @@
 			mashangtansuo(base64Img) {
 				//马上探索
 				let self = this;
-				console.log(1231312)
 				let strLength = base64Img.length;
 				var fileLength = parseInt(strLength - (strLength / 8) * 2);
 				if(fileLength > 1024 * 1000 * 2) {
 					self.toast("自拍照不能大于2M");
+					self.imgTitle = "重新上传";
+					self.base64Img = null;
 					return false;
 				}
 				console.log("fileLength", fileLength);
@@ -284,6 +287,8 @@
 							setTimeout(() => {
 								self.cuowu = false;
 								self.isUnUpload = true;
+								self.imgTitle = "重新上传";
+								self.base64Img = null;
 							}, 3000);
 						}
 					})
@@ -293,6 +298,8 @@
 						setTimeout(() => {
 							self.chaoshi = false;
 							self.isUnUpload = true;
+							self.imgTitle = "重新上传";
+							self.base64Img = null;
 						}, 3000);
 						console.log(error);
 					});
