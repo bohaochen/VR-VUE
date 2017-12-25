@@ -123,10 +123,10 @@
 		},
 		data() {
 			return {
-				quality : 0.5,
+				quality: 0.5,
 				originXDiff: 0, //裁剪canvas与原图canvas坐标原点上的差值
 				originYDiff: 0,
-				
+
 				maskShow: true,
 				maskShowTimer: null,
 
@@ -202,10 +202,8 @@
 
 				$pCanvas.style.width = clipperClientRect.width + 'px';
 				$pCanvas.style.height = clipperClientRect.height + 'px';
-				$pCanvas.width = this._ratio(clipperWidth);
-				$pCanvas.height = this._ratio(clipperHeight);
-
-				//计算两个canvas原点的x y差值
+				$pCanvas.width = clipperClientRect.width;
+				$pCanvas.height = clipperClientRect.width; //计算两个canvas原点的x y差值
 				let cClientRect = $canvas.getBoundingClientRect(),
 					pClientRect = $pCanvas.getBoundingClientRect();
 
