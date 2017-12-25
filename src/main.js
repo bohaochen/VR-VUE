@@ -6,6 +6,7 @@ import axios from 'axios'
 import routeConfig from './router'
 import * as APIS from './api.js'
 import qs from 'qs'; //使用qs模块转换payload参数为formdata请求参数
+import imageClipper from './views/imageClipper/index'
 
 // 添加请求拦截器
 axios.interceptors.request.use(function(config) {
@@ -37,7 +38,7 @@ import {
 } from './filters';
 
 Vue.use(VueRouter);
-
+Vue.use(imageClipper);
 Vue.filter('timeToNow', timeToNow);
 Vue.filter('dateFormat', dateFormat);
 Vue.filter('numberinteger', numberinteger);

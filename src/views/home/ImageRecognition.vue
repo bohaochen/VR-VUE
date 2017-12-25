@@ -18,6 +18,8 @@
 			<div class="album-content">
 				<div class="title" v-show="!base64Img">点击上传个人正面自拍照</div>
 				<img :src="base64Img" ref="imgsss" class="imgsss" />
+		<image-clipper ref="clipper" v-show="visible" :img="imgUrl"  @sure="sure"></image-clipper>
+				
 				<div class="upload">
 					<input ref="upload" @change="start_upload(this)" type="file" name="upload" accept="image/*">
 				</div>
@@ -71,6 +73,9 @@
 	export default {
 		data() {
 			return {
+				visible: true,
+				sure:false,
+				imgUrl: '../../../static/img/guangyun.png',
 				quality: 0.5,
 				isUnUpload: false,
 				chaoshi: false,
