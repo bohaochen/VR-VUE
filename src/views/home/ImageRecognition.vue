@@ -45,13 +45,18 @@
 			</div>
 		</div>
 
+		<img v-show="chaoshi" src="../../../static/img/sbsb_1.png" class="sbsbsb" />
+		<img v-show="cuowu" src="../../../static/img/sbsb_2.png" class="sbsbsb" />
+
 		<img class="cntu" v-show="isRead" src="../../../static/img/cntu_bc.png">
+		<img class="cntu" v-show="!isRead&&isPageOut" src="../../../static/img/cntu_ewm.png">
+
 		<img class="html_img" :src="htmlImg" :style="{display:htmlImg ? 'block' : 'none'}">
 
 		<div class="zd-xh" v-show="isPageOut" @click="goToUserInfo">
 			<div class="zd-xh-text-box">
 				<span class="zd-xh-text">
-          接收到重大信号，马上接收！
+          接收到重大信号，点击接收！
         </span>
 				<img class="zd-xh-box" src="../../../static/img/xinhaodantanchuang.png">
 			</div>
@@ -67,7 +72,9 @@
 		data() {
 			return {
 				quality: 0.5,
-				isUnUpload: true,
+				isUnUpload: false,
+				chaoshi: false,
+				cuowu: false,
 				isUpload: false,
 				isRead: false,
 				isPageOut: false,
@@ -76,7 +83,7 @@
 				scoreArray: [{
 						minScore: -1,
 						maxScore: 0.1,
-						starNum: 1,
+						starNum: 0,
 						starMsg: ["竟然一点神秘感也没有？", "！！！", "WTF！！！"]
 					},
 					{
@@ -204,9 +211,9 @@
 			document.getElementsByClassName("starImg")[0].style.height =
 				document.body.clientWidth * 74 / 460 + "px";
 			document.getElementsByClassName("starImg")[0].style.marginTop = -(document.body.clientWidth * 74 / 460) / 2 + "px";
-//			var score = (Math.random() * 1.4).toFixed(2) - 1;
-//			console.log("score",score.toFixed(2))
-//			self.score(score);
+			//			var score = (Math.random() * 1.4).toFixed(2) - 1;
+			//			console.log("score", score.toFixed(2))
+			//			self.score(-0.5);
 		},
 		methods: {
 			goToUserInfo() {
@@ -250,12 +257,22 @@
 						if(response.data.code == 200 || response.data.code == 102) {
 							self.score(response.data.score); //设置打分界面
 						} else {
-							self.toast("人脸识别失败,请重试");
-							self.isUnUpload = true; //初始界面消失
-							self.isUpload = false; //出现扫描界面
+							//							self.toast("人脸识别失败,请重试");
+							self.isUpload = false;
+							self.cuowu = true;
+							setTimeout(() => {
+								self.cuowu = false;
+								self.isUnUpload = true;
+							}, 3000);
 						}
 					})
 					.catch(function(error) {
+						self.chaoshi = true;
+						self.isUpload = false;
+						setTimeout(() => {
+							self.chaoshi = false;
+							self.isUnUpload = true;
+						}, 3000);
 						console.log(error);
 					});
 			},
@@ -280,6 +297,9 @@
 				document.getElementsByClassName("score_3")[0].innerHTML =
 					self.scoreArray[scoreIndex].starMsg[2];
 				switch(self.scoreArray[scoreIndex].starNum) {
+					case 0:
+						document.getElementsByClassName("star")[0].style.width = "47.6%";
+						break;
 					case 1:
 						document.getElementsByClassName("star")[0].style.width = "53%";
 						break;
@@ -392,6 +412,7 @@
 								self.toast("自拍照不能大于2M");
 								return false;
 							} else {
+								self.isUnUpload = true;
 								callback && callback(base64);
 							}
 						};
@@ -553,7 +574,7 @@
 			top: 12%;
 			z-index: 4;
 			.score {
-				width: 300px;
+				width: 55%;
 				line-height: 50px;
 				border: 2px #bb7753 solid;
 				border-radius: 10px;
@@ -563,7 +584,7 @@
 				position: absolute;
 				z-index: 5;
 				text-align: center;
-				font-size: 30px;
+				font-size: 26px;
 			}
 			.score_1 {
 				right: 5%;
@@ -769,6 +790,13 @@
 			position: absolute;
 			z-index: 2;
 			animation: fuxian 0.5s;
+		}
+		.sbsbsb {
+			width: 100%;
+			position: absolute;
+			z-index: 2;
+			animation: fuxian 0.5s;
+			top: 70%;
 		}
 	}
 </style>
