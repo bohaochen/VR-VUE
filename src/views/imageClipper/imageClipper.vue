@@ -202,8 +202,8 @@
 
 				$pCanvas.style.width = clipperClientRect.width + 'px';
 				$pCanvas.style.height = clipperClientRect.height + 'px';
-				$pCanvas.width = clipperClientRect.width;
-				$pCanvas.height = clipperClientRect.width; //计算两个canvas原点的x y差值
+				$pCanvas.width = this._ratio(clipperClientRect.width);
+				$pCanvas.height = this._ratio(clipperClientRect.height); //计算两个canvas原点的x y差值
 				let cClientRect = $canvas.getBoundingClientRect(),
 					pClientRect = $pCanvas.getBoundingClientRect();
 
