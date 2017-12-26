@@ -231,7 +231,7 @@ input::-webkit-input-placeholder {
   }
   .cjts {
     width: 86%;
-    position: absolute;
+    position: relative;
     top: 12%;
     z-index: 2;
     left: 50%;
