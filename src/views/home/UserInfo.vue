@@ -157,16 +157,17 @@
 //											_this.toast("已经抽过奖");
 											_this.toast("你已经参与过活动,分享邀请好友一起参与吧");
 											_this.drawNum(response.data.draw);
+											_this.goToLuckdraw();
 											break;
 										default:
 											_this.drawNum(response.data.draw);
+											_this.goToLuckdraw();
 											break;
 									}
 								})
 								.catch(function(error) {
 									console.log(error);
 								});
-							_this.goToLuckdraw();
 						} else {
 							console.log("接口返回错误");
 						}
