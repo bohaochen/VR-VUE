@@ -786,6 +786,7 @@
 			top: 15%;
 			left: 50%;
 			overflow: hidden;
+			z-index: 5;
 			img {
 				top: 0px;
 				width: 100%;
