@@ -71,6 +71,9 @@
 				// 带查询参数，变成 /register?plan=private
 				self.$router.push({
 					path: "vr",
+					query: {
+						code: self.$route.query.code,
+					}
 				});
 			},
 

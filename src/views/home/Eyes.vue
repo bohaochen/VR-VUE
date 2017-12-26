@@ -30,6 +30,7 @@
 					path: "imagerecognition",
 					query: {
 						isIndex: 1,
+						code: self.$route.query.code,
 					}
 				});
 			}

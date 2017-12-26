@@ -186,7 +186,8 @@
 				let self = this;
 				// 带查询参数，变成 /register?plan=private
 				self.$router.push({
-					path: "imagerecognition"
+					path: "imagerecognition",
+					code: self.$route.query.code,
 				});
 			},
 			share() {

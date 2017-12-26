@@ -73,6 +73,7 @@
 				// 带查询参数，变成 /register?plan=private
 				self.$router.push({
 					path: "userinfo",
+					code: self.$route.query.code,
 				});
 				//				if(self.$route.query.isIndex == 0) {
 				//					self.$router.push({

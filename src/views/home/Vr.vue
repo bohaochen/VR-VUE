@@ -343,7 +343,10 @@
 			},
 			goToEyes() {
 				this.$router.push({
-					path: 'eyes'
+					path: 'eyes',
+					query: {
+						code: this.$route.query.code,
+					}
 				})
 			},
 			toggleGyroscope: function() {
