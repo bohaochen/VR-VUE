@@ -58,38 +58,34 @@ router.beforeEach((to, from, next) => {
 	//路由请求前做些什么
 	let u = navigator.userAgent;
 	let isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+	var loadImg = document.getElementById('loadImg');
+	if(isiOS && to.path != "/") {
+		isLoadAllImgs = true;
+		if(loadImg != null) {
+			loadImg.remove();
+		}
+	}
 	if(isLoadAllImgs) {
-		//		console.log(isiOS)
-		//		console.log(to.path)
-		//		console.log(location.pathname)
 		if(isiOS && to.path !== location.pathname) {
 			// 此处不可使用location.replace
-			location.assign(to.fullPath)
+			location.assign(to.fullPath);
 		} else {
 			next();
 		}
 	} else {
-		if(to.path == "/") {
-			let interval = setInterval(() => {
-				if(isLoadAllImgs) {
-					next();
-					clearInterval(interval);
-				}
-			}, 50)
-			loader.start();
-		} else {
-			let loadImg = document.getElementById('loadImg');
-			if(loadImg != null) {
-				loadImg.remove()
+		let interval = setInterval(() => {
+			if(isLoadAllImgs) {
+				next();
+				clearInterval(interval);
 			}
-			next();
-		}
+		}, 50)
+		loader.start();
+		loadImg.style.display = 'block';
 	}
 })
 
-router.afterEach(transition => {
+router.afterEach((to, from, next) => {
 	//路由请求完做些什么
-
 });
 
 new Vue({
