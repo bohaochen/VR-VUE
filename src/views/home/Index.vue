@@ -153,10 +153,10 @@
 			position: absolute;
 			top: 0;
 			z-index: 1;
-			// animation: myfirst 2s linear 0.5s infinite alternate;
+			/*// animation: myfirst 2s linear 0.5s infinite alternate;
 			// -moz-animation: myfirst 2s linear 0.5s infinite alternate;
 			// -webkit-animation: myfirst 2s linear 0.5s infinite alternate;
-			// -o-animation: myfirst 2s linear 0.5s infinite alternate;
+			// -o-animation: myfirst 2s linear 0.5s infinite alternate;*/
 		}
 		.bg-gr {
 			width: 100%;
@@ -270,12 +270,12 @@
 	}
 	
 	.malfunction1 {
-		// animation: malfunction1 0.0025s linear 400 alternate;
+		/*// animation: malfunction1 0.0025s linear 400 alternate;*/
 		animation: malfunction1 0.1s linear 10 alternate;
 	}
 	
 	.malfunction2 {
-		// animation: malfunction2 0.001s linear 1000 alternate;
+		/*// animation: malfunction2 0.001s linear 1000 alternate;*/
 		animation: malfunction2 0.1s linear 10 alternate;
 	}
 	
