@@ -127,6 +127,8 @@
 					return false;
 				}
 				let openid = window.localStorage.getItem("openid");
+				// let openid = 111;
+				alert(openid);
 				_this.$http
 					.post(
 						"v1/em?action=update_userinfo&uid=" +
