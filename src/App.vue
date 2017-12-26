@@ -24,55 +24,18 @@
 		mounted() {
 			//页面加载完成回调
 			let self = this;
-			self.getShare();
+			self.setShare();
 			//			self.wxLogin();
 		},
 		watch: {
 			'$route' (to, from) {
 				let self = this;
-				self.$nextTick(function() {
-					setTimeout(() => {
-						self.setShare();
-					}, 1000);
-				});
+				setTimeout(() => {
+					self.setShare();
+				}, 1000);
 			}
 		},
 		methods: {
-			getShare() {
-				let self = this
-				let timestamp = new Date().getTime()
-				//				let urlStr = encodeURIComponent(window.location.href.split("#")[0])
-				let urlStr = encodeURIComponent(window.location.href.split("#")[0]);
-				//				let urlStr = encodeURIComponent(location.protocol + '//' + window.location.host);	
-				console.log(urlStr);
-				self.$http.post("v1/em?action=query_config_parm&timestamp=" + timestamp + '&url=' + urlStr, {})
-					.then(function(response) {
-						if(response.data.code == 200) {
-							// 微信配置
-							wx.config({
-								debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-								appId: 'wx42c67be9af7fa426', // 必填，公众号的唯一标识
-								timestamp: response.data.timestamp, // 必填，生成签名的时间戳
-								nonceStr: response.data.noncestr, // 必填，生成签名的随机串
-								signature: response.data.signature, // 必填，签名，见附录1
-								jsApiList: [
-									'checkJsApi',
-									"onMenuShareTimeline",
-									"onMenuShareAppMessage",
-									"onMenuShareQQ"
-								] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
-							});
-							wx.error(function(res) {
-								//验证失败
-								//								alert("验证失败");
-//								alert("验证失败");
-							});
-						}
-					})
-					.catch(function(error) {
-						console.log(error);
-					});
-			},
 			share(title, link, imgUrl, desc) {
 				//获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
 				wx.onMenuShareTimeline({
@@ -117,27 +80,58 @@
 			},
 			setShare() {
 				let self = this
-				wx.ready(function() {
-//					alert("ready5");
-					wx.checkJsApi({
-						jsApiList: ['checkJsApi',
-							"onMenuShareTimeline",
-							"onMenuShareAppMessage",
-							"onMenuShareQQ"
-						],
-						success: function(res) {
-							alert("readysuccess5")
-							let openid = window.localStorage.getItem('openid');
-							var title = "聚焦AI,智创未来/平安人脸识别调用量破10亿";
-							var link = 'https://wx.nullexcept.com/';
-							var imgUrl = "https://wx.nullexcept.com/static/img/shareImg.png";
-							var desc = "欢迎来见证人脸识别调用量破10亿!参与体验即可抽取小礼物,它可能是iPhoneX哦";
-							self.share(title, link, imgUrl, desc);
-							// 以键值对的形式返回，可用的api值true，不可用为false
-							// 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
+				let timestamp = new Date().getTime()
+				let urlStr = encodeURIComponent(window.location.href.split("#")[0]);
+				//				let urlStr = encodeURIComponent(window.location.href.split("?")[0]);
+				//				let urlStr = encodeURIComponent(location.protocol + '//' + window.location.host);	
+				console.log(urlStr);
+				self.$http.post("v1/em?action=query_config_parm&timestamp=" + timestamp + '&url=' + urlStr, {})
+					.then(function(response) {
+						if(response.data.code == 200) {
+							// 微信配置
+							wx.config({
+								debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+								appId: 'wx42c67be9af7fa426', // 必填，公众号的唯一标识
+								timestamp: response.data.timestamp, // 必填，生成签名的时间戳
+								nonceStr: response.data.noncestr, // 必填，生成签名的随机串
+								signature: response.data.signature, // 必填，签名，见附录1
+								jsApiList: [
+									'checkJsApi',
+									"onMenuShareTimeline",
+									"onMenuShareAppMessage",
+									"onMenuShareQQ"
+								] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+							});
+							wx.error(function(res) {
+								//验证失败
+								//								alert("验证失败");
+								alert("验证失败");
+							});
+							wx.ready(function() {
+								wx.checkJsApi({
+									jsApiList: ['checkJsApi',
+										"onMenuShareTimeline",
+										"onMenuShareAppMessage",
+										"onMenuShareQQ"
+									],
+									success: function(res) {
+										alert("readysuccess111");
+										let openid = window.localStorage.getItem('openid');
+										var title = "聚焦AI,智创未来/平安人脸识别调用量破10亿";
+										var link = 'https://wx.nullexcept.com/';
+										var imgUrl = "https://wx.nullexcept.com/static/img/shareImg.png";
+										var desc = "欢迎来见证人脸识别调用量破10亿!参与体验即可抽取小礼物,它可能是iPhoneX哦";
+										self.share(title, link, imgUrl, desc);
+										// 以键值对的形式返回，可用的api值true，不可用为false
+										// 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
+									}
+								});
+							});
 						}
+					})
+					.catch(function(error) {
+						console.log(error);
 					});
-				});
 			},
 		},
 		components: {}
