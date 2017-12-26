@@ -59,18 +59,27 @@ router.beforeEach((to, from, next) => {
 	if(isLoadAllImgs) {
 		next();
 	} else {
-		let interval = setInterval(() => {
-			if(isLoadAllImgs) {
-				next();
-				clearInterval(interval);
-			}
-		}, 50)
-		loader.start();
+		var u = navigator.userAgent;
+		var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+		if(isiOS && to.path !== location.pathname) {
+			// 此处不可使用location.replace
+			location.assign(to.fullPath)
+		} else {
+			let interval = setInterval(() => {
+				if(isLoadAllImgs) {
+					next();
+					clearInterval(interval);
+				}
+			}, 50)
+			loader.start();
+		}
+
 	}
 })
 
 router.afterEach(transition => {
 	//路由请求完做些什么
+
 });
 
 new Vue({

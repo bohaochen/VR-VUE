@@ -83,7 +83,7 @@
 				//				let urlStr = encodeURIComponent(window.location.href.split("?")[0]);
 				let urlStr = window.location.protocol + '//' + window.location.host + fullPath;
 				urlStr = encodeURIComponent(urlStr.split("#")[0]);
-				alert(urlStr);
+//				alert(urlStr);
 				self.$http.post("v1/em?action=query_config_parm&timestamp=" + timestamp + '&url=' + urlStr, {})
 					.then(function(response) {
 						if(response.data.code == 200) {
@@ -114,12 +114,12 @@
 										"onMenuShareQQ"
 									],
 									success: function(res) {
-										alert("readysuccess2");
+//										alert("readysuccess2");
 										let openid = window.localStorage.getItem('openid');
-										var title = "聚焦AI,智创未来/平安人脸识别调用量破10亿";
+										var title = "今年占据平安热搜榜的竟然是TA……";
 										var link = 'https://wx.nullexcept.com/';
 										var imgUrl = "https://wx.nullexcept.com/static/img/shareImg.png";
-										var desc = "欢迎来见证人脸识别调用量破10亿!参与体验即可抽取小礼物,它可能是iPhoneX哦";
+										var desc = "点击探索真相，还有机会赢取iPhoneX！";
 										self.share(title, link, imgUrl, desc);
 										// 以键值对的形式返回，可用的api值true，不可用为false
 										// 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
