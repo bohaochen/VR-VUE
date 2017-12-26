@@ -104,7 +104,7 @@
 							wx.error(function(res) {
 								//验证失败
 								//								alert("验证失败");
-								alert("验证失败");
+//								alert("验证失败");
 							});
 							wx.ready(function() {
 								wx.checkJsApi({
