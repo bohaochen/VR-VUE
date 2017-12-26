@@ -2,28 +2,28 @@
 	<div class="content-father">
 		<div class="content" v-show="isInfoPage">
 			<div class="bg"></div>
-			<img src="../../../static/img/pn_logo_03.png" class="logo" />
-			<img src="../../../static/img/cj_01.png" class="cjts" />
+			<img src="/static/img/pn_logo_03.png" class="logo" />
+			<img src="/static/img/cj_01.png" class="cjts" />
 			<div class="join-box">
-				<img src="../../../static/img/cj_02.png" class="b-bg">
+				<img src="/static/img/cj_02.png" class="b-bg">
 				<input v-model="phone" class="put-text-ipone" placeholder="请输入你的手机号" />
 				<input v-model="name" class="put-text-name" placeholder="请输入你的姓名" />
 				<div class="put-text-box">
 					请确保填写正确的手机号，以便中奖后工作人员与您取得联系。
 				</div>
 				<div class="btns">
-					<img src="../../../static/img/cj_04.png" @click="checkPhone" class="btn" />
+					<img src="/static/img/cj_04.png" @click="checkPhone" class="btn" />
 				</div>
 			</div>
 		</div>
 		<div class="content1" v-show="isLuckPage">
 			<div class="bg"></div>
-			<img src="../../../static/img/pn_logo_03.png" class="logo" />
+			<img src="/static/img/pn_logo_03.png" class="logo" />
 			<div class="hj-box">
 				<div class="hj-img-box">
-					<img src="../../../static/img/cj_05.png" class="hj-img" />
-					<img src="../../../static/img/cj_gxn.png" class="hj-img-wz" v-show="isLuck" />
-					<img src="../../../static/img/cj_hyh.png" class="hj-img-wz" v-show="!isLuck" />
+					<img src="/static/img/cj_05.png" class="hj-img" />
+					<img src="/static/img/cj_gxn.png" class="hj-img-wz" v-show="isLuck" />
+					<img src="/static/img/cj_hyh.png" class="hj-img-wz" v-show="!isLuck" />
 					<span class="hj-text" :class="{huishe:!isLuck}">
 					{{drawText}}
 				</span>
@@ -58,11 +58,11 @@
 
 			<div class="btns">
 				<!-- <div class="btns hidden"> -->
-				<img src="../../../static/img/cj_06.png" @click="goToImagerecognition" class="btn1" />
-				<img src="../../../static/img/cj_07.png" @click="share" class="btn2" />
+				<img src="/static/img/cj_06.png" @click="goToImagerecognition" class="btn1" />
+				<img src="/static/img/cj_07.png" @click="share" class="btn2" />
 			</div>
 			<div class="share-it" v-show="isSharePage" @click="share">
-				<img src="../../../static/img/share-it.png" />
+				<img src="/static/img/share-it.png" />
 			</div>
 		</div>
 	</div>
@@ -212,13 +212,13 @@
 		background-color: #000000;
 		overflow: auto;
 		position: absolute;
-		background: url(../../../static/img/bg.jpg) 50%/cover;
+		background: url(/static/img/bg.jpg) 50%/cover;
 		animation: fuxian 1s;
 		top: 0px;
 		/*.bg {
 			width: 100%;
 			height: 100%;
-			background: url(../../../static/img/bg.jpg) no-repeat center center;
+			background: url(/static/img/bg.jpg) no-repeat center center;
 			background-size: 120% 120%;
 			position: absolute;
 			top: 0;
@@ -262,7 +262,7 @@
 				outline: none;
 				line-height: 90px;
 				border: 0px;
-				background: url("../../../static/img/cj_03.png");
+				background: url("/static/img/cj_03.png");
 				background-size: 100% 100%;
 				padding: 0px 45px;
 				box-sizing: border-box;
@@ -279,7 +279,7 @@
 				outline: none;
 				line-height: 90px;
 				border: 0px;
-				background: url("../../../static/img/cj_03.png");
+				background: url("/static/img/cj_03.png");
 				background-size: 100% 100%;
 				padding: 0px 45px;
 				box-sizing: border-box;
@@ -330,7 +330,7 @@
 		.bg {
 			width: 100%;
 			height: 100%;
-			background: url(../../../static/img/bg.jpg) 50%/cover;
+			background: url(/static/img/bg.jpg) 50%/cover;
 			position: fixed;
 			top: 0;
 			z-index: 1;

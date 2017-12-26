@@ -3,27 +3,27 @@
 		<div class="bg"></div>
 		<div class="bg-gr"></div>
 
-		<img src="../../../static/img/qiu.png" class="qiu" />
-		<img src="../../../static/img/qiu_gr.png" class="qiu qiu-gr" />
+		<img src="/static/img/qiu.png" class="qiu" />
+		<img src="/static/img/qiu_gr.png" class="qiu qiu-gr" />
 
-		<img src="../../../static/img/pn_logo_03.png" class="logo" />
+		<img src="/static/img/pn_logo_03.png" class="logo" />
 
-		<img src="../../../static/img/wzh3j_01.png" class="sanjiao animated" v-show="hkjAni" :class="{slideInDown:hkjAni}">
-		<img src="../../../static/img/wz_01.png" class="heikeji animated" v-show="hkjAni" :class="{slideInDown:hkjAni}" />
-		<img src="../../../static/img/wz_01_gr.png" class="heikeji-gr animated" v-show="hkjAni" :class="{slideInDown:hkjAni}" />
+		<img src="/static/img/wzh3j_01.png" class="sanjiao animated" v-show="hkjAni" :class="{slideInDown:hkjAni}">
+		<img src="/static/img/wz_01.png" class="heikeji animated" v-show="hkjAni" :class="{slideInDown:hkjAni}" />
+		<img src="/static/img/wz_01_gr.png" class="heikeji-gr animated" v-show="hkjAni" :class="{slideInDown:hkjAni}" />
 
-		<img ref="sanjiao"  src="../../../static/img/wz_02.png" class="heikeji animated" v-show="hkjAni" :class="{slideInDown:hkjAni}" />
-		<img src="../../../static/img/wz_02_gr.png" class="heikeji-gr animated" v-show="hkjAni" :class="{slideInDown:hkjAni}" />
+		<img ref="sanjiao"  src="/static/img/wz_02.png" class="heikeji animated" v-show="hkjAni" :class="{slideInDown:hkjAni}" />
+		<img src="/static/img/wz_02_gr.png" class="heikeji-gr animated" v-show="hkjAni" :class="{slideInDown:hkjAni}" />
 
-		<img src="../../../static/img/gx_01.png" class="guangxiao animated" v-show="gxAni" />
+		<img src="/static/img/gx_01.png" class="guangxiao animated" v-show="gxAni" />
 
-		<img src="../../../static/img/zj_01.png" class="jingweidu" />
+		<img src="/static/img/zj_01.png" class="jingweidu" />
 
 		<div class="btns" v-show="gxAni">
 			<!-- <div class="btns hidden"> -->
-			<img src="../../../static/img/jt_04.png" class="jiantou psv-marker-jiantou" />
-			<img src="../../../static/img/btn_06.png"  @click="goToVr" class="btn2" />
-			<img src="../../../static/img/btn_04.png"  @click="goToAi" class="btn1" />
+			<img src="/static/img/jt_04.png" class="jiantou psv-marker-jiantou" />
+			<img src="/static/img/btn_06.png"  @click="goToVr" class="btn2" />
+			<img src="/static/img/btn_04.png"  @click="goToAi" class="btn1" />
 		</div>
 	</div>
 </template>
@@ -149,7 +149,7 @@
 		.bg {
 			width: 100%;
 			height: 100%;
-			background: url(../../../static/img/bg.jpg) 50%/cover;
+			background: url(/static/img/bg.jpg) 50%/cover;
 			position: absolute;
 			top: 0;
 			z-index: 1;
@@ -161,7 +161,7 @@
 		.bg-gr {
 			width: 100%;
 			height: 100%;
-			background: url(../../../static/img/bg_gr.jpg) 50%/cover;
+			background: url(/static/img/bg_gr.jpg) 50%/cover;
 			position: absolute;
 			top: 0;
 			opacity: 0;

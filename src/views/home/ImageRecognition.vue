@@ -1,7 +1,7 @@
 <template>
 	<div class="content">
 		<div class="bg"></div>
-		<img src="../../../static/img/pn_logo_03.png" class="logo" />
+		<img src="/static/img/pn_logo_03.png" class="logo" />
 
 		<div class="album">
 			<div v-show="isRead" class="score_box animated">
@@ -10,10 +10,10 @@
 				<div class="score score_3">1111</div>
 			</div>
 
-			<!--<img class="waikuang" src="../../../static/img/renlianshibiekuangdeng.png" />-->
-			<img class="waikuang" src="../../../static/img/renlianshibiekuangdengwu.png" />
-			<img src="../../../static/img/guangdian.png" class="waikuangleftdian" />
-			<img src="../../../static/img/guangdian.png" class="waikuangrightdian" />
+			<!--<img class="waikuang" src="/static/img/renlianshibiekuangdeng.png" />-->
+			<img class="waikuang" src="/static/img/renlianshibiekuangdengwu.png" />
+			<img src="/static/img/guangdian.png" class="waikuangleftdian" />
+			<img src="/static/img/guangdian.png" class="waikuangrightdian" />
 
 			<!--<img :src="teset" v-show="teset" ref="imgsss" class="imgsss" style="position: fixed;top: 0;left: 0;bottom: 0;right: 0;z-index: 999;" />-->
 
@@ -27,33 +27,33 @@
 				</div>
 			</div>
 			<div class="upload-end" v-show="isUpload">
-				<img src="../../../static/img/saomiao.png" class="saomiao-animate" />
+				<img src="/static/img/saomiao.png" class="saomiao-animate" />
 			</div>
 		</div>
 
 		<div class="btns" :style="{display:isUnUpload ? 'block' : 'none'}">
-			<img src="../../../static/img/querenceshi.png" @click="test" class="btn1" />
+			<img src="/static/img/querenceshi.png" @click="test" class="btn1" />
 		</div>
 
 		<div class="sb-btn animated" v-show="isUpload">
-			<!--<img src="../../../static/img/titlebg.png" class="btn1" />-->
-			<img src="../../../static/img/titlebg1.png" class="btn1">
-			<img src="../../../static/img/xiegang.png" class="xiegang" />
+			<!--<img src="/static/img/titlebg.png" class="btn1" />-->
+			<img src="/static/img/titlebg1.png" class="btn1">
+			<img src="/static/img/xiegang.png" class="xiegang" />
 			<span class="is-cs">正在启动分析...</span>
 		</div>
 
 		<div class="sb-btn animated" v-show="isRead">
-			<img src="../../../static/img/titlebg1.png" class="btn1" />
+			<img src="/static/img/titlebg1.png" class="btn1" />
 			<div class="star">
-				<img class="starImg" src="../../../static/img/xingxing.png">
+				<img class="starImg" src="/static/img/xingxing.png">
 			</div>
 		</div>
 
-		<img v-show="chaoshi" src="../../../static/img/sbsb_1.png" class="sbsbsb" />
-		<img v-show="cuowu" src="../../../static/img/sbsb_2.png" class="sbsbsb" />
+		<img v-show="chaoshi" src="/static/img/sbsb_1.png" class="sbsbsb" />
+		<img v-show="cuowu" src="/static/img/sbsb_2.png" class="sbsbsb" />
 
-		<img class="cntu" v-show="!isPageOut&&isRead" src="../../../static/img/cntu_bc.png">
-		<img class="cntu" v-show="isPageOut" src="../../../static/img/cntu_ewm.png">
+		<img class="cntu" v-show="!isPageOut&&isRead" src="/static/img/cntu_bc.png">
+		<img class="cntu" v-show="isPageOut" src="/static/img/cntu_ewm.png">
 
 		<img class="html_img" :src="htmlImg" :style="{display:htmlImg ? 'block' : 'none'}">
 
@@ -62,9 +62,9 @@
 				<span class="zd-xh-text">
 		          接收到重大信号，点击接收！
 		        </span>
-				<img class="zd-xh-box" src="../../../static/img/xinhaodantanchuang.png">
+				<img class="zd-xh-box" src="/static/img/xinhaodantanchuang.png">
 			</div>
-			<img @click="goToUserInfo" class="zd-xh-btn" src="../../../static/img/redbtn.png">
+			<img @click="goToUserInfo" class="zd-xh-btn" src="/static/img/redbtn.png">
 		</div>
 	</div>
 
@@ -597,7 +597,7 @@
 		.bg {
 			width: 100%;
 			height: 100%;
-			background: url(../../../static/img/bg.jpg) 50%/cover;
+			background: url(/static/img/bg.jpg) 50%/cover;
 			position: absolute;
 			top: 0;
 			z-index: 1;
@@ -659,7 +659,7 @@
 				top: 15%;
 				left: 50%;
 				overflow: hidden;
-				background: url(../../../static/img/renlianshibierenlian.png) no-repeat 50%/cover;
+				background: url(/static/img/renlianshibierenlian.png) no-repeat 50%/cover;
 				display: -webkit-flex;
 				display: flex;
 				flex-wrap: nowrap;

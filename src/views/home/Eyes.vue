@@ -1,16 +1,16 @@
 <template>
 	<div class="content">
 		<div class="bg"></div>
-		<img src="../../../static/img/pn_logo_03.png" class="logo" />
-		<img src="../../../static/img/jiuzainiyanqian.png" class="jiuzaiyanqian" />
-		<img src="../../../static/img/guangyunbg.png" class="gybg" />
+		<img src="/static/img/pn_logo_03.png" class="logo" />
+		<img src="/static/img/jiuzainiyanqian.png" class="jiuzaiyanqian" />
+		<img src="/static/img/guangyunbg.png" class="gybg" />
 		<div class="yuanquan">
-			<img src="../../../static/img/guangyun.png" class="guanyun" />
+			<img src="/static/img/guangyun.png" class="guanyun" />
 		</div>
 		<div class="btns">
 			<div class="title">想体验试试吗？</div>
-			<img src="../../../static/img/jt_04.png" class="jiantou psv-marker-jiantou" />
-			<img src="../../../static/img/lijitiyan.png" @click="goToImageRecognition" class="btn1" />
+			<img src="/static/img/jt_04.png" class="jiantou psv-marker-jiantou" />
+			<img src="/static/img/lijitiyan.png" @click="goToImageRecognition" class="btn1" />
 		</div>
 	</div>
 </template>
@@ -47,7 +47,7 @@
 		.bg {
 			width: 100%;
 			height: 100%;
-			background: url(../../../static/img/bg.jpg) 50%/cover;
+			background: url(/static/img/bg.jpg) 50%/cover;
 			position: absolute;
 			top: 0;
 			z-index: 1;

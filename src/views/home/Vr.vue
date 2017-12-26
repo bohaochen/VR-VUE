@@ -414,22 +414,22 @@
 				width: 72px;
 				height: 72px;
 				padding-left: 22px;
-				background: url(../../../static/img/tuoluoyino.png) no-repeat center center;
+				background: url(/static/img/tuoluoyino.png) no-repeat center center;
 				background-size: 64px 64px;
 			}
 			.gyroscope-on {
-				background: url(../../../static/img/tuoluoyi.png) no-repeat center center;
+				background: url(/static/img/tuoluoyi.png) no-repeat center center;
 				background-size: 64px 64px;
 			}
 			.rotate-off {
 				width: 72px;
 				height: 72px;
-				background: url(../../../static/img/xuanzhuanno.png) no-repeat center center;
+				background: url(/static/img/xuanzhuanno.png) no-repeat center center;
 				padding-left: 22px;
 				background-size: 64px 64px;
 			}
 			.rotate-on {
-				background: url(../../../static/img/xuanzhuan.png) no-repeat center center;
+				background: url(/static/img/xuanzhuan.png) no-repeat center center;
 				background-size: 64px 64px;
 			}
 		}

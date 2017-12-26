@@ -1,15 +1,15 @@
 <template>
 	<div class="content" id="content">
 		<div class="bg"></div>
-		<img src="../../../static/img/pn_logo_03.png" class="logo" />
+		<img src="/static/img/pn_logo_03.png" class="logo" />
 		<div class="relative_box">
-			<img src="../../../static/img/ai_gs.jpg" class="longImage" />
+			<img src="/static/img/ai_gs.jpg" class="longImage" />
 
 			<div class="btns">
 				<!-- <div class="btns hidden"> -->
-				<img src="../../../static/img/aiStoryText.png" class="wenzi-text" alt="">
-				<img src="../../../static/img/jt_04.png" class="jiantou psv-marker-jiantou" />
-				<img src="../../../static/img/houmianyougecaidan.png" @click="goToImagerecognition" class="btn1" />
+				<img src="/static/img/aiStoryText.png" class="wenzi-text" alt="">
+				<img src="/static/img/jt_04.png" class="jiantou psv-marker-jiantou" />
+				<img src="/static/img/houmianyougecaidan.png" @click="goToImagerecognition" class="btn1" />
 			</div>
 		</div>
 

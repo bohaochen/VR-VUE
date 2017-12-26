@@ -1,10 +1,10 @@
 <template>
 	<div class="content">
 		<div class="bg"></div>
-		<img src="../../../static/img/pn_logo_03.png" class="logo" />
+		<img src="/static/img/pn_logo_03.png" class="logo" />
 		<div class="hj-box">
 			<div class="hj-img-box">
-				<img src="../../../static/img/cj_05.png" class="hj-img" />
+				<img src="/static/img/cj_05.png" class="hj-img" />
 				<span class="hj-text">
 					获得勇于探索奖
 				</span>
@@ -41,8 +41,8 @@
 		
 		<div class="btns">
 		<!-- <div class="btns hidden"> -->
-			<img src="../../../static/img/cj_06.png" @click="goToImagerecognition" class="btn1" />
-			<img src="../../../static/img/cj_07.png" @click="share" class="btn2" />
+			<img src="/static/img/cj_06.png" @click="goToImagerecognition" class="btn1" />
+			<img src="/static/img/cj_07.png" @click="share" class="btn2" />
 		</div>
 	</div>
 </template>
@@ -91,7 +91,7 @@ export default {
   .bg {
     width: 100%;
     height: 100%;
-    background: url(../../../static/img/bg.jpg) 50%/cover;
+    background: url(/static/img/bg.jpg) 50%/cover;
     position: fixed;
     top: 0;
     z-index: 1;

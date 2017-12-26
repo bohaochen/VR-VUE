@@ -1,7 +1,7 @@
 <template>
 	<div class="content">
 		<div class="bg"></div>
-		<img src="../../../static/img/pn_logo_03.png" class="logo" />
+		<img src="/static/img/pn_logo_03.png" class="logo" />
 	</div>
 </template>
 
@@ -33,7 +33,7 @@
 		.bg {
 			width: 100%;
 			height: 100%;
-			background: url(../../../static/img/bg.jpg) 50%/cover;
+			background: url(/static/img/bg.jpg) 50%/cover;
 			position: absolute;
 			top: 0;
 			z-index: 1;
