@@ -240,6 +240,7 @@
 				width: 66%;
 				display: block;
 				margin: auto;
+				 pointer-events: auto;
 			}
 		}
 		.sanjiao {

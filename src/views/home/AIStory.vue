@@ -23,7 +23,7 @@
 				wordArr: [],
 				isTouch: true,
 				isOutPage: false,
-				isShowBtns:false
+				isShowBtns: false
 			};
 		},
 		mounted() {
@@ -41,19 +41,19 @@
 				}, 20);
 			}, 1500);
 			var dom = document.getElementById("content");
-			document.getElementById("content").onscroll = function(){
-				if((dom.scrollHeight - dom.scrollTop)<((dom.clientHeight)*1.25)){
+			document.getElementById("content").onscroll = function() {
+				if((dom.scrollHeight - dom.scrollTop) < ((dom.clientHeight) * 1.25)) {
 					document.getElementsByClassName("wenzi-text")[0].style.display = "block";
 				}
-				if((dom.scrollHeight - dom.scrollTop)<((dom.clientHeight)*1.2)){
-					setTimeout(function(){
+				if((dom.scrollHeight - dom.scrollTop) < ((dom.clientHeight) * 1.2)) {
+					setTimeout(function() {
 						document.getElementsByClassName("jiantou")[0].style.opacity = "1";
-					},500)
+					}, 500)
 				}
-				if((dom.scrollHeight - dom.scrollTop)<((dom.clientHeight)*1.15)){
-					setTimeout(function(){
+				if((dom.scrollHeight - dom.scrollTop) < ((dom.clientHeight) * 1.15)) {
+					setTimeout(function() {
 						document.getElementsByClassName("btn1")[0].style.opacity = "1";
-					},1000)
+					}, 1000)
 				}
 			}
 		},
@@ -158,7 +158,8 @@
 				z-index: 2;
 				display: block;
 				left: 50%;
-				opacity: 0;transition: all 1s;
+				opacity: 0;
+				transition: all 1s;
 				margin-left: -3%;
 				animation: 1s linear inherit alternate;
 				transform: translate3d(0, -100%, 0);
@@ -181,6 +182,7 @@
 				opacity: 0;
 				margin: auto;
 				transition: all 1s;
+				pointer-events: auto;
 			}
 		}
 		.relative_box {

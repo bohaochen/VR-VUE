@@ -555,6 +555,7 @@
 			display: block;
 			margin: auto;
 			line-height: 200px;
+			pointer-events: auto;
 		}
 		.zd-xh-text-box {
 			width: 100%;
@@ -578,6 +579,7 @@
 			display: block;
 			margin: auto;
 			margin-bottom: 3%;
+			pointer-events: auto;
 			animation: fuxian1 1s linear infinite alternate;
 		}
 		.zd-xh {
@@ -712,6 +714,7 @@
 				width: 66%;
 				display: block;
 				margin: auto;
+				pointer-events: auto;
 			}
 		}
 		.sb-btn {

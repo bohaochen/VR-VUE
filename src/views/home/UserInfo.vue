@@ -299,6 +299,7 @@
 				bottom: 14%;
 				left: 50%;
 				margin-left: -33%;
+				pointer-events: auto;
 			}
 		}
 	}
@@ -434,6 +435,7 @@
 				width: 66%;
 				display: block;
 				margin: auto;
+				pointer-events: auto;
 			}
 		}
 	}
