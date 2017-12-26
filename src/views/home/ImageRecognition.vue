@@ -239,6 +239,7 @@
 					path: "ai",
 					query: {
 						isIndex: 1,
+						code: self.$route.query.code,
 					}
 				});
 				// 带查询参数，变成 /register?plan=private

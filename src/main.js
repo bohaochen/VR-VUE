@@ -60,6 +60,8 @@ router.beforeEach((to, from, next) => {
 		let u = navigator.userAgent;
 		let isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
 		console.log(isiOS)
+		console.log(to.path)
+		console.log(location.pathname)
 		if(isiOS && to.path !== location.pathname) {
 			// 此处不可使用location.replace
 			location.assign(to.fullPath)
