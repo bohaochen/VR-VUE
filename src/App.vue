@@ -24,13 +24,15 @@
 		mounted() {
 			//页面加载完成回调
 			let self = this;
-			self.setShare();
+			//			self.setShare();
 			//			self.wxLogin();
 		},
 		watch: {
 			'$route' (to, from) {
 				let self = this;
-				self.setShare();
+				setTimeout(() => {
+					self.setShare();
+				}, 50);
 			}
 		},
 		methods: {
@@ -106,7 +108,7 @@
 								alert("验证失败");
 							});
 							wx.ready(function() {
-								alert("ready");
+								alert("ready111");
 								wx.checkJsApi({
 									jsApiList: ['checkJsApi',
 										"onMenuShareTimeline",
