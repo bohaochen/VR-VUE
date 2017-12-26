@@ -30,9 +30,11 @@
 		watch: {
 			'$route' (to, from) {
 				let self = this;
-				setTimeout(() => {
-					self.setShare();
-				}, 50);
+				self.$nextTick(function() {
+					setTimeout(() => {
+						self.setShare();
+					}, 50);
+				});
 			}
 		},
 		methods: {
@@ -108,7 +110,7 @@
 								alert("验证失败");
 							});
 							wx.ready(function() {
-								alert("ready111");
+								alert("ready222");
 								wx.checkJsApi({
 									jsApiList: ['checkJsApi',
 										"onMenuShareTimeline",
