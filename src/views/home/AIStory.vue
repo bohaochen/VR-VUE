@@ -71,18 +71,21 @@
 				//页面跳转
 				let self = this;
 				// 带查询参数，变成 /register?plan=private
-				if(self.$route.query.isIndex == 0) {
-					self.$router.push({
-						path: "imagerecognition",
-						query: {
-							isIndex: 0,
-						}
-					});
-				} else {
-					self.$router.push({
-						path: "userinfo",
-					});
-				}
+				self.$router.push({
+					path: "userinfo",
+				});
+				//				if(self.$route.query.isIndex == 0) {
+				//					self.$router.push({
+				//						path: "imagerecognition",
+				//						query: {
+				//							isIndex: 0,
+				//						}
+				//					});
+				//				} else {
+				//					self.$router.push({
+				//						path: "userinfo",
+				//					});
+				//				}
 			},
 			ontouchFn() {
 				var _this = this;

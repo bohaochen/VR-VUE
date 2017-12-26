@@ -57,14 +57,14 @@
 
 		<img class="html_img" :src="htmlImg" :style="{display:htmlImg ? 'block' : 'none'}">
 
-		<div class="zd-xh" v-show="isPageOut" @click="goToUserInfo">
-			<div class="zd-xh-text-box">
+		<div class="zd-xh" v-show="isPageOut">
+			<div class="zd-xh-text-box" @click="goToUserInfo">
 				<span class="zd-xh-text">
-          接收到重大信号，点击接收！
-        </span>
+		          接收到重大信号，点击接收！
+		        </span>
 				<img class="zd-xh-box" src="../../../static/img/xinhaodantanchuang.png">
 			</div>
-			<img class="zd-xh-btn" src="../../../static/img/redbtn.png">
+			<img @click="goToUserInfo" class="zd-xh-btn" src="../../../static/img/redbtn.png">
 		</div>
 	</div>
 
@@ -235,19 +235,25 @@
 			goToUserInfo() {
 				//页面跳转
 				let self = this;
+				self.$router.push({
+					path: "ai",
+					query: {
+						isIndex: 1,
+					}
+				});
 				// 带查询参数，变成 /register?plan=private
-				if(self.$route.query.isIndex == 0) {
-					self.$router.push({
-						path: "userinfo",
-					});
-				} else {
-					self.$router.push({
-						path: "ai",
-						query: {
-							isIndex: 1,
-						}
-					});
-				}
+				//				if(self.$route.query.isIndex == 0) {
+				//					self.$router.push({
+				//						path: "userinfo",
+				//					});
+				//				} else {
+				//					self.$router.push({
+				//						path: "ai",
+				//						query: {
+				//							isIndex: 1,
+				//						}
+				//					});
+				//				}
 			},
 			test() {
 				let self = this;

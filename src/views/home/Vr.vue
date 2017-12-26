@@ -212,12 +212,12 @@
 							longitude: 3.17,
 							latitude: 0.13
 						}, 2000)
-						setTimeout(() => {
-							if(!self.PSV.isGyroscopeEnabled()) {
-								self.PSV.startGyroscopeControl();
-								self.isGyroscope = self.PSV.isGyroscopeEnabled();
-							}
-						}, 50)
+//						setTimeout(() => {
+//							if(!self.PSV.isGyroscopeEnabled()) {
+//								self.PSV.startGyroscopeControl();
+//								self.isGyroscope = self.PSV.isGyroscopeEnabled();
+//							}
+//						}, 50)
 					});
 			},
 			showIndex: function(index) {
