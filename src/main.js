@@ -56,12 +56,12 @@ const router = new VueRouter({
 })
 router.beforeEach((to, from, next) => {
 	//路由请求前做些什么
+	let u = navigator.userAgent;
+	let isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
 	if(isLoadAllImgs) {
-		let u = navigator.userAgent;
-		let isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-		console.log(isiOS)
-		console.log(to.path)
-		console.log(location.pathname)
+		//		console.log(isiOS)
+		//		console.log(to.path)
+		//		console.log(location.pathname)
 		if(isiOS && to.path !== location.pathname) {
 			// 此处不可使用location.replace
 			location.assign(to.fullPath)
@@ -69,13 +69,21 @@ router.beforeEach((to, from, next) => {
 			next();
 		}
 	} else {
-		let interval = setInterval(() => {
-			if(isLoadAllImgs) {
-				next();
-				clearInterval(interval);
+		if(to.path == "/") {
+			let interval = setInterval(() => {
+				if(isLoadAllImgs) {
+					next();
+					clearInterval(interval);
+				}
+			}, 50)
+			loader.start();
+		} else {
+			let loadImg = document.getElementById('loadImg');
+			if(loadImg != null) {
+				loadImg.remove()
 			}
-		}, 50)
-		loader.start();
+			next();
+		}
 	}
 })
 
