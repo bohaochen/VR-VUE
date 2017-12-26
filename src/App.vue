@@ -33,7 +33,7 @@
 				self.$nextTick(function() {
 					setTimeout(() => {
 						self.setShare();
-					}, 50);
+					}, 200);
 				});
 			}
 		},
@@ -84,7 +84,7 @@
 				let self = this
 				let timestamp = new Date().getTime()
 				//				let urlStr = encodeURIComponent(window.location.href.split("#")[0])
-				let urlStr = encodeURIComponent(window.location.href.split("?")[0]);
+				let urlStr = encodeURIComponent(window.location.href.split("#")[0]);
 				//				let urlStr = encodeURIComponent(location.protocol + '//' + window.location.host);	
 				console.log(urlStr);
 				self.$http.post("v1/em?action=query_config_parm&timestamp=" + timestamp + '&url=' + urlStr, {})
@@ -110,7 +110,7 @@
 								alert("验证失败");
 							});
 							wx.ready(function() {
-								alert("ready222");
+								alert("ready333");
 								wx.checkJsApi({
 									jsApiList: ['checkJsApi',
 										"onMenuShareTimeline",
