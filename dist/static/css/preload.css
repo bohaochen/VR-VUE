@@ -2296,3 +2296,32 @@
 	width: 100%;
 	height: 100%;
 }
+
+.musec-img{
+	width: 65px;
+    height: 65px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAP1BMVEUAAAD8hiP9hyL/gCD8hyP/hSD/hyD9hiL9hiL9hyL/hyD9hyL8hyP9hyL9hiL/hiL9hiL8hiP9iCL9hiL9hyNlXP6PAAAAFHRSTlMAwPAQYDBAoNCAIN+wkHBQ4a9vj8dbsSsAAATrSURBVHja7ZvblqMgEEW5iuDdqf//1umx7T4TIxEozFPOQ6/VMYFt1SkgYMRHH330UZmayTsp6UvKiDcrmD8t/S/9S+V9I26W/dPRUXa/tF1RzvwC3do7JPeLin7k7omDkfQgJXv/pWm//HC1qx4GvXYEST/ZoyvpgOerIhjEtz03mt/cEMaeEIV6Nfd79/MQxLmGf2xbrJCqro4Xwm+D/YsGJewogvsJ2J8KeVj3xpTDzccAYBmvKgVBLz+lhXu5AtijUCUIjdptj7u/AICs3F0bGObfoz8JkQ4Ajd/4qjgNbveeFmUAwu6ThilLvyTMdnkAkN+NUNL/N31rRTkAXORK+5da8ABE+G7IZvcPcAYAmso1okT/XAChHVFb5H8nWACQzb1/E+0/rPoSgK8m1r/+Q+TvB9Bq8//5vDTb+wGWrf41XsDYrsYCD2Bik1OyAZQ9e3nQggEg06oxbAkwJ3Ux49NFANv6QKeNAP3TYII5iRUB8kkVoPRz/8h+KYBNGpO3cXN67t8IFgCmRpngQPnUv2oYIyE0X84KWiFK6B+vMAGayxCYkyHQIf5cACGvQtD9c2A4Mo3JkxE3BNNzAKxCTfIBxPbNLbyOUDi8NOs6AAjB8KpQD/c7ImVcABSCit3SAIugKgZRFWDEQH9uwfmApHQ1ABR6G8nAU34Cxu4aAFjt6XgG7OObZ10RAJVmkjMwidoAQsHpj9InFaJFTQAMBSoSm4Sa4wOYWD/D0R16MXcAhNi6pD3WhydZEwAdRd76ZIGWhsoAMEEXGQXM46hpawNgYXQyTTx5I1i+CTPc7uHB+6oALjTnRSBuBoDbPKMFNkALuzMAQrNt1tu8j+O9PIDGdbRLLYYPgLgkaZL0oM4wAeCMxO3jJ7U2B6BnAdiOTqTaJABUvCoDwNmUHO1mReNA8Q4A/X3/fRB4yQOAkwKZtC83YPv4EJX3lGFzvn2j23cBbAkfT5zxLoDoon6gyJXY6rePzNIJGTDRGa4rnYzwnSkkrCd1NDazuBLyNUUWJAVrGQAo1oJEw18lAHMSAFqJZMYlsNtoBFz6ODRHiqNLyJ6P2nMUrO9mPsGFc2y3dcGHkzw4ZtUYNER2WKaMYWBEHvNNENRpEoxCZZV/ORUywcjj2Un2SthcKrQAGp+SjtO6FQimJWxwX8vEMx0uc4CJj9SyNl8yrtv/txmLAdIv7k5fEfR0oja1/4Bs5UTn+VQeim495udZq7QpLfhHBBdEsrqXTnepuzTauHnPfT+G3CPR4XWCpEiUbRrAZgSAAmM/nyGcRzD283lCAC5CYER9oQRc6qldfWmVMGf2sGl1ObR9fW7GEDO6I45460p38Nf12ekiqmtJrTBLWDPVrgBlE99a3waWMgq8B2wtWZXzWI6e8RBHHWmV16JVdQl0mxvTiUDwzv4hU5FAtzBgNoGt4r+iGW6gOrXQFPWPGNAqWPKE/gsJFhiB8VgoJ3pdwwg/L4+2xVPN+QoLsZ2sHW1Sa/kz4U5XebBf5pZxR0g/S1biWCK7e5Kh5q8bujWpubB2VOv24YRdV+fZ+H0DHj+soQYIalltNF2rjHxl5Ss4gtTiTXNANH5RdEP3UBjU8Xc+X3Lu319cwU9R7tDUU4LcJO4RNgbimp3R4m7ZsW/pRG1vgnibbOO9/FHvfWPFRx999FGZ/gJ5bJM1F6yRxAAAAABJRU5ErkJggg==);
+    background-size: 100% 100%;
+    position: absolute;
+    z-index: 10;
+    top: 1.5%;
+	left: 2%;
+}
+.runRound{
+	animation: round 2s 0s infinite linear;
+}
+
+@keyframes round {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	50% {
+		-webkit-transform: rotate(180deg);
+		transform: rotate(180deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}

@@ -12,7 +12,7 @@
 		<img src="/static/img/wz_01.png" class="heikeji animated" v-show="hkjAni" :class="{slideInDown:hkjAni}" />
 		<img src="/static/img/wz_01_gr.png" class="heikeji-gr animated" v-show="hkjAni" :class="{slideInDown:hkjAni}" />
 
-		<img ref="sanjiao"  src="/static/img/wz_02.png" class="heikeji animated" v-show="hkjAni" :class="{slideInDown:hkjAni}" />
+		<img ref="sanjiao" src="/static/img/wz_02.png" class="heikeji animated" v-show="hkjAni" :class="{slideInDown:hkjAni}" />
 		<img src="/static/img/wz_02_gr.png" class="heikeji-gr animated" v-show="hkjAni" :class="{slideInDown:hkjAni}" />
 
 		<img src="/static/img/gx_01.png" class="guangxiao animated" v-show="gxAni" />
@@ -22,8 +22,8 @@
 		<div class="btns" v-show="gxAni">
 			<!-- <div class="btns hidden"> -->
 			<img src="/static/img/jt_04.png" class="jiantou psv-marker-jiantou" />
-			<img src="/static/img/btn_06.png"  @click="goToVr" class="btn2" />
-			<img src="/static/img/btn_04.png"  @click="goToAi" class="btn1" />
+			<img src="/static/img/btn_06.png" @click="goToVr" class="btn2" />
+			<img src="/static/img/btn_04.png" @click="goToAi" class="btn1" />
 		</div>
 	</div>
 </template>
@@ -82,6 +82,7 @@
 					path: "ai",
 					query: {
 						isIndex: 0,
+						code: self.$route.query.code,
 					}
 				});
 			},
@@ -240,7 +241,7 @@
 				width: 66%;
 				display: block;
 				margin: auto;
-				 pointer-events: auto;
+				pointer-events: auto;
 			}
 		}
 		.sanjiao {
