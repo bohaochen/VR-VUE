@@ -24,13 +24,17 @@
 		mounted() {
 			//页面加载完成回调
 			let self = this;
-			self.setShare();
+			//			self.setShare();
 			//			self.wxLogin();
 		},
 		watch: {
 			'$route' (to, from) {
 				let self = this;
-				self.setShare();
+				self.$nextTick(function() {
+					setTimeout(() => {
+						self.setShare();
+					}, 200);
+				});
 			}
 		},
 		methods: {
@@ -80,7 +84,7 @@
 				let self = this
 				let timestamp = new Date().getTime()
 				//				let urlStr = encodeURIComponent(window.location.href.split("#")[0])
-				let urlStr = encodeURIComponent(window.location.href.split("?")[0]);
+				let urlStr = encodeURIComponent(window.location.href.split("#")[0]);
 				//				let urlStr = encodeURIComponent(location.protocol + '//' + window.location.host);	
 				console.log(urlStr);
 				self.$http.post("v1/em?action=query_config_parm&timestamp=" + timestamp + '&url=' + urlStr, {})
@@ -88,7 +92,7 @@
 						if(response.data.code == 200) {
 							// 微信配置
 							wx.config({
-								debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+								debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
 								appId: 'wx42c67be9af7fa426', // 必填，公众号的唯一标识
 								timestamp: response.data.timestamp, // 必填，生成签名的时间戳
 								nonceStr: response.data.noncestr, // 必填，生成签名的随机串
@@ -103,10 +107,10 @@
 							wx.error(function(res) {
 								//验证失败
 								//								alert("验证失败");
-								console.log("验证失败");
+								alert("验证失败");
 							});
 							wx.ready(function() {
-								console.log("ready");
+								alert("ready333");
 								wx.checkJsApi({
 									jsApiList: ['checkJsApi',
 										"onMenuShareTimeline",

@@ -220,9 +220,9 @@
 			position: absolute;
 			bottom: 5%;
 			z-index: 2;
-			// opacity: 0;
+			/*// opacity: 0;*/
 			animation-fill-mode: forwards;
-			animation: fudong 1s;
+			animation: fuxian 1s;
 			.jiantou {
 				position: absolute;
 				width: 7%;
