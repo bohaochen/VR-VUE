@@ -138,7 +138,7 @@
 					)
 					.then(function(response) {
 						console.log(response);
-						if(response.data.code == 200) {
+						if(response.status == 200) {
 							_this.$http
 								.post("v1/em?action=draw&uid=" + openid)
 								.then(function(response) {
