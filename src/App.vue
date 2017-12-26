@@ -24,15 +24,13 @@
 		mounted() {
 			//页面加载完成回调
 			let self = this;
-			self.setShare();
+//			self.setShare();
 			//			self.wxLogin();
 		},
 		watch: {
 			'$route' (to, from) {
 				let self = this;
-				setTimeout(() => {
-					self.setShare();
-				}, 1000);
+				self.setShare(to.fullPath);
 			}
 		},
 		methods: {
@@ -78,13 +76,13 @@
 					}
 				});
 			},
-			setShare() {
+			setShare(fullPath) {
 				let self = this
 				let timestamp = new Date().getTime()
-				let urlStr = encodeURIComponent(window.location.href.split("#")[0]);
+//				let urlStr = encodeURIComponent(window.location.href.split("#")[0]);
 				//				let urlStr = encodeURIComponent(window.location.href.split("?")[0]);
-				//				let urlStr = encodeURIComponent(location.protocol + '//' + window.location.host);	
-				console.log(urlStr);
+				let urlStr = encodeURIComponent(location.protocol + '//' + window.location.host + fullPath);	
+				alert(urlStr);
 				self.$http.post("v1/em?action=query_config_parm&timestamp=" + timestamp + '&url=' + urlStr, {})
 					.then(function(response) {
 						if(response.data.code == 200) {
