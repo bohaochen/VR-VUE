@@ -79,7 +79,7 @@
 			setShare() {
 				let self = this
 				let timestamp = new Date().getTime()
-				let urlStr = encodeURIComponent(window.location.href.split("?")[0])
+				let urlStr = encodeURIComponent(window.location.href.split("#")[0])
 				//				let urlStr = encodeURIComponent(location.protocol + '//' + window.location.host);
 				self.$http.post("v1/em?action=query_config_parm&timestamp=" + timestamp + '&url=' + urlStr, {})
 					.then(function(response) {

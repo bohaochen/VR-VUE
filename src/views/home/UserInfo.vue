@@ -154,7 +154,8 @@
 											_this.toast("还没做人脸对比");
 											break;
 										case 104:
-											_this.toast("已经抽过奖");
+//											_this.toast("已经抽过奖");
+											_this.toast("你已经参与过活动,分享邀请好友一起参与吧");
 											_this.drawNum(response.data.draw);
 											break;
 										default:
