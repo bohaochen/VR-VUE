@@ -78,7 +78,7 @@ var loader = new resLoader({
 	onStart: function(total) {},
 	onProgress: function(current, total) {
 		if(!isLoadAllImgs) {
-			document.getElementById('current').innerHTML = ((current / 20) * 100).toFixed(2);
+			document.getElementById('current').innerHTML = ((current / 20) * 100).toFixed(0);
 			//			document.getElementById('total').innerHTML = total - 4;
 		}
 		if(current == 20) {
