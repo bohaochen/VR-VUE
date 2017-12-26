@@ -14,10 +14,11 @@
 	</head>
 
 	<body>
+		<!-- <div class="musec-img runRound" id="musecBox" onclick="toggerMuc()"></div> -->
 		<div id="app">
 
 		</div>
-		<audio src="http://oj1hxt5z0.bkt.clouddn.com/123.mp3" id="Jaudio" class="media-audio" autoplay preload loop="loop"></audio>
+		<!-- <audio src="http://oj1hxt5z0.bkt.clouddn.com/123.mp3" id="Jaudio" class="media-audio" autoplay preload loop="loop"></audio> -->
 		<div id="loadImg" class="loadImg">
 			<div class="progress">
 				<div class="loader">
@@ -49,23 +50,39 @@
 		<script>
 			//百度统计 
 			var _hmt = _hmt || [];
+			var isMucOpen = true;
 			(function() {
 				var hm = document.createElement("script");
 				hm.src = "https://hm.baidu.com/hm.js?e425071bbac75d469be1039846fbdc5d";
 				var s = document.getElementsByTagName("script")[0];
 				s.parentNode.insertBefore(hm, s);
 			})();
-			function audioAutoPlay(id){
-                var audio = document.getElementById(id);
-                audio.play();
-                document.addEventListener("WeixinJSBridgeReady", function () {
-                    audio.play();
-                }, false);
-                document.addEventListener('YixinJSBridgeReady', function() {
-                    audio.play();
-                }, false);
-            }
-        audioAutoPlay('Jaudio');
+			// function audioAutoPlay(id){
+			// 	var audio = document.getElementById(id);
+			// 	document.getElementById("musecBox").className = "musec-img runRound"
+            //     audio.play();
+            //     document.addEventListener("WeixinJSBridgeReady", function () {
+            //         audio.play();
+            //     }, false);
+            //     document.addEventListener('YixinJSBridgeReady', function() {
+            //         audio.play();
+            //     }, false);
+			// }
+			// function audioStopPlay(id){
+			// 	document.getElementById("musecBox").className = "musec-img"
+            //     var audio = document.getElementById(id);
+            //     audio.pause();
+            // }
+			// function toggerMuc(){
+			// 	console.log(":111")
+			// 	if(isMucOpen){
+			// 		isMucOpen=false;
+			// 		audioStopPlay('Jaudio');
+			// 	}else{
+			// 		isMucOpen=true;
+			// 		audioAutoPlay('Jaudio');
+			// 	}
+			// }
 		</script>
 
 	</body>
