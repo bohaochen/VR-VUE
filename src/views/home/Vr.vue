@@ -57,7 +57,7 @@
 					loading_img: 'https://wx.nullexcept.com/s_static/img/photosphere-logo.gif', //loadING图
 					//					navbar: 'gyroscope', //控制台配置
 					navbar: false, //控制台配置
-					default_fov: 70, //初始焦距
+					default_fov: 100, //初始焦距
 					default_long: 5.6, //max 6.3
 					default_lat: 0.13, //max 1.5
 					tilt_up_max: Math.PI / 2,
