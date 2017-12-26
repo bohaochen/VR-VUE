@@ -33,7 +33,7 @@
 				self.$nextTick(function() {
 					setTimeout(() => {
 						self.setShare();
-					}, 200);
+					}, 1000);
 				});
 			}
 		},
@@ -126,7 +126,7 @@
 							"onMenuShareQQ"
 						],
 						success: function(res) {
-//							alert("readysuccess5")
+							alert("readysuccess5")
 							let openid = window.localStorage.getItem('openid');
 							var title = "聚焦AI,智创未来/平安人脸识别调用量破10亿";
 							var link = 'https://wx.nullexcept.com/';
