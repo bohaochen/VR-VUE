@@ -24,7 +24,7 @@
 		mounted() {
 			//页面加载完成回调
 			let self = this;
-//			self.setShare();
+			//			self.setShare();
 			//			self.wxLogin();
 		},
 		watch: {
@@ -79,16 +79,17 @@
 			setShare(fullPath) {
 				let self = this
 				let timestamp = new Date().getTime()
-//				let urlStr = encodeURIComponent(window.location.href.split("#")[0]);
+				//				let urlStr = encodeURIComponent(window.location.href.split("#")[0]);
 				//				let urlStr = encodeURIComponent(window.location.href.split("?")[0]);
-				let urlStr = encodeURIComponent(location.protocol + '//' + window.location.host + fullPath);	
+				let urlStr = window.location.protocol + '//' + window.location.host + fullPath;
+				urlStr = encodeURIComponent(urlStr.split("#")[0]);
 				alert(urlStr);
 				self.$http.post("v1/em?action=query_config_parm&timestamp=" + timestamp + '&url=' + urlStr, {})
 					.then(function(response) {
 						if(response.data.code == 200) {
 							// 微信配置
 							wx.config({
-								debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+								debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
 								appId: 'wx42c67be9af7fa426', // 必填，公众号的唯一标识
 								timestamp: response.data.timestamp, // 必填，生成签名的时间戳
 								nonceStr: response.data.noncestr, // 必填，生成签名的随机串
@@ -113,7 +114,7 @@
 										"onMenuShareQQ"
 									],
 									success: function(res) {
-										alert("readysuccess111");
+										alert("readysuccess2");
 										let openid = window.localStorage.getItem('openid');
 										var title = "聚焦AI,智创未来/平安人脸识别调用量破10亿";
 										var link = 'https://wx.nullexcept.com/';
