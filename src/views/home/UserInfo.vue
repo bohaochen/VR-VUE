@@ -237,14 +237,14 @@
 			z-index: 2;
 			left: 50%;
 			margin-left: -43%;
-			margin-top: 26%;
+			margin-top: 18%;
 		}
 		.join-box {
 			position: relative;
 			z-index: 2;
 			width: 100%;
 			top: 0;
-			margin-top: 12%;
+			margin-top: 6%;
 			margin-bottom: 64px;
 			.b-bg {
 				width: 100%;

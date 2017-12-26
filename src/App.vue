@@ -27,6 +27,12 @@
 			self.setShare();
 			//			self.wxLogin();
 		},
+		watch: {
+			'$route' (to, from) {
+				let self = this;
+				self.setShare();
+			}
+		},
 		methods: {
 			share(title, link, imgUrl, desc) {
 				//获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
@@ -73,7 +79,8 @@
 			setShare() {
 				let self = this
 				let timestamp = new Date().getTime()
-				let urlStr = encodeURIComponent(window.location.href.split("#")[0])
+				//				let urlStr = encodeURIComponent(window.location.href.split("#")[0])
+				let urlStr = encodeURIComponent(location.protocol + '//' + window.location.host);
 				self.$http.post("v1/em?action=query_config_parm&timestamp=" + timestamp + '&url=' + urlStr, {})
 					.then(function(response) {
 						if(response.data.code == 200) {

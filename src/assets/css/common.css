@@ -1,5 +1,13 @@
-img {
-	-ms-user-select: none;
+* {
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color:transparent;
+}
+img{
+	 pointer-events: none;
+}
+
+input {
+	-webkit-user-select: text;
 }
 
 .psv-marker-jiantou {
@@ -27,13 +35,13 @@ img {
 }
 
 @keyframes fuxian {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
 
 .toast {
 	position: fixed;
@@ -69,15 +77,15 @@ img {
 		-webkit-transform: translate3d(0, 100%, 0);
 	}
 	from {
-		transform: translate3d(0, -100%, 0);
-		-webkit-transform: translate3d(0, -100%, 0);
+		transform: translate3d(0, -600%, 0);
+		-webkit-transform: translate3d(0, -600%, 0);
 	}
 }
 
 @keyframes findin {
 	to {
-		transform: translate3d(0, -100%, 0);
-		-webkit-transform: translate3d(0, -100%, 0);
+		transform: translate3d(0, -600%, 0);
+		-webkit-transform: translate3d(0, -600%, 0);
 	}
 	from {
 		transform: translate3d(0, 100%, 0);
