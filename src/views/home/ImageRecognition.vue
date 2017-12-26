@@ -37,7 +37,7 @@
 
 		<div class="sb-btn animated" v-show="isUpload">
 			<!--<img src="../../../static/img/titlebg.png" class="btn1" />-->
-			<img src="../../../dist/static/img/titlebg1.png" class="btn1">
+			<img src="../../../static/img/titlebg1.png" class="btn1">
 			<img src="../../../static/img/xiegang.png" class="xiegang" />
 			<span class="is-cs">正在启动分析...</span>
 		</div>
