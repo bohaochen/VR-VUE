@@ -65,7 +65,7 @@
 				var _this = this;
 				var dom = document.getElementsByClassName("content")[0];
 				var y = dom.scrollTop;
-				dom.scrollTop = y + 2;
+				dom.scrollTop = y + 4;
 			},
 			goToImagerecognition() {
 				//页面跳转
