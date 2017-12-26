@@ -50,7 +50,7 @@
 						if(response.data.code == 200) {
 							// 微信配置
 							wx.config({
-								debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+								debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
 								appId: 'wx42c67be9af7fa426', // 必填，公众号的唯一标识
 								timestamp: response.data.timestamp, // 必填，生成签名的时间戳
 								nonceStr: response.data.noncestr, // 必填，生成签名的随机串
@@ -65,7 +65,7 @@
 							wx.error(function(res) {
 								//验证失败
 								//								alert("验证失败");
-								alert("验证失败");
+//								alert("验证失败");
 							});
 						}
 					})
@@ -118,7 +118,7 @@
 			setShare() {
 				let self = this
 				wx.ready(function() {
-					alert("ready5");
+//					alert("ready5");
 					wx.checkJsApi({
 						jsApiList: ['checkJsApi',
 							"onMenuShareTimeline",
@@ -126,6 +126,7 @@
 							"onMenuShareQQ"
 						],
 						success: function(res) {
+//							alert("readysuccess5")
 							let openid = window.localStorage.getItem('openid');
 							var title = "聚焦AI,智创未来/平安人脸识别调用量破10亿";
 							var link = 'https://wx.nullexcept.com/';
