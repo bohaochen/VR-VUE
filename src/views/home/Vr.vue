@@ -131,7 +131,7 @@
 						visible: false,
 					}, {
 						id: 'xiaoxi3',
-						longitude: 2.95,
+						longitude: 3.05,
 						//						latitude: -0.1,
 						latitude: -6.32,
 						image: '/static/img/xinhao2.png',
@@ -142,7 +142,7 @@
 						visible: false,
 					}, {
 						id: 'quan3',
-						longitude: 2.95,
+						longitude: 3.05,
 						//						latitude: -0.105,
 						latitude: -6.32,
 						image: '/static/img/quan.png',
@@ -153,7 +153,7 @@
 						visible: false,
 					}, {
 						id: 'jiantou3',
-						longitude: 2.95,
+						longitude: 3.05,
 						latitude: -6.32,
 						image: '/static/img/jiantou.png',
 						width: 111,
@@ -164,7 +164,7 @@
 						visible: false,
 					}, {
 						id: 'xiaoxi31',
-						longitude: 2.506,
+						longitude: 2.35,
 						latitude: -6.32,
 						image: '/static/img/zhajixinxihao.png',
 						width: 242,
@@ -264,7 +264,7 @@
 						break;
 					case 3:
 						self.PSV.animate({
-							longitude: 0.1,
+							longitude: 0.45,
 							latitude: 0.13
 						}, 2000)
 						setTimeout(() => {

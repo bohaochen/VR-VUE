@@ -93,7 +93,7 @@
 						minScore: -1,
 						maxScore: 0.1,
 						starNum: 0,
-						starMsg: ["竟然一点神秘感也没有？", "！！！", "WTF！！！"]
+						starMsg: ["竟然一点神秘感也没有？", "什么情况！！！", "WTF！！！"]
 					},
 					{
 						minScore: 0.1,
@@ -222,7 +222,7 @@
 			document.getElementsByClassName("starImg")[0].style.marginTop = -(document.body.clientWidth * 74 / 460) / 2 + "px";
 			//			var score = (Math.random() * 1.4).toFixed(2) - 1;
 			//			console.log("score", score.toFixed(2))
-			//			self.score(-0.5);
+			//			self.score(0);
 		},
 		methods: {
 			change(base64Img) {
@@ -319,6 +319,17 @@
 			},
 			score(score) {
 				var self = this;
+				if(score == 0) {
+					self.isUpload = false;
+					self.cuowu = true;
+					setTimeout(() => {
+						self.cuowu = false;
+						//								self.isUnUpload = true;
+						self.imgTitle = "重新上传";
+						self.base64Img = null;
+					}, 3000);
+					return false;
+				}
 				//				var score = obj.data.score; //需要改成OBJ的分数值！！！！！！！！！！！！！！！！！！！！！！！
 				var scoreIndex = null;
 				self.isUpload = false; //扫描消失
