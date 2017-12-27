@@ -1,88 +1,107 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="utf-8">
-		<title>平安黑科技</title>
-		<meta name="x5-fullscreen" content="true">
-		<meta name="viewport" content="width=device-width, initial-scale=0.5, user-scalable=0, minimal-ui" />
-		<meta name="format-detection" content="telephone=no, email=no">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<script src="static/js/isWxLoging.js"></script>
-		<link rel="stylesheet" href="static/css/preload.css" />
-		<!--<link rel="shortcut icon" href="http://kpximg.oss-cn-shenzhen.aliyuncs.com/201705/07/055e141542914283b351421f2eeb6140.png">-->
-	</head>
+<head>
+	<meta charset="utf-8">
+	<title>平安黑科技</title>
+	<meta name="x5-fullscreen" content="true">
+	<meta name="viewport" content="width=device-width, initial-scale=0.5, user-scalable=0, minimal-ui" />
+	<meta name="format-detection" content="telephone=no, email=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<script src="static/js/isWxLoging.js"></script>
+	<link rel="stylesheet" href="static/css/preload.css" />
+	<!--<link rel="shortcut icon" href="http://kpximg.oss-cn-shenzhen.aliyuncs.com/201705/07/055e141542914283b351421f2eeb6140.png">-->
+</head>
 
-	<body>
-		<div id="app">
+<body>
+	<div id="app">
 
-		</div>
-		<div id="loadImg" class="loadImg" style="display: none;">
-			<div class="progress">
-				<div class="loader">
-					<div class="loader-inner pacman">
-						<div></div>
-						<div></div>
-						<div></div>
-						<div></div>
-						<div></div>
-					</div>
+	</div>
+	<div id="loadImg" class="loadImg" style="display: none;">
+		<div class="progress">
+			<div class="loader">
+				<div class="loader-inner pacman">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
 				</div>
-				<!--<div class="preload">资源加载中(<span id="current">0</span>/<span id="total">60</span>)</div>-->
-				<div class="preload">资源加载中.. <span id="current">0</span>%</div>
 			</div>
+			<!--<div class="preload">资源加载中(<span id="current">0</span>/<span id="total">60</span>)</div>-->
+			<div class="preload">资源加载中..
+				<span id="current">0</span>%</div>
 		</div>
-		<div id="toast" class="toast"></div>
-		<script type="text/javascript" src="static/js/resLoader.js"></script>
-		<script type="text/javascript" src="static/js/preload.js"></script>
-		<script src="https://wx.nullexcept.com/s_static/js/three.min.js"></script>
-		<script src="https://wx.nullexcept.com/s_static/js/D.min.js"></script>
-		<script src="https://wx.nullexcept.com/s_static/js/doT.min.js"></script>
-		<script src="https://wx.nullexcept.com/s_static/js/uevent.min.js"></script>
-		<script src="https://wx.nullexcept.com/s_static/js/CanvasRenderer.js"></script>
-		<script src="https://wx.nullexcept.com/s_static/js/Projector.js"></script>
-		<script src="https://wx.nullexcept.com/s_static/js/photo-sphere-viewer.min.js"></script>
-		<script src="https://wx.nullexcept.com/s_static/js/DeviceOrientationControls.js"></script>
-		<script src="static/js/exif.js"></script>
-		<script type="text/javascript" src='https://res.wx.qq.com/open/js/jweixin-1.0.0.js' charset='utf-8'></script>
-		<script>
-			//百度统计 
-			var _hmt = _hmt || [];
-			var isMucOpen = true;
-			(function() {
-				var hm = document.createElement("script");
-				hm.src = "https://hm.baidu.com/hm.js?e425071bbac75d469be1039846fbdc5d";
-				var s = document.getElementsByTagName("script")[0];
-				s.parentNode.insertBefore(hm, s);
-			})();
-			function audioAutoPlay(id){
-				var audio = document.getElementById(id);
-				document.getElementById("musecBox").className = "musec-img runRound"
-                audio.play();
-                document.addEventListener("WeixinJSBridgeReady", function () {
-                    audio.play();
-                }, false);
-                document.addEventListener('YixinJSBridgeReady', function() {
-                    audio.play();
-                }, false);
+	</div>
+	<div id="toast" class="toast"></div>
+	<script type="text/javascript" src="static/js/resLoader.js"></script>
+	<script type="text/javascript" src="static/js/preload.js"></script>
+	<script src="https://wx.nullexcept.com/s_static/js/three.min.js"></script>
+	<script src="https://wx.nullexcept.com/s_static/js/D.min.js"></script>
+	<script src="https://wx.nullexcept.com/s_static/js/doT.min.js"></script>
+	<script src="https://wx.nullexcept.com/s_static/js/uevent.min.js"></script>
+	<script src="https://wx.nullexcept.com/s_static/js/CanvasRenderer.js"></script>
+	<script src="https://wx.nullexcept.com/s_static/js/Projector.js"></script>
+	<script src="https://wx.nullexcept.com/s_static/js/photo-sphere-viewer.min.js"></script>
+	<script src="https://wx.nullexcept.com/s_static/js/DeviceOrientationControls.js"></script>
+	<script src="static/js/exif.js"></script>
+	<script type="text/javascript" src='https://res.wx.qq.com/open/js/jweixin-1.0.0.js' charset='utf-8'></script>
+	<script>
+		//百度统计 
+		var _hmt = _hmt || [];
+		var isMucOpen = true;
+		(function () {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?e425071bbac75d469be1039846fbdc5d";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+		function audioAutoPlay(id) {
+			var audio = document.getElementById(id);
+			document.getElementById("musecBox").className = "musec-img runRound"
+			audio.play();
+			document.addEventListener("WeixinJSBridgeReady", function () {
+				audio.play();
+			}, false);
+			document.addEventListener('YixinJSBridgeReady', function () {
+				audio.play();
+			}, false);
+		}
+		function autoPlayAudio2(id) {
+				// alert(typeof WeixinJSBridge);
+				WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+					// 在这里拿到 e.err_msg, 这里面就包含了所有的网络类型
+					// alert(e.err_msg);
+					document.getElementById(id).play();
+				});
+		}
+		function audioStopPlay(id) {
+			document.getElementById("musecBox").className = "musec-img"
+			var audio = document.getElementById(id);
+			audio.pause();
+		}
+		function isWeiXin() {
+			var ua = window.navigator.userAgent.toLowerCase();
+			console.log(ua);//mozilla/5.0 (iphone; cpu iphone os 9_1 like mac os x) applewebkit/601.1.46 (khtml, like gecko)version/9.0 mobile/13b143 safari/601.1
+			if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+				return true;
+			} else {
+				return false;
 			}
-			function audioStopPlay(id){
-				document.getElementById("musecBox").className = "musec-img"
-                var audio = document.getElementById(id);
-                audio.pause();
+		}
+		
+		function toggerMuc() {
+			console.log(":111")
+			if (isMucOpen) {
+				isMucOpen = false;
+				audioStopPlay('Jaudio');
+			} else {
+				isMucOpen = true;
+				audioAutoPlay('Jaudio');
 			}
-			function toggerMuc(){
-				console.log(":111")
-				if(isMucOpen){
-					isMucOpen=false;
-					audioStopPlay('Jaudio');
-				}else{
-					isMucOpen=true;
-					audioAutoPlay('Jaudio');
-				}
-			}
-		</script>
+		}
+	</script>
 
-	</body>
+</body>
 
 </html>

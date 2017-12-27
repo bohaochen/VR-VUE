@@ -28,6 +28,10 @@
 			let self = this;
 			//			self.setShare();
 			//			self.wxLogin();
+			if(isWeiXin()){
+				autoPlayAudio2('Jaudio');
+				console.log(" 是来自微信内置浏览器")
+			}
 		},
 		watch: {
 			'$route' (to, from) {
