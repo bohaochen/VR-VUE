@@ -131,6 +131,7 @@
 										// 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
 									}
 								});
+								document.getElementById('Jaudio').play();
 							});
 						}
 					})
