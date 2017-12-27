@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><title>平安黑科技</title><meta name=x5-fullscreen content=true><meta name=viewport content="width=device-width,initial-scale=0.5,user-scalable=0,minimal-ui"><meta name=format-detection content="telephone=no, email=no"><meta name=apple-mobile-web-app-capable content=yes><script src=static/js/isWxLoging.js></script><link rel=stylesheet href=static/css/preload.css><link href=./static/css/app.039d00e8fe74cb67a6559234d675b98a.css rel=stylesheet></head><body><div id=app></div><div id=loadImg class=loadImg style="display: none;"><div class=progress><div class=loader><div class="loader-inner pacman"><div></div><div></div><div></div><div></div><div></div></div></div><div class=preload>资源加载中.. <span id=current>0</span>%</div></div></div><div id=toast class=toast></div><script type=text/javascript src=static/js/resLoader.js></script><script type=text/javascript src=static/js/preload.js></script><script src=https://wx.nullexcept.com/s_static/js/three.min.js></script><script src=https://wx.nullexcept.com/s_static/js/D.min.js></script><script src=https://wx.nullexcept.com/s_static/js/doT.min.js></script><script src=https://wx.nullexcept.com/s_static/js/uevent.min.js></script><script src=https://wx.nullexcept.com/s_static/js/CanvasRenderer.js></script><script src=https://wx.nullexcept.com/s_static/js/Projector.js></script><script src=https://wx.nullexcept.com/s_static/js/photo-sphere-viewer.min.js></script><script src=https://wx.nullexcept.com/s_static/js/DeviceOrientationControls.js></script><script src=static/js/exif.js></script><script type=text/javascript src=https://res.wx.qq.com/open/js/jweixin-1.0.0.js charset=utf-8></script><script>//百度统计 
+<!DOCTYPE html><html><head><meta charset=utf-8><title>平安黑科技</title><meta name=x5-fullscreen content=true><meta name=viewport content="width=device-width,initial-scale=0.5,user-scalable=0,minimal-ui"><meta name=format-detection content="telephone=no, email=no"><meta name=apple-mobile-web-app-capable content=yes><script src=static/js/isWxLoging.js></script><link rel=stylesheet href=static/css/preload.css><link href=./static/css/app.0353b185bdc8c0d696bbe515fbcbcf1c.css rel=stylesheet></head><body><div id=app></div><div id=loadImg class=loadImg style="display: none;"><div class=progress><div class=loader><div class="loader-inner pacman"><div></div><div></div><div></div><div></div><div></div></div></div><div class=preload>资源加载中.. <span id=current>0</span>%</div></div></div><div id=toast class=toast></div><script type=text/javascript src=static/js/resLoader.js></script><script type=text/javascript src=static/js/preload.js></script><script src=https://wx.nullexcept.com/s_static/js/three.min.js></script><script src=https://wx.nullexcept.com/s_static/js/D.min.js></script><script src=https://wx.nullexcept.com/s_static/js/doT.min.js></script><script src=https://wx.nullexcept.com/s_static/js/uevent.min.js></script><script src=https://wx.nullexcept.com/s_static/js/CanvasRenderer.js></script><script src=https://wx.nullexcept.com/s_static/js/Projector.js></script><script src=https://wx.nullexcept.com/s_static/js/photo-sphere-viewer.min.js></script><script src=https://wx.nullexcept.com/s_static/js/DeviceOrientationControls.js></script><script src=static/js/exif.js></script><script type=text/javascript src=https://res.wx.qq.com/open/js/jweixin-1.0.0.js charset=utf-8></script><script>//百度统计 
 			var _hmt = _hmt || [];
 			var isMucOpen = true;
 			(function() {
@@ -7,29 +7,29 @@
 				var s = document.getElementsByTagName("script")[0];
 				s.parentNode.insertBefore(hm, s);
 			})();
-			// function audioAutoPlay(id){
-			// 	var audio = document.getElementById(id);
-			// 	document.getElementById("musecBox").className = "musec-img runRound"
-            //     audio.play();
-            //     document.addEventListener("WeixinJSBridgeReady", function () {
-            //         audio.play();
-            //     }, false);
-            //     document.addEventListener('YixinJSBridgeReady', function() {
-            //         audio.play();
-            //     }, false);
-			// }
-			// function audioStopPlay(id){
-			// 	document.getElementById("musecBox").className = "musec-img"
-            //     var audio = document.getElementById(id);
-            //     audio.pause();
-            // }
-			// function toggerMuc(){
-			// 	console.log(":111")
-			// 	if(isMucOpen){
-			// 		isMucOpen=false;
-			// 		audioStopPlay('Jaudio');
-			// 	}else{
-			// 		isMucOpen=true;
-			// 		audioAutoPlay('Jaudio');
-			// 	}
-			// }</script><script type=text/javascript src=./static/js/manifest.addf0cd5750b978f4651.js></script><script type=text/javascript src=./static/js/vendor.b2a97004f5047c1be28e.js></script><script type=text/javascript src=./static/js/app.41d8b4d418ddd6736741.js></script></body></html>
+			function audioAutoPlay(id){
+				var audio = document.getElementById(id);
+				document.getElementById("musecBox").className = "musec-img runRound"
+                audio.play();
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                    audio.play();
+                }, false);
+                document.addEventListener('YixinJSBridgeReady', function() {
+                    audio.play();
+                }, false);
+			}
+			function audioStopPlay(id){
+				document.getElementById("musecBox").className = "musec-img"
+                var audio = document.getElementById(id);
+                audio.pause();
+			}
+			function toggerMuc(){
+				console.log(":111")
+				if(isMucOpen){
+					isMucOpen=false;
+					audioStopPlay('Jaudio');
+				}else{
+					isMucOpen=true;
+					audioAutoPlay('Jaudio');
+				}
+			}</script><script type=text/javascript src=./static/js/manifest.d6382319403c0c8ec173.js></script><script type=text/javascript src=./static/js/vendor.c0b5eb48e7d127c5f1e5.js></script><script type=text/javascript src=./static/js/app.26422f07a38dd4c438cd.js></script></body></html>

@@ -3,6 +3,8 @@
 		<transition name="bounce">
 			<router-view></router-view>
 		</transition>
+		<div class="musec-img runRound" id="musecBox" onclick="toggerMuc()"></div>
+		<audio src="/static/media/bg-music.mp3" id="Jaudio" class="media-audio" autoplay preload loop="loop"></audio>
 	</div>
 </template>
 
