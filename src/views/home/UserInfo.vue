@@ -1,6 +1,6 @@
 <template>
 	<div class="content-father">
-		<div class="content" v-show="isInfoPage">
+		<div class="content" v-if="isShowUserInfo">
 			<div class="bg"></div>
 			<img src="/static/img/pn_logo_03.png" class="logo" />
 			<img src="/static/img/cj_01.png" class="cjts" />
@@ -16,7 +16,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="content1" v-show="isLuckPage">
+		<div class="content1" v-else>
 			<div class="bg"></div>
 			<img src="/static/img/pn_logo_03.png" class="logo" />
 			<div class="hj-box">
@@ -78,13 +78,58 @@
 				isInfoPage: true,
 				isLuckPage: false,
 				isSharePage: false,
-				isLuck: true
+				isLuck: true,
+				isShowUserInfo: true,
 			};
 		},
-		mounted() {},
+		mounted() {
+			let _this = this;
+			_this.getUserInfo();
+		},
 		methods: {
-			jieping() {
-				console.log("什么鬼");
+			getUserInfo() {
+				let _this = this;
+				let openid = window.localStorage.getItem("openid");
+				//				openid = "o0qFxuPwkVwO5PVPkrOOFu7qGvgs";//未抽奖  未填写用户信息
+				//				openid = "o0qFxuOYI-FLEY4QTplR59mEMs0o";//未中奖  已填写用户信息
+				//				openid = "o0qFxuAO8X_b14wJKnq9vHgfYHOU";//中奖  已填写用户信息
+				_this.$http
+					.post("v1/em?action=query_userinfo&uid=" + openid)
+					.then(function(response) {
+						if(response.data.code == 200 && response.data.phone.length >= 11) {
+							//已经填写过用户信息
+							_this.isShowUserInfo = false;
+							_this.$http
+								.post("v1/em?action=draw&uid=" + openid)
+								.then(function(response) {
+									console.log(response);
+									switch(response.data.code) {
+										case 100:
+											_this.toast("用户不存在");
+											break;
+										case 102:
+											_this.toast("没有录入用户信息");
+											break;
+										case 103:
+											_this.toast("还没做人脸对比");
+											break;
+										case 104:
+											//											_this.toast("已经抽过奖");
+											_this.toast("你已经参与过活动,分享邀请好友一起参与吧");
+											_this.drawNum(response.data.draw);
+											_this.goToLuckdraw();
+											break;
+										default:
+											_this.drawNum(response.data.draw);
+											_this.goToLuckdraw();
+											break;
+									}
+								})
+								.catch(function(error) {
+									console.log(error);
+								});
+						}
+					});
 			},
 			drawNum(num) {
 				var _this = this;
