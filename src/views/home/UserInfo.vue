@@ -200,11 +200,13 @@
 											break;
 										case 104:
 											//											_this.toast("已经抽过奖");
+											_this.isShowUserInfo = false;
 											_this.toast("你已经参与过活动,分享邀请好友一起参与吧");
 											_this.drawNum(response.data.draw);
 											_this.goToLuckdraw();
 											break;
 										default:
+											_this.isShowUserInfo = false;
 											_this.drawNum(response.data.draw);
 											_this.goToLuckdraw();
 											break;
